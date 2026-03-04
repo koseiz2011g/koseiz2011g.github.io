@@ -416,7 +416,7 @@ question: {
  ]
   },
 
-   pre01: {
+  pre01: {
     title: "📘 前置詞01",
     questions: [
 {
@@ -494,8 +494,8 @@ question: {
 {
   sentence: "The book is <span class='highlight'>under the bed</span>.",
   choices: ["ベッドの下に", "ベッドの横に", "ベッドの中に", "ベッドの上に"],
-  correct: 1,
-  explanation: "▶ 本は／あります／机の下に<br>▶「on」は「～の下に」という意味です。"
+  correct: 0,
+  explanation: "▶ 本は／あります／ベッドの下に<br>▶「on」は「～の下に」という意味です。"
 },
 
 {
@@ -509,6 +509,133 @@ question: {
   choices: ["音楽と", "音楽について", "音楽から", "音楽まで"],
   correct: 1,
   explanation: "▶ 私たちは／話しました／音楽について<br>▶「about」は「～について」という意味です。"
+}
+ ]
+  },
+
+  conjunction: {
+    title: "📘 接続詞",
+    questions: [
+
+{
+  sentence: "<span class='highlight'>If</span> it is sunny, we will play soccer.",
+  choices: ["もし～なら", "～だけれども", "～するとき", "そして"],
+  correct: 0,
+  explanation: "▶ もし晴れるなら／私たちはサッカーをします<br>▶「if」は条件を表し、「もし～なら」という意味です。条件節は未来のことでも現在形で表現します。"
+},
+{
+  sentence: "<span class='highlight'>Though</span> he is young, he is very strong.",
+  choices: ["もし～なら", "～だけれども", "～するとき", "だから"],
+  correct: 1,
+  explanation: "▶ 彼は若いけれども／とても強い<br>▶「though」は逆接を表し、「～だけれども」という意味です。"
+},
+{
+  sentence: "I like math, <span class='highlight'>but</span> I don’t like science.",
+  choices: ["そして", "だから", "しかし", "もし～なら"],
+  correct: 2,
+  explanation: "▶ 私は数学が好きです／しかし／理科は好きではありません<br>▶「but」は逆接で「しかし」という意味です。"
+},
+{
+  sentence: "I know <span class='highlight'>that</span> she is kind.",
+  choices: ["～するとき", "～ということ", "もし～なら", "だから"],
+  correct: 1,
+  explanation: "▶ 私は知っています／彼女が親切だということを<br>▶「that」は名詞節を導き、「～ということ」という意味になります。"
+},
+{
+  sentence: "I play soccer <span class='highlight'>and</span> tennis.",
+  choices: ["または", "しかし", "そして", "だから"],
+  correct: 2,
+  explanation: "▶ 私は／します／サッカーとテニスを<br>▶「and」は「そして」という意味で語と語を結びます。"
+},
+{
+  sentence: "Do you want tea <span class='highlight'>or</span> juice?",
+  choices: ["そして", "または", "しかし", "だから"],
+  correct: 1,
+  explanation: "▶ あなたは／望んでいますか／お茶を／それともジュースを<br>▶「or」は選択を表し、「または」という意味です。"
+},
+{
+  sentence: "He was <span class='highlight'>so</span> tired <span class='highlight'>that</span> he went to bed early.",
+  choices: ["とても～なので…", "もし～なら", "～だけれども", "～するとき"],
+  correct: 0,
+  explanation: "▶ 彼は／とても疲れていたので／早く寝ました<br>▶「so ～ that …」は「とても～なので…」という結果を表します。"
+},
+{
+  sentence: "<span class='highlight'>Both</span> Tom <span class='highlight'>and</span> Ken like music.",
+  choices: ["どちらか一方", "両方とも", "どちらも～ない", "しかし"],
+  correct: 1,
+  explanation: "▶ トムとケンの両方とも／音楽が好きです<br>▶「both A and B」は「AもBも両方」という意味です。"
+},
+{
+  sentence: "You can choose <span class='highlight'>either</span> this book <span class='highlight'>or</span> that one.",
+  choices: ["両方とも", "どちらも～ない", "どちらか一方", "そして"],
+  correct: 2,
+  explanation: "▶ あなたは／選ぶことができる／どちらか一方を／この本かあの本の<br>▶「either A or B」は「AかBのどちらか」という意味です。"
+},
+{
+  sentence: "<span class='highlight'>Neither</span> my father <span class='highlight'>nor</span> my mother is at home.",
+  choices: ["だから", "両方とも～である", "どちらか一方", "どちらも～ない"],
+  correct: 3,
+  explanation: "▶ 父も母も／いません／家に<br>▶「neither A nor B」は「AもBも～ない」という意味です。"
+},
+{
+  sentence: "She can speak <span class='highlight'>not only</span> English <span class='highlight'>but also</span> French.",
+  choices: ["どちらも～ない", "どちらか一方", "AだけでなくBも", "しかし"],
+  correct: 2,
+  explanation: "▶ 彼女は／話すことができる／英語だけでなくフランス語も<br>▶「not only A but also B」は「AだけでなくBも」という意味です。"
+},
+{
+  sentence: "Study hard, <span class='highlight'>and</span> you will pass the test.",
+  choices: ["さもないと", "そうすれば", "しかし", "もし～なら"],
+  correct: 1,
+  explanation: "▶ 一生懸命勉強しなさい、そうすれば試験に合格します<br>▶ 命令文＋and は「～しなさい、そうすれば…」という意味です。"
+},
+{
+  sentence: "Hurry up, <span class='highlight'>or</span> you will miss the bus.",
+  choices: ["そして", "しかし", "だから", "さもないと"],
+  correct: 3,
+  explanation: "▶ 急ぎなさい、さもないとバスに乗り遅れます<br>▶ 命令文＋or は「～しなさい、さもないと…」という意味です。"
+},
+{
+  sentence: "I stayed home <span class='highlight'>because</span> I was sick.",
+  choices: ["～する前に", "なぜなら～だから", "～だけれども", "その間に"],
+  correct: 1,
+  explanation: "▶ 私は／家にいました／なぜなら病気だったから<br>▶「because」は理由を表し、「なぜなら～だから」という意味です。"
+},
+{
+  sentence: "It was very cold, <span class='highlight'>so</span> I stayed home.",
+  choices: ["だから", "しかし", "～する前に", "その間に"],
+  correct: 0,
+  explanation: "▶ とても寒かった／だから／私はいた／家に<br>▶「so」は結果を表し、「だから」という意味です。"
+},
+{
+  sentence: "Brush your teeth <span class='highlight'>before</span> you go to bed.",
+  choices: ["～した後で", "なぜなら～だから", "～する前に", "～だけれども"],
+  correct: 2,
+  explanation: "▶ 歯をみがきなさい／寝る前に<br>▶「before」は「～する前に」という意味です。"
+},
+{
+  sentence: "I did my homework <span class='highlight'>after</span> I got home.",
+  choices: ["～する前に", "～した後で", "だから", "その間に"],
+  correct: 1,
+  explanation: "▶ 私はやった／宿題を／家に帰った後で<br>▶「after」は「～した後で」という意味です。"
+},
+{
+  sentence: "I have lived here <span class='highlight'>since</span> I was five.",
+  choices: ["～の間に", "～だけれども", "だから", "～以来ずっと"],
+  correct: 3,
+  explanation: "▶ 私は／ずっと住んでいます／ここに／私が5歳のときから<br>▶「since」は「～以来ずっと」という意味で使われます。"
+},
+{
+  sentence: "My mother was cooking <span class='highlight'>while</span> I was studying.",
+  choices: ["～する間に", "～する前に", "なぜなら～だから", "だから"],
+  correct: 0,
+  explanation: "▶ 母は／料理をしていました／私が勉強している間に<br>▶「while」は「～している間に」という意味です。"
+},
+{
+  sentence: "<span class='highlight'>Although</span> it was raining, we played soccer.",
+  choices: ["なぜなら～だから", "だから", "～の間に", "～だけれども"],
+  correct: 3,
+  explanation: "▶ 雨が降っていたけれども／私たちはサッカーをしました<br>▶「although」は逆接を表し、「～だけれども」という意味です。"
 }
  ]
   },
@@ -1502,5 +1629,6 @@ if ("serviceWorker" in navigator) {
     .catch(err => console.error("SW failed", err));
 
 }
+
 
 
