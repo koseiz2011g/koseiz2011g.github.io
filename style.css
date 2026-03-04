@@ -849,6 +849,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  padding-bottom: 90px; /* bottom-nav 高さ分 */
 }
 
 body {
@@ -875,3 +876,4 @@ body {
   font-size: 12px;
 
 }
+
