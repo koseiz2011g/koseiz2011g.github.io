@@ -766,6 +766,115 @@ conjunction: {
  ]
   },
 
+   infinitive01: {
+    title: "📘 不定詞01",
+    questions: [
+{
+  sentence: "I had no time <span class='highlight'>to do my homework</span>.",
+  choices: ["宿題をするための", "宿題をすることを", "宿題をして", "宿題をするために"],
+  correct: 0,
+  explanation: "▶ 私は/持っていた/ゼロの時間を/宿題をするための<br>▶「to do」は「するための」という意味で、「time」 を説明する形容詞的用法です。"
+},
+{
+  sentence: "He went to the park <span class='highlight'>to play tennis</span>.",
+  choices: ["テニスをして", "テニスをするために", "テニスをすることを", "テニスをするための"],
+  correct: 1,
+  explanation: "▶ 彼は/行きました/公園へ/テニスをするために<br>▶「to play」は「するために」という意味で、目的を表す副詞的用法です。"
+},
+{
+  sentence: "I want <span class='highlight'>to visit</span> Australia.",
+  choices: ["訪れて", "訪れるために", "訪れることを", "訪れるための"],
+  correct: 2,
+  explanation: "▶ 私は/望んでいる/訪れることを/オーストラリアを<br>▶「to visit」は 「訪れることを」という意味で、「want」 の目的語になる名詞的用法です。"
+},
+{
+  sentence: "He has a dream <span class='highlight'>to be a singer</span>.",
+  choices: ["歌手になるために", "歌手になるための", "歌手になることを", "歌手になるという"],
+  correct: 3,
+  explanation: "▶ 彼は/持っている/一つの夢を/歌手になるという<br>▶「to be a singer」 は 「dream」 の内容を説明する同格の不定詞です。"
+},
+{
+  sentence: "Aki got up early <span class='highlight'>to help his mother</span>.",
+  choices: ["母を助けるために", "母を助けて", "母を助けることを", "母を助けるための"],
+  correct: 0,
+  explanation: "▶ アキは/起きました/早く/手伝うために/お母さんを<br>▶「to help」は「手伝うために」という意味で、目的を表す副詞的用法です。"
+},
+{
+  sentence: "I am glad <span class='highlight'>to see you again</span>.",
+  choices: ["またあなたに会うことを", "またあなたに会って", "またあなたに会うために", "またあなたに会うための"],
+  correct: 1,
+  explanation: "▶ 私は/うれしい/あなたに会って/また<br>▶「to see you again」は 「あなたに会って」という意味で、「glad」 という感情の原因を表しています。"
+},
+{
+  sentence: "<span class='highlight'>To play tennis</span> is a lot of fun.",
+  choices: ["テニスをすることは", "テニスをするために", "テニスをして", "テニスをするための"],
+  correct: 0,
+  explanation: "▶ テニスをすることは/とても楽しい<br>▶「to play tennis」は、「テニスをすることは」という意味で、不定詞が文の主語として使われている名詞的用法です。"
+},
+{
+  sentence: "I want something cold <span class='highlight'>to drink</span>.",
+  choices: ["飲むことを", "飲んで", "飲むために", "飲むための"],
+  correct: 3,
+  explanation: "▶ 私は/望んでいる/冷たい何かを/飲むための<br>▶「to drink」は 「飲むための」という意味で、「something cold」 を説明する形容詞的用法です。"
+}
+ ]
+  },
+
+  infinitive02: {
+    title: "📘 不定詞02",
+    questions: [
+{
+  sentence: "She bought some eggs <span class='highlight'>to make a cake</span>.",
+  choices: ["ケーキを作るために", "ケーキを作ることを", "ケーキを作って", "ケーキを作るべき"],
+  correct: 0,
+  explanation: "▶彼女は／買った／卵を／作るために／ケーキを<br>▶「to make」は「作るために」という意味で、目的を表す副詞的用法です。",
+  youtube: "https://www.youtube.com/embed/=XXXX"
+
+},
+{
+  sentence: "My dream is <span class='highlight'>to be a tennis player</span>.",
+  choices: ["テニス選手になるために", "テニス選手になるという", "テニス選手になること", "テニス選手になって"],
+  correct: 2,
+  explanation: "▶ 私の夢は／なることです／テニスの選手に<br>▶「to be」は「なるために」という意味です。名詞的用法で、主語 「my dream」 の補語になっています。"
+},
+{
+  sentence: "She tried <span class='highlight'>to open the window</span>.",
+  choices: ["窓を開けるために", "窓を開けて", "窓を開けることを", "窓を開けるべき"],
+  correct: 2,
+  explanation: "▶彼女は／トライした／開けることを／窓を<br>▶「to open」は「開けることを」という意味で、「tried」 の目的語になる名詞的用法です。"
+},
+{
+  sentence: "I have one thing <span class='highlight'>to say about it</span>.",
+  choices: ["それについて言うために", "それについて言って", "それについて言うことを", "それについて言うべき"],
+  correct: 3,
+  explanation: "▶ 私は／持っている／1つのことを／言うべき／それについて<br>▶「to say」は「言うべき」という意味で、「thing」を説明する形容詞的用法です。"
+},
+{
+  sentence: "I am sad <span class='highlight'>to hear that</span>.",
+  choices: ["それを聞いて", "それを聞くことを", "それを聞くために", "それを聞くべき"],
+  correct: 0,
+  explanation: "▶ 私は／悲しい／聞いて／それを<br>▶「to hear」は「～を聞いて」という意味で、「sad」 という感情の原因を表しています。"
+},
+{
+  sentence: "We have a lot of homework <span class='highlight'>to do</span>.",
+  choices: ["するために", "することを", "するべき", "するべきこと"],
+  correct: 2,
+  explanation: "▶ 私たちは／持っている／たくさんの宿題を／やるべき<br>▶「to do」は「やるべき」という意味で、「homework」 を説明する形容詞的用法です。"
+},
+{
+  sentence: "<span class='highlight'>To become a pilot</span>, he studies English hard.",
+  choices: ["パイロットになることを", "パイロットになるために", "パイロットになって", "パイロットになることは"],
+  correct: 1,
+  explanation: "▶ なるために／パイロットに／彼は／勉強している／懸命に<br>▶ 「to become」は「なるために」という意味で、目的を表す副詞的用法です。"
+},
+{
+  sentence: "You need <span class='highlight'>to get up</span> early every morning.",
+  choices: ["起きるために", "起きて", "起きるべき", "起きることを"],
+  correct: 3,
+  explanation: "▶ あなたは／必要としている／起きることを／早く／毎朝<br>▶「to get up」は「起きることを」という意味で、「need」 の目的語になる名詞的用法です。"
+}
+ ]
+  },
 }
 
 
@@ -1760,6 +1869,7 @@ if ("serviceWorker" in navigator) {
     .catch(err => console.error("SW failed", err));
 
 }
+
 
 
 
