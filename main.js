@@ -95,7 +95,7 @@ pronoun01: {
 {
   sentence: "<span class='highlight'>I</span> enjoyed playing tennis.",
   choices: ["私に", "私は", "私を", "私の"],
-  correct: 2,
+  correct: 1,
   explanation: "▶ 私は/楽しんだ/テニスをすることを<br>▶「I」は1人称単数・主格の人称代名詞で、「私は」という意味で使われています。主格とは主語になる形のことを言います。"
 },
 {
@@ -1404,3 +1404,4 @@ if ("serviceWorker" in navigator) {
     .catch(err => console.error("SW failed", err));
 
 }
+
