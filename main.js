@@ -502,14 +502,15 @@ modal02: {
   sentence: "<span class='highlight'>Would you like</span> some coffee?",
   choices: ["望んでいますか", "飲まなければなりませんか", "飲めますか", "飲むべきですか"],
   correct: 0,
-  explanation: "▶ いかがですか／コーヒーは<br>▶「Would you like ～?」は勧める表現です。"
+  explanation: "▶ 望んでいますか➟いかがですか／コーヒーは<br>▶「Would you like ～?」は勧める表現です。"
 },
 {
   sentence: "I<span class='highlight'>'d like to ask</span> you some questions.",
   choices: ["聞かなければならない", "聞くことができる", "聞きたい", "聞くべきだ"],
   correct: 2,
-  explanation: "▶ 私は／聞きたい／あなたに／いくつかの質問を<br>▶「I'd like to ～」は「～したい」という丁寧な希望表現です。"
+  explanation: "▶ 私は／望んでいる／聞くことを／あなたに／いくつかの質問を<br>▶「I'd like to ～」は「～したい」という丁寧な希望表現です。"
 }
+
  ]
   },
 
@@ -2212,6 +2213,7 @@ if ("serviceWorker" in navigator) {
     .then(() => console.log("SW registered"))
     .catch(err => console.error("SW failed", err));
 }
+
 
 
 
