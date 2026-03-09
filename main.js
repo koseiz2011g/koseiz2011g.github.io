@@ -1214,7 +1214,9 @@ function successWeakQuestion(q) {
 
 function render() {
 
-  console.log("render called", state.mode);
+   window.scrollTo(0, 0); // ←追加
+
+  console.log("render called", state.screen);
 
   const app = document.getElementById("app");
   app.innerHTML = "";
@@ -1251,6 +1253,14 @@ function render() {
 
     case "weakChainMenu":
       renderWeakChainMenu(app);
+      break;
+
+    case "basicChainMenu":
+      renderBasicChainMenu(app);
+      break;
+
+    case "quiz":
+      renderQuiz(app);
       break;
 
     default:
@@ -1413,6 +1423,16 @@ function renderModeSelect(root) {
       </button>
     </div>
 
+
+    <div class="mode-card">
+      <button id="basicChainBtn" class="mode-btn">
+        📘 必修連チャンモード
+        <div class="mode-sub">
+          最高 ${maxChain} 連チャン
+        </div>
+      </button>
+    
+
     <div class="mode-card">
       <button id="chainBtn" class="mode-btn">
         🔥 連チャンモード
@@ -1432,11 +1452,17 @@ function renderModeSelect(root) {
       </button>
 
      
-      <p class="version">ver 1.2</p>
+      <p class="version">ver 1.3</p>
     </div>
   `;
 
   document.getElementById("studyBtn").onclick = goStudyMenu;
+
+  document.getElementById("basicChainBtn").onclick = () => {
+  state.screen = "basicChainMenu";
+  render();
+};
+
   document.getElementById("chainBtn").onclick = goChainMenu;
   document.getElementById("weakChainBtn").onclick = () => {
   state.screen = "weakChainMenu";
@@ -1822,7 +1848,7 @@ function renderChainMenu(root) {
   
     
     <div class="mode-study">
-      <img src="images/cw01.png" class="mode-cat">
+      <img src="images/cm01.png" class="mode-cat">
     </div>
 
     <p align=center>🏆 BEST：${state.maxChain}連チャン！</p>
@@ -1888,8 +1914,13 @@ function renderChainQuestion(root) {
   const answered = chain.answered;
 
   root.innerHTML = `
-   <h2>${chain.isWeak ? "💥 弱点連チャンモード" : "🔥 連チャンモード"}</h2>
-
+   <h2>
+${chain.isWeak
+  ? "💥 弱点連チャンモード"
+  : chain.isBasic
+  ? "📘 基本問題連チャンモード"
+  : "🔥 連チャンモード"}
+</h2>
 
     <div class="question-area">
       <div class="question">${q.sentence}</div> 
@@ -2071,7 +2102,14 @@ function renderChainResult(root) {
   const chain = state.chain;
 
   root.innerHTML = `
-    <h2>${chain.isWeak ? "💥 弱点連チャン結果" : "🔥 連チャン結果"}</h2>
+    
+     <h2>
+     ${chain.isWeak
+     ? "💥 弱点連チャン結果"
+     : chain.isBasic
+     ? "📘 基本連チャン結果"
+     : "🔥 連チャン結果"}
+     </h2>
 
     <div class="cat-jump">
       <img src="images/cw02.png" class="mode-cat">
@@ -2120,7 +2158,7 @@ function renderWeakChainMenu(root) {
     <h2>💥 弱点連チャンモード</h2>
 
      <div class="mode-study">
-      <img src="images/csad02.png" class="mode-cat">
+      <img src="images/cs01.png" class="mode-cat">
     </div>
 
     <p>弱点問題：${weakCount}問</p>
@@ -2164,6 +2202,97 @@ function generateChoices(correct) {
 
   return shuffled.sort(() => Math.random() - 0.5);
 }
+
+function getBasicQuestions() {
+  return questions.slice(0, 50); 
+}
+
+
+
+function renderBasicChainMenu(root) {
+
+  
+
+  root.innerHTML = `
+
+   <h2>📘 基本連チャンモード</h2>
+
+  
+    <div class="mode-study">
+      <img src="images/cb01.png" class="mode-cat">
+    </div>
+
+    <p class="mode-desc">
+      基本問題だけで連チャンに挑戦！
+    </p>
+  
+
+    <button id="startBasicChainBtn">
+      基本連チャンスタート
+    </button>
+
+
+     <div class="bottom-nav">
+    <button id="backBtn" class="mode-btn">◀モード選択へ</button>
+    </div>
+  `;
+
+  document.getElementById("startBasicChainBtn").onclick = startBasicChainMode;
+  document.getElementById("backBtn").onclick = goModeSelect;
+
+  
+
+  setupChainReset(); // ← 後で作る
+}
+
+function shuffle(array) {
+  return array.sort(() => Math.random() - 0.5);
+}
+
+function startBasicChainMode() {
+
+  console.log("基本連チャン開始");
+
+  const allQuestions = getAllQuestions();
+  const basicQuestions = allQuestions.slice(0, 69);
+
+  console.log("basicQuestions:", basicQuestions.length);
+
+  if (basicQuestions.length === 0) {
+    alert("基本問題がありません");
+    return;
+  }
+
+  state.chain = {
+    questions: shuffle([...basicQuestions]),
+    correctStreak: 0,   // ★これが必要
+    lastStreak: 0,      // ★これも安全のため
+    startMaxChain: state.maxChain,  // ★これを追加
+    index: 0,
+    streak: 0,
+    maxStreak: 0,
+    isBasic: true,
+    isWeak: false
+  };
+
+  console.log("chain state:", state.chain);
+
+  state.screen = "chainQuestion";
+
+  render();
+}
+
+function getAllQuestions() {
+
+  let all = [];
+
+  for (let key in categories) {
+    all = all.concat(categories[key].questions);
+  }
+
+  return all;
+}
+
 
 /*********************************************************
  * UIユーティリティ
@@ -2213,7 +2342,6 @@ if ("serviceWorker" in navigator) {
     .then(() => console.log("SW registered"))
     .catch(err => console.error("SW failed", err));
 }
-
 
 
 
