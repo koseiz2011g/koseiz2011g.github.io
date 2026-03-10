@@ -397,8 +397,8 @@ pre01: {
 {
   sentence: "The book is <span class='highlight'>under the bed</span>.",
   choices: ["ベッドの下に", "ベッドの横に", "ベッドの中に", "ベッドの上に"],
-  correct: 1,
-  explanation: "▶ 本は／あります／机の下に<br>▶「on」は「～の下に」という意味です。"
+  correct: 0,
+  explanation: "▶ 本は／あります／机の下に<br>▶「under」は「～の下に」という意味です。"
 },
 {
   sentence: "We talked <span class='highlight'>about music</span>.",
@@ -2342,6 +2342,7 @@ if ("serviceWorker" in navigator) {
     .then(() => console.log("SW registered"))
     .catch(err => console.error("SW failed", err));
 }
+
 
 
 
