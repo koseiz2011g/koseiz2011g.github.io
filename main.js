@@ -1068,7 +1068,20 @@ const state = {
     normalChain:0,
     basicChain:0,
     weakChain:0
-  }
+  },
+
+  // ===== 今日の記録 =====
+  today: JSON.parse(
+  localStorage.getItem("todayRecord")
+) || {
+
+  date: "",
+
+  maxChain: 0,
+
+  challenge: 0
+
+}
 
 };
 
@@ -1145,6 +1158,11 @@ function load() {
     console.error("データ読み込み失敗", e);
   }
 }
+
+
+const MAX_STARS = 13; // 単元数が追加されたら増やす
+
+
 
 
 /*********************************************************
@@ -1314,6 +1332,15 @@ function startStudy(categoryKey) {
 
 function startChain(mode){
 
+  checkTodayRecord();
+
+state.today.challenge++;
+
+localStorage.setItem(
+  "todayRecord",
+  JSON.stringify(state.today)
+);
+
   let questions = [];
 
   if(mode==="basic"){
@@ -1394,12 +1421,20 @@ function goWeakChainMenu() {
 
 function renderModeSelect(root) {
 
+
+  const totalStars = getTotalStars();  
+
   
-  const totalStars = getTotalStars();
-  
+  const starIcons =
+  "⭐".repeat(totalStars) +
+  "☆".repeat(MAX_STARS - totalStars);
+
   const weakCount = getWeakQuestions().length;
+  checkTodayRecord();
 
   root.innerHTML = `
+
+     <h2>-連チャン中学英文法-</h2>
 
     <div class="mode-hero">
       <img src="images/4cats.png" class="mode-cat">
@@ -1407,19 +1442,41 @@ function renderModeSelect(root) {
 
     <h1 class="logo">
       よんたくん
-      <span>-連チャン中学英文法-</span>
+      
     </h1>
 
+   
 
     <!-- 学習モード -->
     <div class="mode-card">
       <button id="studyBtn" class="mode-btn">
         📘 じっくり学習モード
         <div class="mode-sub">
-          ${totalStars > 0 ? `⭐ ${totalStars}` : ""}
+       ${starIcons}
+       <div class="star-count">
+       ${totalStars} / ${MAX_STARS}
         </div>
+      </div>
       </button>
     </div>
+
+
+ <div class="today-box">
+
+  <div align=center class="today-title">
+    🔥 今日の記録
+  </div>
+
+  <div align=center class="today-item">
+    最高：
+    ${state.today.maxChain}連チャン    　挑戦回数：
+    ${state.today.challenge}
+  </div>
+
+</div>
+
+
+
 
 
     <!-- 必修連チャン -->
@@ -1455,7 +1512,7 @@ function renderModeSelect(root) {
     </div>
 
 
-    <p class="version">ver 1.4</p>
+    <p class="version">ver 1.6</p>
 
   `;
 
@@ -2110,6 +2167,21 @@ buttons.forEach((b,i)=>{
 
         chain.correctStreak++;
 
+        if (
+  chain.correctStreak >
+  state.today.maxChain
+) {
+
+  state.today.maxChain =
+    chain.correctStreak;
+
+  localStorage.setItem(
+    "todayRecord",
+    JSON.stringify(state.today)
+  );
+
+}
+
         if(chain.mode==="weak"){
           successWeakQuestion(q);
         }
@@ -2399,7 +2471,8 @@ function renderWeakChainMenu(root) {
         showFeedback: false,
         milestone: null,
         newRecord: false,
-        isWeak: true
+        isWeak: true,
+        mode: "weak"
       };
 
       state.screen = "chainQuestion";
@@ -2557,6 +2630,33 @@ function getAllQuestions() {
   return all;
 }
 
+function checkTodayRecord() {
+
+  const today =
+    new Date()
+      .toISOString()
+      .slice(0, 10);
+
+  if (state.today.date !== today) {
+
+    state.today = {
+
+      date: today,
+
+      maxChain: 0,
+
+      challenge: 0
+
+    };
+
+    localStorage.setItem(
+      "todayRecord",
+      JSON.stringify(state.today)
+    );
+
+  }
+
+}
 
 /*********************************************************
  * UIユーティリティ
@@ -2606,7 +2706,6 @@ if ("serviceWorker" in navigator) {
     .then(() => console.log("SW registered"))
     .catch(err => console.error("SW failed", err));
 }
-
 
 
 
