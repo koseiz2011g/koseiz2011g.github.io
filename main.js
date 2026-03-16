@@ -622,7 +622,7 @@ conjunction02: {
 
 
 
- pronoun02: {
+pronoun02: {
     title: "📗 代名詞02",
     questions: [
 {
@@ -715,7 +715,16 @@ conjunction02: {
   choices: ["彼らに", "彼のもの", "彼女を", "彼らのもの"],
   correct: 3,
   explanation: "▶ その赤いかばんは／私たちのものです／彼らのものではありません<br>▶「theirs」 は3人称複数・所有代名詞で、「彼らのもの」という意味で使われています。"
-},
+}
+
+ ]
+  },
+
+
+
+ pronoun03: {
+    title: "📗 代名詞03",
+    questions: [
 {
   sentence: "This classroom is <span class='highlight'>ours</span>.",
   choices: ["私たちの", "私たちのもの", "私たちは", "私たちに"],
