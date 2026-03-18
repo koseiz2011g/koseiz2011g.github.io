@@ -1650,7 +1650,7 @@ function renderStudyMenu(root) {
       }).join("")}
     </div>
 
-    
+    <button id="resetStarsBtn">⭐ すべてリセット</button>
     <div class="bottom-nav">
     <button id="modeBtn" class="mode-btn">◀モード選択へ</button>
     </div>
@@ -1658,6 +1658,7 @@ function renderStudyMenu(root) {
 
   document.querySelectorAll(".category-btn").forEach(btn => {
   const key = btn.dataset.key;
+
 
   let pressTimer = null;
   let longPressTriggered = false;
@@ -1697,6 +1698,22 @@ function renderStudyMenu(root) {
 });
 
   document.getElementById("modeBtn").onclick = goModeSelect;
+
+  document.getElementById("resetStarsBtn").onclick = () => {
+
+  const ok = confirm("すべての⭐をリセットしますか？");
+
+  if (!ok) return;
+
+  // ⭐データ削除
+  localStorage.removeItem("stars");
+
+  // stateもリセット
+  state.stars = {};
+
+  // 再描画
+  render();
+};
 }
 
 // ⭐解除処理を関数化
