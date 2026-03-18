@@ -623,8 +623,6 @@ conjunction02: {
 
 
 
-
-
  pronoun02: {
     title: "📗 代名詞02",
     questions: [
@@ -1204,7 +1202,13 @@ load();
 // ==========================
 
 function getTotalStars() {
-  return Object.values(state.stars).reduce((a, b) => a + b, 0);
+
+  const stars = state.stars || {};
+
+  return Object.entries(stars)
+    .filter(([key]) => key !== "weak")  // ←① これ
+    .reduce((sum, [, val]) => sum + val, 0); // ←②③
+
 }
 
 /*********************************************************
@@ -1240,7 +1244,8 @@ function addWeakQuestion(q) {
   if (!state.weakQuestions[key]) {
     state.weakQuestions[key] = {
       data: q,
-      success: 0
+      success: 0,
+      lastWrongAt: Date.now() // ←追加
     };
   }
 
@@ -1261,6 +1266,51 @@ function successWeakQuestion(q) {
 
   saveWeakQuestions();
 }
+
+
+function sortWeakList(weakList){
+
+  const now = Date.now();
+
+  weakList.sort((a, b) => {
+
+    // 弱さ（successが少ないほど弱い）
+    const weakA = 2 - (a.success || 0);
+    const weakB = 2 - (b.success || 0);
+
+    // 古さ（時間差）
+    const ageA = (now - (a.lastWrongAt || 0)) / 1000000;
+    const ageB = (now - (b.lastWrongAt || 0)) / 1000000;
+
+    // 総合スコア
+    const scoreA = weakA * 10 + ageA;
+    const scoreB = weakB * 10 + ageB;
+
+    return scoreB - scoreA; // 大きい方を上に
+
+  });
+
+}
+
+function addQuestionIds(){
+
+  const all = getAllQuestions();
+
+  all.forEach((q,i)=>{
+
+    if(!q.id){
+      q.id = "q_" + i;
+    }
+
+  });
+
+}
+
+function getAllQuestions() {
+  return Object.values(categories)
+    .flatMap(category => category.questions);
+}
+
 
 
 /*********************************************************
@@ -1317,6 +1367,11 @@ function render() {
     case "quiz":
       renderQuiz(app);
       break;
+
+    case "studyQuestion":
+      renderStudyQuestion(app);
+      break;
+    
 
     default:
       app.textContent = "不明な画面です";
@@ -1421,7 +1476,10 @@ function goChainMenu() {
   render();
 }
 
-
+function goBasicChainMenu() {
+  state.screen = "basicChainMenu";
+  render();
+}
 
 
 
@@ -1486,6 +1544,8 @@ function renderModeSelect(root) {
       </div>
       </button>
     </div>
+
+   
 
 
  <div class="today-box">
@@ -1852,11 +1912,20 @@ function finishStudy() {
   const alreadyHadStar = state.stars[study.categoryKey];
   let newlyEarned = false;
 
-  if (correct === total && !alreadyHadStar) {
-    state.stars[study.categoryKey] = 1;
-    localStorage.setItem("stars", JSON.stringify(state.stars));
-    newlyEarned = true;
-  }
+  if (
+  correct === total &&
+  !alreadyHadStar &&
+  study.categoryKey !== "weak"
+) {
+  state.stars[study.categoryKey] = 1;
+
+  localStorage.setItem(
+    "stars",
+    JSON.stringify(state.stars)
+  );
+
+  newlyEarned = true;
+}
 
   state.study.newlyEarnedStar = newlyEarned;
 
@@ -1906,9 +1975,16 @@ function renderStudyResult(root) {
     }
 
     <button id="reviewBtn" class="mode-btn">最後の問題を見る</button>
-    <button id="menuBtn" class="mode-btn">📘 学習メニューへ</button>
+    <button id="menuBtn" class="mode-btn">📘 じっくり学習メニューへ</button>
+
+    
+      <button id="weakChainBtn" class="mode-btn">
+        💥 弱点学習メニューへ
+      </button>
+    
+
     <div class="bottom-nav">
-    <button id="modeBtn" class="mode-btn">モード選択へ</button></div>
+    <button id="modeBtn" class="mode-btn">◀モード選択へ</button></div>
   `;
 
   // 効果音
@@ -1925,6 +2001,12 @@ function renderStudyResult(root) {
   };
 
   document.getElementById("menuBtn").onclick = goStudyMenu;
+
+  document.getElementById("weakChainBtn").onclick = () => {
+    state.screen = "weakChainMenu";
+    render();
+  };
+
   document.getElementById("modeBtn").onclick = goModeSelect;
 }
 
@@ -2376,7 +2458,8 @@ function finishChain() {
 
   // 全問制覇
   chain.perfect =
-    chain.maxStreak === chain.questions.length;
+  chain.mode !== "weak" &&
+  chain.maxStreak === chain.questions.length;
 
   // 10連達成
   chain.milestone10 =
@@ -2485,7 +2568,19 @@ function renderChainResult(root){
     ?.addEventListener("click", () => startChain(chain.mode));
 
   document.getElementById("menuBtn")
-    ?.addEventListener("click", goChainMenu);
+  ?.addEventListener("click", () => {
+
+    if (chain.mode === "basic") {
+      goBasicChainMenu();
+    }
+    else if (chain.mode === "weak") {
+      goWeakChainMenu();
+    }
+    else {
+      goChainMenu();
+    }
+
+  });
 
   document.getElementById("backBtn")
     ?.addEventListener("click", goModeSelect);
@@ -2530,95 +2625,104 @@ function showResultSteps(chain){
 
 
 
-function renderWeakChainMenu(root) {
+function renderWeakChainMenu(root){
 
   const weakList = Object.values(state.weakQuestions || {});
+  sortWeakList(weakList);
   const weakCount = weakList.length;
 
   root.innerHTML = `
 
   <h2>💥 弱点連チャンモード</h2>
 
-   <div class="mode-study">
-      <img src="images/cs01.png" class="mode-cat">
-    </div>
+  <div class="mode-study">
+    <img src="images/cs01.png" class="mode-cat">
+  </div>
 
-   <div align=center>弱点問題：${weakCount}問</div>
-
-  <div align=center>克服しよう！</div>
+  <div align="center">弱点問題：${weakCount}問</div>
+  <div align="center">克服しよう！</div>
 
   <button class="start-btn" id="startWeakChainBtn">
     💥 弱点連チャンSTART
   </button>
 
   <div class="weak-list">
-    ${
-      weakCount === 0
-        ? `<p class="weak-empty">弱点問題はありません 🎉</p>`
-        : weakList.map((w, i) => {
 
-            const remain = 2 - w.success;
+  ${
+    weakCount === 0
+      ? `<p class="weak-empty">弱点問題はありません 🎉</p>`
+      : weakList.map((w,i)=>{
 
-            return `
-            <div class="weak-item" data-index="${i}">
-              <div class="weak-sentence">
-                ${w.data.sentence}
-              </div>
-              <div class="weak-info" align=right>
-                克服まであと ${remain} 回
-              </div>
+          const remain = 2 - w.success;
+          const skulls = "<span class='weak-skull'>" + "☠".repeat(remain) + "</span>";
+
+          return `
+          <div class="weak-item" data-index="${i}">
+           <div class="weak-sentence"> 
+             <class="weak-skull"> ${skulls} ${w.data.sentence}</div>
             </div>
-            `;
-          }).join("")
-    }
+
+            
+          </div>
+          `;
+
+        }).join("")
+  }
+
   </div>
 
   <div class="bottom-nav">
-    <button id="backBtn" class="mode-btn">◀ モード選択へ</button>
+    <button id="backBtn" class="mode-btn">
+      ◀ モード選択へ
+    </button>
   </div>
-
   `;
 
-  // ===== 弱点連チャンスタート =====
 
-  document.getElementById("startWeakChainBtn").onclick =
-  () => startChain("weak");
+  // ===== 弱点連チャン =====
+
+  const startBtn = document.getElementById("startWeakChainBtn");
+
+  if(startBtn){
+    startBtn.onclick = () => startChain("weak");
+  }
+
 
   // ===== 戻る =====
 
   document.getElementById("backBtn").onclick = goModeSelect;
 
-  // ===== 個別問題クリック =====
+
+  // ===== 個別問題クリック（学習モード） =====
 
   document.querySelectorAll(".weak-item").forEach((item, i) => {
 
-    item.onclick = () => {
+  item.onclick = () => {
 
-      const q = weakList[i].data;
+    const weak = weakList[i];
+    if (!weak) return;
 
-      state.chain = {
-        questions: [q],
-        index: 0,
-        correctStreak: 0,
-        maxStreak: 0,
-        answered: null,
-        showFeedback: false,
-        milestone: null,
-        newRecord: false,
-        isWeak: true,
-        mode: "weak"
-      };
+    const q = weak.data || weak;
 
-      state.screen = "chainQuestion";
-
-      render();
-      window.scrollTo(0,0);
-
+    state.study = {
+      questions: [q],
+      index: 0,
+      answers: [],
+      correctCount: 0,
+      categoryKey: "weak"
     };
 
-  });
+    state.screen = "studyQuestion";
+
+    render();
+    window.scrollTo(0,0);
+
+  };
+
+});
 
 }
+
 
 function generateChoices(correct) {
 
@@ -2791,6 +2895,96 @@ function checkTodayRecord() {
   }
 
 }
+
+
+
+
+
+function renderWeakStudyMenu(root){
+
+  const weakQuestions = getWeakQuestions();
+
+  if(weakQuestions.length === 0){
+    root.innerHTML = `
+      <h2>💀 弱点学習</h2>
+      <p>弱点問題はありません</p>
+      <button class="mode-btn" id="backBtn">戻る</button>
+    `;
+
+    document.getElementById("backBtn").onclick = goMenu;
+    return;
+  }
+
+  const list = weakQuestions.map(q => `
+    <button class="category-btn weak-btn"
+      data-id="${q.id}">
+      💀 ${q.title}
+    </button>
+  `).join("");
+
+  root.innerHTML = `
+    <h2>💀 弱点問題</h2>
+    <div class="category-list">
+      ${list}
+    </div>
+
+    <button class="mode-btn" id="backBtn">
+      ◀ 戻る
+    </button>
+  `;
+
+  document.querySelectorAll(".weak-btn")
+    .forEach(btn => {
+
+      btn.onclick = () => {
+        startSingleWeakStudy(btn.dataset.id);
+      };
+
+    });
+
+  document.getElementById("backBtn")
+    .onclick = goMenu;
+
+}
+
+function startSingleWeakStudy(id){
+
+  const q = QUESTIONS.find(q => q.id == id);
+
+  state.study = {
+    questions: [q],
+    index: 0,
+    correctCount: 0,
+    categoryKey: "weak_" + id
+  };
+
+  state.screen = "studyQuestion";
+  render();
+
+}
+
+function startWeakChain(){
+
+  const weakQuestions = getWeakQuestions();
+
+  if(weakQuestions.length === 0){
+    alert("弱点問題がありません");
+    return;
+  }
+
+  state.chain = {
+    mode: "weak",
+    questions: shuffle(weakQuestions),
+    index: 0,
+    streak: 0,
+    maxStreak: 0
+  };
+
+  state.screen = "chainQuestion";
+  render();
+
+}
+
 
 /*********************************************************
  * UIユーティリティ
