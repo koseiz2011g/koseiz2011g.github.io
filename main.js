@@ -1516,18 +1516,20 @@ function renderModeSelect(root) {
 
   root.innerHTML = `
 
-     <h3>-英語を日本語に-</h3><h3>「四択で」やさしく身につけよう</h3>
+      <h3>-英語を日本語に-</h3><h3>4択で やさしく読める</h3>
+
+
+<h1 class="logo">
+      よんたくん
+      
+    </h1>
+
 
     <div class="mode-hero">
       <img src="images/4cats.png" class="mode-cat">
     </div>
 
-    <h1 class="logo">
-      よんたくん
-      
-    </h1>
-
-   
+    
 
     <!-- 学習モード -->
     <div class="mode-card">
