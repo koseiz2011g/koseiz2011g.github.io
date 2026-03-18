@@ -1532,7 +1532,7 @@ function renderModeSelect(root) {
     <!-- 学習モード -->
     <div class="mode-card">
       <button id="studyBtn" class="mode-btn">
-        📘 じっくり学習モード
+        📘 じっくり学習
         <div class="mode-sub02">
        ${starIcons}
        <div class="star-count">
@@ -1543,6 +1543,15 @@ function renderModeSelect(root) {
     </div>
 
    
+    <!-- 弱点連チャン -->
+    <div class="mode-card">
+      <button id="weakChainBtn" class="mode-btn">
+        💥 弱点克服
+        <div class="mode-sub">
+          弱点問題 ${weakCount} 問
+        </div>    
+      </button>
+    </div>
 
 
  <div class="today-box">
@@ -1566,7 +1575,7 @@ function renderModeSelect(root) {
     <!-- 必修連チャン -->
     <div class="mode-card">
       <button id="basicChainBtn" class="mode-btn">
-        📘 必修連チャンモード
+        📘 必修連チャン
         <div class="mode-sub">
           🏆 最高 ${state.records.basicChain} 連チャン
         </div>
@@ -1577,7 +1586,7 @@ function renderModeSelect(root) {
     <!-- 通常連チャン -->
     <div class="mode-card">
       <button id="chainBtn" class="mode-btn">
-        🔥 連チャンモード
+        🔥 連チャン
         <div class="mode-sub">
           🏆 最高 ${state.records.normalChain} 連チャン
         </div>
@@ -1585,18 +1594,9 @@ function renderModeSelect(root) {
     </div>
 
 
-    <!-- 弱点連チャン -->
-    <div class="mode-card">
-      <button id="weakChainBtn" class="mode-btn">
-        💥 弱点連チャンモード
-        <div class="mode-sub">
-          弱点問題 ${weakCount} 問
-        </div>    
-      </button>
-    </div>
 
 
-    <p class="version">ver 1.75</p>
+    <p class="version">ver 1.8</p>
 
   `;
 
@@ -1626,7 +1626,7 @@ function renderModeSelect(root) {
 
 function renderStudyMenu(root) {
   root.innerHTML = `
-    <h2>📘 じっくり学習モード</h2>
+    <h2>📘 じっくり学習</h2>
 
 
      <div class="mode-study">
@@ -1650,9 +1650,9 @@ function renderStudyMenu(root) {
       }).join("")}
     </div>
 
-    <button id="resetStarsBtn">⭐ すべてリセット</button>
+    <button class="category-btn" id="resetStarsBtn">⭐ すべてリセット</button>
     <div class="bottom-nav">
-    <button id="modeBtn" class="mode-btn">◀モード選択へ</button>
+    <button id="modeBtn" class="mode-btn">◀メニューへ</button>
     </div>
   `;
 
@@ -1740,7 +1740,7 @@ function renderStudyQuestion() {
 
   root.innerHTML = `
 
-  <h2>📘 じっくり学習モード</h2>
+  <h2>📘 じっくり学習</h2>
 
     <div class="screen study">
       
@@ -1770,7 +1770,7 @@ function renderStudyQuestion() {
       </div>
 
       <div class="bottom-nav">
-        <button id="menuBtn" class="nav-menu">メニュー</button>
+        <button id="menuBtn" class="nav-menu">分野選択へ</button>
   <button id="prevBtn" class="nav-prev">前へ</button>
   <button id="nextBtn" class="nav-next">次へ ▶</button>
       </div>
@@ -1998,7 +1998,7 @@ function renderStudyResult(root) {
     
 
     <div class="bottom-nav">
-    <button id="modeBtn" class="mode-btn">◀モード選択へ</button></div>
+    <button id="modeBtn" class="mode-btn">◀メニューへ</button></div>
   `;
 
   // 効果音
@@ -2026,10 +2026,10 @@ function renderStudyResult(root) {
 
 function getModeTitle(mode){
 
-  if(mode === "basic") return "📘 必修連チャンモード";
-  if(mode === "weak") return "💥 弱点連チャンモード";
+  if(mode === "basic") return "📘 必修連チャン";
+  if(mode === "weak") return "💥 弱点克服";
 
-  return "🔥 連チャンモード";
+  return "🔥 連チャン";
 }
 
 function getChainRecord(mode){
@@ -2080,7 +2080,7 @@ function renderChainMenu(root) {
 
   root.innerHTML = `
 
-   <h2>🔥 連チャンモード</h2>
+   <h2>🔥 連チャン</h2>
 
   
     
@@ -2098,7 +2098,7 @@ function renderChainMenu(root) {
    
 
      <div class="bottom-nav">
-    <button id="backBtn" class="mode-btn">◀モード選択へ</button>
+    <button id="backBtn" class="mode-btn">◀メニューへ</button>
     </div>
   `;
 
@@ -2164,10 +2164,10 @@ function renderChainQuestion(root){
 
   const modeTitle =
     chain.mode === "basic"
-      ? "📘 必修連チャンモード"
+      ? "📘 必修連チャン"
       : chain.mode === "weak"
-      ? "💥 弱点連チャンモード"
-      : "🔥 連チャンモード";
+      ? "💥 弱点克服"
+      : "🔥 連チャン";
 
   const record =
     chain.mode === "basic"
@@ -2228,7 +2228,7 @@ function renderChainQuestion(root){
 
   <div class="bottom-nav">
     <button id="menuBtn" class="mode-btn">
-      記録確定せず<br>モード選択へ
+      記録確定せず<br>メニューへ
     </button>
 
     <button id="endBtn" class="mode-btn">
@@ -2566,11 +2566,11 @@ function renderChainResult(root){
   <div class="bottom-nav">
 
     <button id="backBtn" class="mode-btn">
-      ◀ モード選択へ
+      ◀ メニューへ
     </button>
 
     <button id="menuBtn" class="mode-btn">
-      📋 メニューへ
+      📋 連チャンスタートへ
     </button> 
 
   </div>
@@ -2687,7 +2687,7 @@ function renderWeakChainMenu(root){
 
   <div class="bottom-nav">
     <button id="backBtn" class="mode-btn">
-      ◀ モード選択へ
+      ◀ メニューへ
     </button>
   </div>
   `;
@@ -2764,7 +2764,7 @@ function renderBasicChainMenu(root) {
 
   root.innerHTML = `
 
-   <h2>📘 必修連チャンモード</h2>
+   <h2>📘 必修連チャン</h2>
 
     <div class="mode-study">
       <img src="images/cb01.png" class="mode-cat">
@@ -2785,7 +2785,7 @@ function renderBasicChainMenu(root) {
     </button>
 
     <div class="bottom-nav">
-      <button id="backBtn" class="mode-btn">◀モード選択へ</button>
+      <button id="backBtn" class="mode-btn">◀ メニューへ</button>
     </div>
   `;
 
@@ -3049,8 +3049,6 @@ function setupStarLongPress() {
 }
 
 function init() {
-
-  console.log("INIT RUN"); // ←追加
 
   cleanStars();
   loadData();
