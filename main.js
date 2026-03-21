@@ -167,7 +167,7 @@ modal: {
   explanation: "▶ 私たちは／勉強しなければならない／理科を／学校で<br>▶「have to」は「～しなければならない」という義務を表します。"
 },
 {
-  sentence: "You <span class='highlight'>don't have to get</span> up early tomorrow morning.",
+  sentence: "You <span class='highlight'>don't have to get up</span> early tomorrow morning.",
   choices: ["起きてはいけない", "起きるべきだ", "起きなくてもよい", "起きられる"],
   correct: 2,
   explanation: "▶ あなたは／起きなくてもよい／明日の朝早く<br>▶「don't have to」は「～する必要はない」という意味です。"
@@ -1324,6 +1324,7 @@ function render() {
    window.scrollTo(0, 0); // ←追加
 
   console.log("render called", state.screen);
+  
 
   const app = document.getElementById("app");
   app.innerHTML = "";
@@ -1373,6 +1374,7 @@ function render() {
     default:
       app.textContent = "不明な画面です";
   }
+ 
 }
 
 /*********************************************************
@@ -1413,27 +1415,22 @@ function startChain(mode){
 
   checkTodayRecord();
 
-state.today.challenge++;
+  state.today.challenge++;
 
-localStorage.setItem(
-  "todayRecord",
-  JSON.stringify(state.today)
-);
+  localStorage.setItem(
+    "todayRecord",
+    JSON.stringify(state.today)
+  );
 
   let questions = [];
 
   if(mode==="basic"){
-
     questions = getAllQuestions().slice(0,69);
-
   }else if(mode==="weak"){
-
     questions =
       Object.values(state.weakQuestions)
       .map(w=>w.data);
-
   }else{
-
     questions = getAllQuestions();
   }
 
@@ -1456,7 +1453,11 @@ localStorage.setItem(
     milestone:null,
     newRecord:false,
 
-    startMaxRecord: getChainRecord(mode), // ★追加
+    // ★ここが超重要
+    startTodayBest: state.today?.maxChain || 0,
+
+    todayNewRecord:false,
+    todayStatus:"",
 
     mode:mode
   };
@@ -1464,7 +1465,6 @@ localStorage.setItem(
   state.screen="chainQuestion";
   render();
 }
-
 
 
 
@@ -1516,7 +1516,7 @@ function renderModeSelect(root) {
 
   root.innerHTML = `
 
-      <h3>-英語を日本語に-</h3><h3>4択で やさしく読める</h3>
+     <h3>-英語を日本語に-</h3><h3>4択で やさしく読める</h3>
 
 
 <h1 class="logo">
@@ -1530,6 +1530,8 @@ function renderModeSelect(root) {
     </div>
 
     
+
+   
 
     <!-- 学習モード -->
     <div class="mode-card">
@@ -1654,7 +1656,7 @@ function renderStudyMenu(root) {
 
     <button class="category-btn" id="resetStarsBtn">⭐ すべてリセット</button>
     <div class="bottom-nav">
-    <button id="modeBtn" class="mode-btn">◀メニューへ</button>
+    <button id="modeBtn" class="mode-btn">🔙 メニューへ</button>
     </div>
   `;
 
@@ -1991,16 +1993,16 @@ function renderStudyResult(root) {
     }
 
     <button id="reviewBtn" class="mode-btn">最後の問題を見る</button>
-    <button id="menuBtn" class="mode-btn">📘 じっくり学習メニューへ</button>
+    <button id="menuBtn" class="mode-btn">📘 分野選択へ</button>
 
     
       <button id="weakChainBtn" class="mode-btn">
-        💥 弱点学習メニューへ
+        💥 弱点克服へ
       </button>
     
 
     <div class="bottom-nav">
-    <button id="modeBtn" class="mode-btn">◀メニューへ</button></div>
+    <button id="modeBtn" class="mode-btn">🔙 メニューへ</button></div>
   `;
 
   // 効果音
@@ -2100,7 +2102,7 @@ function renderChainMenu(root) {
    
 
      <div class="bottom-nav">
-    <button id="backBtn" class="mode-btn">◀メニューへ</button>
+    <button id="backBtn" class="mode-btn">🔙 メニューへ</button>
     </div>
   `;
 
@@ -2246,9 +2248,16 @@ function renderChainQuestion(root){
     : ""
   }
 
+   ${chain.showTodayRecordUpdate
+    ? `<div class="milestone-popup">
+        👍 今日の記録更新！
+       </div>`
+    : ""
+  }
+
   ${chain.newRecord
     ? `<div class="record-popup">
-        🔥 記録更新！
+        🔥 最高記録更新！
        </div>`
     : ""
   }
@@ -2294,20 +2303,24 @@ buttons.forEach((b,i)=>{
 
         chain.correctStreak++;
 
-        if (
-  chain.correctStreak >
-  state.today.maxChain
+
+if (
+  chain.correctStreak > chain.startTodayBest &&
+  !chain.todayNewRecord
 ) {
+  chain.todayNewRecord = true;
 
-  state.today.maxChain =
-    chain.correctStreak;
+  chain.showTodayRecordUpdate = true;
+  playSound("result");
+  render();
 
-  localStorage.setItem(
-    "todayRecord",
-    JSON.stringify(state.today)
-  );
-
+  setTimeout(()=>{
+    chain.showTodayRecordUpdate = false;
+     
+    render();
+  }, 800);
 }
+   
 
         if(chain.mode==="weak"){
           successWeakQuestion(q);
@@ -2328,6 +2341,8 @@ buttons.forEach((b,i)=>{
         chain.showFeedback = true;
 
         playSound("correct");
+
+       
 
         
 
@@ -2354,6 +2369,9 @@ buttons.forEach((b,i)=>{
 
             setTimeout(()=>{
               chain.milestone = null;
+
+             
+
               goNext();
 
             render();
@@ -2433,13 +2451,50 @@ function finishChain() {
 
   const chain = state.chain;
 
+  // =========================
+  // 今日の記録（開始時）
+  // =========================
+  const todayBest = chain.startTodayBest || 0;
+
+  // =========================
+  // 今日の状態判定
+  // =========================
+  if (chain.maxStreak > todayBest) {
+    chain.todayStatus = "new";
+    chain.todayNewRecord = true;
+    state.today.maxChain = chain.maxStreak;
+
+  } else if (chain.maxStreak === todayBest) {
+    chain.todayStatus = "equal";
+    chain.todayNewRecord = false;
+
+  } else {
+    chain.todayStatus = "below";
+    chain.todayNewRecord = false;
+  }
+
+  // =========================
+  // 差分
+  // =========================
+  chain.toTodayBest = Math.max(
+    0,
+    todayBest - chain.maxStreak
+  );
+
+  // 保存
+  localStorage.setItem(
+    "todayRecord",
+    JSON.stringify(state.today)
+  );
+
+  // =========================
+  // モード別記録
+  // =========================
   let recordKey = "normalChain";
 
   if (chain.mode === "basic") {
     recordKey = "basicChain";
-  }
-
-  if (chain.mode === "weak") {
+  } else if (chain.mode === "weak") {
     recordKey = "weakChain";
   }
 
@@ -2449,7 +2504,6 @@ function finishChain() {
   if (chain.maxStreak > oldRecord) {
     state.records[recordKey] = chain.maxStreak;
     isNewRecord = true;
-    playSound("record");
   }
 
   localStorage.setItem(
@@ -2459,32 +2513,33 @@ function finishChain() {
 
   chain.newRecord = isNewRecord;
 
-  // 今日イチとの差
-  const todayBest = state.today?.maxChain || 0;
-  chain.toTodayBest = Math.max(
-    0,
-    todayBest - chain.maxStreak
-  );
-
-  // 過去最高との差
+  // =========================
+  // その他
+  // =========================
   chain.toAllTimeBest = Math.max(
     0,
     state.records[recordKey] - chain.maxStreak
   );
 
-  // 全問制覇
   chain.perfect =
-  chain.mode !== "weak" &&
-  chain.maxStreak === chain.questions.length;
+    chain.mode !== "weak" &&
+    chain.maxStreak === chain.questions.length;
 
-  // 10連達成
   chain.milestone10 =
     Math.floor(chain.maxStreak / 10) * 10;
 
-  state.screen = "chainResult";
+  // =========================
+  // サウンド
+  // =========================
+  if (chain.newRecord || chain.todayNewRecord) {
+    playSound("record");
+  }
 
+  state.screen = "chainResult";
   render();
 }
+
+
 
 function getChainImage(streak, perfect){
 
@@ -2493,12 +2548,18 @@ function getChainImage(streak, perfect){
   if (streak >= 150) return "images/cm08.png";
   if (streak >= 130) return "images/cm07.png";
   if (streak >= 100) return "images/cm06.png";
-  if (streak >= 80)  return "images/cm05.png";
-  if (streak >= 50)  return "images/cm04.png";
-  if (streak >= 30)  return "images/cm03.png";
+  if (streak >= 50)  return "images/cm05.png";
+  if (streak >= 30)  return "images/cm04.png";
+  if (streak >= 20)  return "images/cm03.png";
   if (streak >= 10)  return "images/cm02.png";
 
   return "images/cm01.png";
+
+
+
+console.log("todayNewRecord:", chain.todayNewRecord);
+console.log("maxStreak:", chain.maxStreak);
+console.log("todayBest:", todayBest);
 
 }
 
@@ -2549,6 +2610,26 @@ function renderChainResult(root){
       : ""
     }
 
+   ${
+  chain.todayStatus === "new"
+  
+  ? `<p class="today-record result-step" id="stepToday">
+       🌟 今日の記録更新！
+     </p>`
+  : chain.todayStatus === "equal"
+  ? `<p class="today-record result-step" id="stepToday">
+       ✨ 今日の記録と同じ！
+     </p>`
+  : chain.toTodayBest === 1
+  ? `<p class="today-record result-step" id="stepToday">
+       🔥 あと1連で今日イチ！
+     </p>`
+  : `<p class="today-gap result-step" id="stepToday">
+       👉 今日の記録まであと ${chain.toTodayBest} 連！
+     </p>`
+}
+
+
     ${
       chain.perfect
       ? `<p class="perfect result-step" id="stepPerfect">
@@ -2568,7 +2649,7 @@ function renderChainResult(root){
   <div class="bottom-nav">
 
     <button id="backBtn" class="mode-btn">
-      ◀ メニューへ
+      🔙 メニューへ
     </button>
 
     <button id="menuBtn" class="mode-btn">
@@ -2612,6 +2693,7 @@ function showResultSteps(chain){
     { id:"stepScore", sound:"result" },
     { id:"stepMilestone", sound:"milestone" },
     { id:"stepRecord", sound:"record" },
+     { id:"stepToday", sound:"rusult" }, // ←追加！
     { id:"stepPerfect", sound:"perfect" }
   ];
 
@@ -2649,7 +2731,7 @@ function renderWeakChainMenu(root){
 
   root.innerHTML = `
 
-  <h2>💥 弱点連チャンモード</h2>
+  <h2>💥 弱点克服</h2>
 
   <div class="mode-study">
     <img src="images/cs01.png" class="mode-cat">
@@ -2689,7 +2771,7 @@ function renderWeakChainMenu(root){
 
   <div class="bottom-nav">
     <button id="backBtn" class="mode-btn">
-      ◀ メニューへ
+      🔙 メニューへ
     </button>
   </div>
   `;
@@ -2787,7 +2869,7 @@ function renderBasicChainMenu(root) {
     </button>
 
     <div class="bottom-nav">
-      <button id="backBtn" class="mode-btn">◀ メニューへ</button>
+      <button id="backBtn" class="mode-btn">🔙 メニューへ</button>
     </div>
   `;
 
@@ -2945,7 +3027,7 @@ function renderWeakStudyMenu(root){
     </div>
 
     <button class="mode-btn" id="backBtn">
-      ◀ 戻る
+      🔙 戻る
     </button>
   `;
 
@@ -3053,7 +3135,7 @@ function setupStarLongPress() {
 function init() {
 
   cleanStars();
-  loadData();
+ //  loadData();
   render();
 
 }
@@ -3071,4 +3153,3 @@ if ("serviceWorker" in navigator) {
 }
 
 init();
-
