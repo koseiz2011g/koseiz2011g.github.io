@@ -1011,6 +1011,673 @@ clauseparticiple: {
  ]
   },
 
+passive: {
+    title: "📗 受動態",
+    questions: [
+{
+  sentence: "This book <span class='highlight'>is read</span> by many students.",
+  choices: ["読んでいる", "読んでしまった", "読まれていた", "読まれている"],
+  correct: 3,
+  explanation: "▶ この本は／読まれている／多くの学生によって<br>▶「is read」は「be動詞 + 過去分詞」の受動態（現在形）で「～される／～されている」という意味になります。"
+},
+
+{
+  sentence: "The room <span class='highlight'>is cleaned</span> every day.",
+  choices: ["掃除した", "掃除されていた", "掃除している", "掃除されている"],
+  correct: 3,
+  explanation: "▶ その部屋は／掃除されている／毎日<br>▶「is cleaned」は受動態の現在形で「～されている」という意味です。習慣的に行われる動作にもよく使われます。"
+},
+
+{
+  sentence: "English <span class='highlight'>is spoken</span> in many countries.",
+  choices: ["話している", "話された", "話されている", "話していた"],
+  correct: 2,
+  explanation: "▶ 英語は／話されている／多くの国で<br>▶「is spoken」は受動態現在形で「～で話されている」という意味を表します。"
+},
+
+{
+  sentence: "The window <span class='highlight'>was broken</span> by Tom.",
+  choices: ["壊した", "壊されている", "壊している", "壊された"],
+  correct: 3,
+  explanation: "▶ その窓は／壊された／トムによって<br>▶「was broken」は受動態の過去形で「壊された」という意味です。"
+},
+
+{
+  sentence: "The cake <span class='highlight'>was made</span> by my mother.",
+  choices: ["作られている", "作った", "作っている", "作られた"],
+  correct: 3,
+  explanation: "▶ そのケーキは／作られた／私の母によって<br>▶「was made」は受動態の過去形で「作られた」という意味になります。"
+},
+
+{
+  sentence: "The game <span class='highlight'>was played</span> after school.",
+  choices: ["行われている", "行った", "行っている", "行われた"],
+  correct: 3,
+  explanation: "▶ その試合は／行われた／放課後に<br>▶「was played」は受動態の過去形で「行われた」という意味です。"
+},
+
+{
+  sentence: "The song <span class='highlight'>is loved</span> by many people.",
+  choices: ["愛している", "愛されている", "愛された", "愛していた"],
+  correct: 1,
+  explanation: "▶ その歌は／愛されている／多くの人に<br>▶「is loved」は受動態現在形で「愛されている」という意味です。"
+},
+
+{
+  sentence: "The letter <span class='highlight'>was written</span> by Ken.",
+  choices: ["書いている", "書かれている", "書いていた", "書かれた"],
+  correct: 3,
+  explanation: "▶ その手紙は／書かれた／ケンによって<br>▶「was written」は受動態過去形で「書かれた」という意味になります。"
+},
+
+{
+  sentence: "The picture <span class='highlight'>was painted</span> by my sister.",
+  choices: ["描いた", "描いている", "描かれている", "描かれていた"],
+  correct: 3,
+  explanation: "▶ その絵は／描かれた／私の姉（妹）によって<br>▶「was painted」は受動態の過去形で「描かれた」という意味です。"
+},
+
+{
+  sentence: "This desk <span class='highlight'>is made of</span> wood.",
+  choices: ["作った", "作られていた", "作っている", "作られている"],
+  correct: 3,
+  explanation: "▶ この机は／作られている／木で<br>▶「be made of」は材料が見て分かるときに使う表現で「～で作られている」という意味です。"
+},
+
+{
+  sentence: "This wine <span class='highlight'>is made from</span> grapes.",
+  choices: ["作られている", "作っている", "作られていた", "作った"],
+  correct: 0,
+  explanation: "▶ このワインは／作られている／ぶどうから<br>▶「be made from」は材料が変化して元の形が分からないときに使う表現です。"
+},
+
+{
+  sentence: "The cup <span class='highlight'>is filled with</span> water.",
+  choices: ["満たされている", "満たした", "満たしている", "満たされていた"],
+  correct: 0,
+  explanation: "▶ そのカップは／満たされている／水で<br>▶「be filled with」は「～で満たされている」という意味の受動態表現です。"
+},
+
+{
+  sentence: "The book <span class='highlight'>is written in</span> English.",
+  choices: ["書いている", "書かれていた", "書かれている", "書いた"],
+  correct: 2,
+  explanation: "▶ その本は／書かれている／英語で<br>▶「be written in ～」は「～で書かれている」という意味でよく使われる受動態表現です。"
+},
+
+{
+  sentence: "The meeting <span class='highlight'>was held</span> in this room.",
+  choices: ["開いている", "開かれている", "開かれていた", "開いた"],
+  correct: 2,
+  explanation: "▶ その会議は／開かれた／この部屋で<br>▶「was held」は受動態の過去形で「（会議などが）開かれた」という意味になります。"
+},
+
+{
+  sentence: "The car <span class='highlight'>is covered with</span> snow.",
+  choices: ["覆われている", "覆っている", "覆われていた", "覆った"],
+  correct: 0,
+  explanation: "▶ その車は／覆われている／雪で<br>▶「be covered with」は「～で覆われている」という意味の受動態表現です。"
+},
+
+{
+  sentence: "The boy <span class='highlight'>is known to</span> everyone.",
+  choices: ["知られている", "知った", "知っている", "知られていた"],
+  correct: 0,
+  explanation: "▶ その少年は／知られている／みんなに<br>▶「be known to ～」は「～に知られている」という意味の受動態表現です。"
+},
+
+{
+  sentence: "The school <span class='highlight'>is located</span> in the city.",
+  choices: ["位置している", "位置した", "位置していた", "位置されている"],
+  correct: 0,
+  explanation: "▶ その学校は／位置している／その都市に<br>▶「be located」は「位置している」という意味で場所を説明するときに使われます。"
+},
+
+{
+  sentence: "She <span class='highlight'>was satisfied with</span> his report.",
+  choices: ["満足している", "満足させた", "満足していた", "満足させている"],
+  correct: 2,
+  explanation: "▶ 彼女は／満足していた／彼のレポートに<br>▶「was satisfied with」は過去形で「～に満足していた」という意味の表現です。"
+}
+ ]
+  },
+
+
+
+indirect: {
+    title: "📗 間接疑問文",
+    questions: [
+{
+  sentence: "I know <span class='highlight'>what she likes</span>.",
+  choices: ["どちらを彼女がすきなのか", "どんなに彼女が好きなのか", "どこを彼女が好きなのか", "何を彼女が好きなのか"],
+  correct: 3,
+  explanation: "▶ 私は／知っている／彼女が何を好きなのか<br>▶「what」はものを表し、彼女が好きなものを知っているという意味になります。「何を彼女が好きなのか」という表現がよく使われます。"
+},
+{
+  sentence: "I want to know <span class='highlight'>where he lives</span>.",
+  choices: ["どこに彼が住んでいるのか", "いつ彼が住んでいるのか", "なぜ彼が住んでいるのか", "だれが住んでいるのか"],
+  correct: 0,
+  explanation: "▶ 私は／知りたい／彼がどこに住んでいるのか<br>▶「where」は場所を表し、住んでいる場所を知りたいという意味になります。「どこに〜か」という表現がよく使われます。"
+},
+{
+  sentence: "Please tell me <span class='highlight'>when the game starts</span>.",
+  choices: ["なぜ試合が始まるのか", "いつ試合が始まるのか", "どこで試合が始まるのか", "だれが試合を始めるのか"],
+  correct: 1,
+  explanation: "▶ 私に教えてください／試合がいつ始まるのか<br>▶「when」は時を表し、時に関する情報を教えてほしいという意味になります。「いつ〜か」という表現がよく使われます。"
+},
+{
+  sentence: "Can you tell me <span class='highlight'>how you make this</span>?",
+  choices: ["なぜあなたがこれを作るのか", "どこであなたがこれを作るのか", "どのようにあなたがこれを作るのか", "いつあなたがこれを作るのか"],
+  correct: 2,
+  explanation: "▶ 教えてくれますか／あなたがどのようにこれを作るのか<br>▶「how」は方法を表し、作る方法を教えてほしいという意味になります。「どのように〜か」という表現がよく使われます。"
+},
+{
+  sentence: "I don't know <span class='highlight'>how old she is</span>.",
+  choices: ["どこに彼女がいるのか", "なぜ彼女がいるのか", "彼女が何歳なのか", "どれくらい彼女がいるのか"],
+  correct: 2,
+  explanation: "▶ 私は／知らない／彼女が何歳なのか<br>▶「how old」は年齢をたずね、「何歳か」という意味になります。how（どれくらい） old（年寄りか）→何歳か"
+},
+{
+  sentence: "Please tell me <span class='highlight'>what time the train leaves</span>.",
+  choices: ["どこへ電車が出発するのか", "いつ電車が出発するのか", "何時に電車が出発するのか", "なぜ電車が出発するのか"],
+  correct: 2,
+  explanation: "▶ 教えてください／私に／何時に電車が出発するのか<br>▶「what time」は時刻を表し、「何時に〜か」という意味になります。"
+},
+{
+  sentence: "Can you tell me <span class='highlight'>who that boy is</span>?",
+  choices: ["だれなのかあの少年が", "どこにあの少年がいるのか", "なぜあの少年がいるのか", "いつあの少年が来たのか"],
+  correct: 0,
+  explanation: "▶ 教えてくれますか／あの少年がだれなのか<br>▶「who」は人を表し、「だれなのか」教えてほしい、という意味になります。"
+},
+{
+  sentence: "I know <span class='highlight'>which color you like</span>.",
+  choices: ["どこの色をあなたが好きなのか", "どの色をあなたが好きなのか", "なぜその色をあなたが好きなのか", "いつからその色をあなたが好きなのか"],
+  correct: 1,
+  explanation: "▶ 私は／知っている／あなたがどの色が好きなのか<br>▶「which」は選択を表し、「which color」で「どの色」という意味になります。"
+},
+{
+  sentence: "I know <span class='highlight'>how long he stayed there</span>.",
+  choices: ["どこに彼がいたのか", "なぜ彼がそこにいたのか", "どのように彼がそこにいたのか", "どれくらいの間彼がそこにいたのか"],
+  correct: 3,
+  explanation: "▶ 私は／知っている／彼がどれくらいの間そこにいたのか<br>▶「how long」は期間を表し、「どれくらいの間〜か」という意味になります。"
+},
+{
+  sentence: "She asked me <span class='highlight'>why you looked sad</span>.",
+  choices: ["なぜあなたが悲しそうだったのか", "どこであなたが悲しそうだったのか", "いつあなたが悲しそうだったのか", "だれが悲しそうだったのか"],
+  correct: 0,
+  explanation: "▶ 彼女は／たずねた／私に／なぜあなたが悲しそうだったのか<br>▶「why」は理由を表し、「なぜ〜か」という意味になります。"
+},
+{
+  sentence: "I know <span class='highlight'>who she is</span>.",
+  choices: ["彼女がだれなのか", "どこに彼女がいるのか", "なぜ彼女がいるのか", "いつ彼女が来たのか"],
+  correct: 0,
+  explanation: "▶ 私は／知っている／彼女がだれなのか<br>▶「who」は人を表し、「だれなのか」という意味になります。"
+},
+{
+  sentence: "Please tell me <span class='highlight'>what you want</span>.",
+  choices: ["どこにあなたが行きたいのか", "何をあなたがほしいのか", "なぜあなたがほしいのか", "いつあなたがほしいのか"],
+  correct: 1,
+  explanation: "▶ 教えてください／私に／あなたが何をほしいのか<br>▶「what」はものを表し、「あなたがほしいもの」という意味になります。"
+},
+{
+  sentence: "Can you tell me <span class='highlight'>where the station is</span>?",
+  choices: ["どこに駅があるのか", "いつ駅があるのか", "なぜ駅があるのか", "駅がだれのものなのか"],
+  correct: 0,
+  explanation: "▶ 教えてくれますか／私に／駅がどこにあるのか<br>▶「where」は場所を表し、駅がある場所を教えてほしい、という意味になります。"
+},
+{
+  sentence: "Can you tell me <span class='highlight'>how long it takes</span>?",
+  choices: ["どこに時間がかかるのか", "なぜ時間がかかるのか", "どれくらい時間がかかるのか", "だれに時間がかかるのか"],
+  correct: 2,
+  explanation: "▶ 教えてくれますか／私に／どれくらい時間がかかるのか<br>▶「how long」は時間の長さを表し、必要な時間を教えてほしい、という意味になります。"
+},
+{
+  sentence: "I don't know <span class='highlight'>why he is late</span>.",
+  choices: ["どこで彼が遅れているのか", "なぜ彼が遅れているのか", "いつ彼が遅れているのか", "だれが遅れているのか"],
+  correct: 1,
+  explanation: "▶ 私は／知らない／なぜ彼が遅れているのか<br>▶「why」は理由を表し、彼が遅れている理由をしらない、という意味になります。"
+}
+]
+  },
+
+relative: {
+    title: "📗 関係代名詞",
+    questions: [
+[
+  {
+    "sentence": "I have <span class='highlight'>a friend who lives in Osaka</span>.",
+    "choices": ["大阪に住んでいた友達", "大阪に住みそうな友達", "大阪に住んでいる友達", "大阪に住んでいない友達"],
+    "correct": 2,
+    "explanation": "▶ 私は／持っています／友達を／その人は／住んでいる／大阪に<br>▶「who」は人を表す関係代名詞です。who lives in Osaka という節の主語で、節全体で直前の a friend を修飾しています。"
+  },
+  {
+    "sentence": "She knows <span class='highlight'>a boy who can swim fast</span>.",
+    "choices": ["速く泳げる少年", "速く泳いだ少年", "速く泳ぎたい少年", "速く泳げない少年"],
+    "correct": 0,
+    "explanation": "▶ 彼女は／知っている／少年を／その人は／泳ぐことができる／はやく<br>▶「who can swim fast」という節がa boy を修飾しています。「who」は主格の関係代名詞です。"
+  },
+  {
+    "sentence": "This is <span class='highlight'>the teacher who helps me</span>.",
+    "choices": ["私を助けてくれた先生", "私を助けてくれる先生", "私を助けたい先生", "私に助けられた先生"],
+    "correct": 1,
+    "explanation": "▶ こちらが／先生です／その人が／助けます／私を<br>▶「who helps me」が the teacher を修飾しています。helps が現在形なので「（いつも）助けてくれる」となります。"
+  },
+  {
+    "sentence": "This is <span class='highlight'>a dog that runs very fast</span>.",
+    "choices": ["とても速く走る犬", "とても速く走った犬", "とても速く走っている犬", "とても速く走れる犬"],
+    "correct": 0,
+    "explanation": "▶ こちらが／その犬です／それは／走ります／とてもはやく<br>▶「that」は人以外（動物）にも使える関係代名詞です。 「that runs very fast」がa dog の説明をしています。"
+  },
+  {
+    "sentence": "I like <span class='highlight'>books that are easy to read</span>.",
+    "choices": ["読むのが難しい本", "読むのが簡単な本", "読み終わった本", "読みたい本"],
+    "correct": 1,
+    "explanation": "▶ 私は／好きです／本が／それらは／読みやすいく<br>▶「that」は主格の関係代名詞です。「that are easy to read」がbooksの説明をしています。"
+  },
+  {
+    "sentence": "That is <span class='highlight'>a movie which makes me happy</span>.",
+    "choices": ["私が幸せにした映画", "私を幸せに見せる映画", "私を幸せにしてくれる映画", "私に見させた映画"],
+    "correct": 2,
+    "explanation": "▶ あれが／映画です／それが／私を幸せにする<br>▶「which」は物を表す関係代名詞です。which makes me happyがa movieを説明しています。"
+  },
+  {
+    "sentence": "She has <span class='highlight'>a friend that I like</span>.",
+    "choices": ["私を好きな友達", "私が好きな友達", "私に似ている友達", "私が見つけた友達"],
+    "correct": 1,
+    "explanation": "▶ 彼女は／持っている／友達を／その人を／私が／好き<br>▶「that」は目的格の関係代名詞で、I like（私が好きだ）の目的語が a friend であることを示します。"
+  },
+  {
+    "sentence": "This is <span class='highlight'>the boy that I met yesterday</span>.",
+    "choices": ["昨日私に会った男の子", "昨日私を見た男の子", "昨日私が呼んだ男の子", "昨日私が会った男の子"],
+    "correct": 3,
+    "explanation": "▶ こちらは／少年です／その人と／私が／出会った<br>▶「that」は目的格の関係代名詞です。that I metがthe boyを説明しています。"
+  },
+  {
+    "sentence": "He is <span class='highlight'>the teacher that we saw</span>.",
+    "choices": ["私たちを見た先生", "私たちを教えた先生", "私たちが見た先生", "私たちを呼んだ先生"],
+    "correct": 2,
+    "explanation": "▶ 彼は／先生です／その人を／私達が／見た<br>▶「that we saw」が the teacher を修飾しています。thatはwe saw（私たちが見た）の目的語です。"
+  },
+  {
+    "sentence": "This is <span class='highlight'>the book that I bought</span>.",
+    "choices": ["私が書いた本", "私が借りた本", "私が持っている本", "私が買った本"],
+    "correct": 3,
+    "explanation": "▶ これが／その本です／それを／私が／買った<br>▶「thatI bought」が the book を修飾しています。thatはI bought（私が買った）の目的語です。"
+  },
+  {
+    "sentence": "That is <span class='highlight'>the game which we played</span>.",
+    "choices": ["私たちがしたゲーム", "私たちが作ったゲーム", "私たちが買ったゲーム", "私たちが好きなゲーム"],
+    "correct": 0,
+    "explanation": "▶ あれが／そのゲームです／それを／私達が／した<br>▶「which we played」が the game を修飾しています。we played（私たちがした）の目的語です。"
+  },
+  {
+    "sentence": "I found <span class='highlight'>a key that I lost</span>.",
+    "choices": ["私が見つけた鍵", "私がなくした鍵", "私が使った鍵", "私が持っていた鍵"],
+    "correct": 1,
+    "explanation": "▶ 私は／見つけた／鍵を／それを／私が／失くした<br>▶「that I lost」が a key を修飾しています。I lost（私がなくした）の目的語です。"
+  },
+  {
+    "sentence": "I have <span class='highlight'>a friend whose father is a doctor</span>.",
+    "choices": ["父親が医者の友達", "友達の医者の父親", "医者の父親が友達", "父親と医者に行った友達"],
+    "correct": 0,
+    "explanation": "▶ 私は／持っている／友達を／その人のお父さんは／医者である<br>▶「whose」は所有格の関係代名詞で、「whose father」で、その友達の父親という意味を表します。"
+  },
+  {
+    "sentence": "She met <span class='highlight'>a girl whose bag was red</span>.",
+    "choices": ["カバンを持っている赤い少女", "赤い女の子のカバン", "カバンを赤くした女の子", "カバンが赤色の女の子"],
+    "correct": 3,
+    "explanation": "▶ 彼女は／出会った／少女に／その人のカバンが／赤かった<br>▶「whose」は所有格の関係代名詞で、「whose bag」は「その女の子のカバン」という意味。"
+  },
+  {
+    "sentence": "That is <span class='highlight'>the boy whose bike is new</span>.",
+    "choices": ["自転車が新しい男の子", "新しい自転車を買った男の子", "自転車を新しくした男の子", "自転車が古くない男の子"],
+    "correct": 0,
+    "explanation": "▶ あれは／少年です／その子の自転車は／新しい<br>▶「whose bike」は「その男の子の自転車」という所有の関係を表しています。"
+  },
+  {
+    "sentence": "I saw <span class='highlight'>a house whose roof is blue</span>.",
+    "choices": ["青い家の屋根", "屋根が赤い家", "赤い家の屋根", "屋根が青い家"],
+    "correct": 3,
+    "explanation": "▶ 私は／見た／家を／その家の屋根が／青い<br>▶「whose roof」は「その家の屋根」という所有の関係を表します。"
+  },
+  {
+    "sentence": "This is <span class='highlight'>a tree whose leaves are big</span>.",
+    "choices": ["巨木の葉っぱ", "葉っぱが大きい木", "葉っぱが少ない木", "葉っぱがたくさんある木"],
+    "correct": 1,
+    "explanation": "▶ これは／木です／その木の葉は／大きい<br>▶「whose tree」は「その木の葉」がという所有の関係を表します。"
+  },
+  {
+    "sentence": "That is <span class='highlight'>a school whose students are kind</span>.",
+    "choices": ["生徒に親切な学校", "生徒が親切にされる学校", "生徒が親切な学校", "生徒を親切にする学校"],
+    "correct": 2,
+    "explanation": "▶ あれは／学校です／その学校の生徒は／親切だ<br>▶「whose student」は「その学校の生徒」という関係を表しています。"
+  }
+　 ]
+　　 },
+
+
+verb: {
+    title: "📗 動詞",
+    questions: [
+
+{
+  sentence: "I <span class='highlight'>went</span> to the park yesterday.",
+  choices: ["行った", "来た", "見た", "作った"],
+  correct: 0,
+  explanation: "▶ 私は／行った／公園に／昨日<br>▶「went」は「go」の過去形です。"
+},
+{
+  sentence: "I <span class='highlight'>want</span> a new bike.",
+  choices: ["持っている", "ほしい", "買った", "見つけた"],
+  correct: 1,
+  explanation: "▶ 私は／ほしい／新しい自転車が<br>▶「want」は「～を望んでいる・～がほしい」という意味です。"
+},
+{
+  sentence: "He <span class='highlight'>broke</span> the window.",
+  choices: ["作った", "開けた", "割った", "閉めた"],
+  correct: 2,
+  explanation: "▶ 彼は／割った／窓を<br>▶「broke」は「break」の過去形で、「～を壊した」という意味です。"
+},
+{
+  sentence: "The dog <span class='highlight'>died</span> last year.",
+  choices: ["生まれた", "走った", "食べた", "死んだ"],
+  correct: 3,
+  explanation: "▶ その犬は／死んだ／去年<br>▶「died」は「die」の過去形です。"
+},
+{
+  sentence: "What <span class='highlight'>happened</span> to you?",
+  choices: ["起こった", "見た", "作った", "行った"],
+  correct: 0,
+  explanation: "▶ 何が／起こったのか／あなたに<br>▶「happened」は「happen」の過去形です。"
+},
+{
+  sentence: "I will <span class='highlight'>invite</span> my friend.",
+  choices: ["送る", "招待する", "会う", "教える"],
+  correct: 1,
+  explanation: "▶ 私は／招待するつもりです／友だちを<br>▶「invite」は「～を招待する」という意味です。"
+},
+{
+  sentence: "She <span class='highlight'>chose</span> a red dress.",
+  choices: ["買った", "見た", "選んだ", "作った"],
+  correct: 2,
+  explanation: "▶ 彼女は／選んだ／赤いドレスを<br>▶「chose」は「choose」の過去形です。"
+},
+{
+  sentence: "I <span class='highlight'>spent</span> two hours on homework.",
+  choices: ["使った", "見た", "行った", "作った"],
+  correct: 0,
+  explanation: "▶ 私は／使った／2時間を／宿題に<br>▶「spent」は「spend」の過去形です。時間やお金を「使う・費やす」という意味です。"
+},
+{
+  sentence: "He <span class='highlight'>taught</span> us English.",
+  choices: ["学んだ", "教えた", "書いた", "読んだ"],
+  correct: 1,
+  explanation: "▶ 彼は／教えた／私たちに／英語を<br>▶「taught」は「teach」の過去形で、「教えた」という意味です。"
+},
+{
+  sentence: "She <span class='highlight'>wore</span> a blue dress.",
+  choices: ["いた", "作った", "着ていた", "見た"],
+  correct: 2,
+  explanation: "▶ 彼女は／着ていた／青いドレスを<br>▶「wore」は「wear」の過去形です。"
+},
+{
+  sentence: "We will <span class='highlight'>move</span> next week.",
+  choices: ["止まる", "行く", "来る", "引っ越す"],
+  correct: 3,
+  explanation: "▶ 私たちは／引っ越す予定です／来週<br>▶「move」は「動く・引っ越す」という意味です。"
+},
+{
+  sentence: "I <span class='highlight'>decided</span> to study hard.",
+  choices: ["決めた", "学んだ", "作った", "行った"],
+  correct: 0,
+  explanation: "▶ 私は／決めた／勉強することを／一生懸命に<br>▶「decided」は「decide」の過去形です。"
+},
+{
+  sentence: "They <span class='highlight'>named</span> the dog Pochi.",
+  choices: ["呼んだ", "名付けた", "見つけた", "育てた"],
+  correct: 1,
+  explanation: "▶ 彼らは／名付けた／その犬を／ポチと<br>▶「named」は「name」の過去形です。"
+},
+{
+  sentence: "I <span class='highlight'>guess</span> the answer is right.",
+  choices: ["知っている", "考えた", "推測する", "聞いた"],
+  correct: 2,
+  explanation: "▶ 私は／推測する／答えは正しいと<br>▶「guess」は「推測する」という意味です。thinkよりも控え目で、「たぶん～だろうな」"
+},
+{
+  sentence: "I <span class='highlight'>borrowed</span> a book from him.",
+  choices: ["あげた", "貸した", "買った", "借りた"],
+  correct: 3,
+  explanation: "▶ 私は／借りた／本を／彼から<br>▶「borrowed」は「borrow」の過去形です。"
+},
+{
+  sentence: "I <span class='highlight'>received</span> a letter yesterday.",
+  choices: ["受け取った", "送った", "書いた", "読んだ"],
+  correct: 0,
+  explanation: "▶ 私は／受け取った／手紙を／昨日<br>▶「received」は「receive」の過去形です。"
+},
+{
+  sentence: "I <span class='highlight'>lost</span> my key.",
+  choices: ["見つけた", "なくした", "持った", "開けた"],
+  correct: 1,
+  explanation: "▶ 私は／なくした／鍵を<br>▶「lost」は「lose」の過去形です。"
+},
+{
+  sentence: "She <span class='highlight'>brought</span> a cake.",
+  choices: ["作った", "食べた", "持ってきた", "見た"],
+  correct: 2,
+  explanation: "▶ 彼女は／持ってきた／ケーキを<br>▶「brought」は「bring」の過去形です。"
+},
+{
+  sentence: "I <span class='highlight'>thought</span> about you.",
+  choices: ["見た", "聞いた", "話した", "考えた"],
+  correct: 3,
+  explanation: "▶ 私は／考えた／あなたのことを<br>▶「thought」は「think」の過去形です。"
+}
+ ]
+  },
+
+
+adjective: {
+    title: "📗 形容詞",
+    questions: [
+{
+  sentence: "He is a <span class='highlight'>famous</span> singer.",
+  choices: ["やさしい", "人気がある", "有名な", "強い"],
+  correct: 2,
+  explanation: "▶ 彼は／有名な歌手です<br>▶「famous」は「有名な」。"
+},
+{
+  sentence: "This game is <span class='highlight'>popular</span> in Japan.",
+  choices: ["人気がある", "危険な", "暗い", "高価な"],
+  correct: 0,
+  explanation: "▶ このゲームは／人気があります／日本で<br>▶「popular」は「人気がある」。"
+},
+{
+  sentence: "She is <span class='highlight'>angry</span> with him.",
+  choices: ["空腹である", "怒っている", "弱い", "外国の"],
+  correct: 1,
+  explanation: "▶ 彼女は／怒っています／彼に<br>▶「angry」は「怒っている」。"
+},
+{
+  sentence: "Water is <span class='highlight'>necessary</span> for life.",
+  choices: ["必要な", "別の", "多くの", "暗い"],
+  correct: 0,
+  explanation: "▶ 水は／必要です／生活に<br>▶「necessary」は「必要な」。"
+},
+{
+  sentence: "I am <span class='highlight'>thirsty</span> now.",
+  choices: ["30の", "危険な", "のどが渇いている", "可能な"],
+  correct: 2,
+  explanation: "▶ 私は／のどが渇いています／今<br>▶「thirsty」は「のどが渇いている」。"
+},
+{
+  sentence: "I want <span class='highlight'>another</span> cup of tea.",
+  choices: ["多くの", "少しの", "貴重な", "もう1つの"],
+  correct: 3,
+  explanation: "▶ 私は／欲しい／もう1杯の紅茶が<br>▶「another」は「もう1つの・別の」。"
+},
+{
+  sentence: "He studies a <span class='highlight'>foreign</span> language.",
+  choices: ["外国の", "暗い", "強い", "必要な"],
+  correct: 0,
+  explanation: "▶ 彼は／勉強します／外国の言語を<br>▶「foreign」は「外国の・海外の」。"
+},
+{
+  sentence: "I have <span class='highlight'>other</span> plans today.",
+  choices: ["人気がある", "別の", "危険な", "可能な"],
+  correct: 1,
+  explanation: "▶ 私は／持っている／別の予定を／今日<br>▶「other」は「ほかの・別の」。"
+},
+{
+  sentence: "This road is <span class='highlight'>dangerous</span>.",
+  choices: ["暗い", "危険な", "多くの", "強い"],
+  correct: 1,
+  explanation: "▶ この道は／危険です<br>▶「dangerous」は「危険な」。"
+},
+{
+  sentence: "He is <span class='highlight'>weak</span> after the game.",
+  choices: ["弱っている", "人気がある", "外国の", "高価な"],
+  correct: 0,
+  explanation: "▶ 彼は／弱っています／試合のあとで<br>▶「weak」は「弱い」。"
+},
+{
+  sentence: "It is <span class='highlight'>possible</span> to finish it today.",
+  choices: ["必要な", "可能な", "暗い", "怒っている"],
+  correct: 1,
+  explanation: "▶ それは／可能だ／それを終えることが／今日<br>▶「possible」は「可能な」。"
+},
+{
+  sentence: "It is <span class='highlight'>dark</span> outside.",
+  choices: ["暗い", "強い", "別の", "多くの"],
+  correct: 0,
+  explanation: "▶ 外は／暗いです<br>▶「dark」は「暗い」。"
+},
+{
+  sentence: "This bag is <span class='highlight'>expensive</span>.",
+  choices: ["安い", "高価な", "弱い", "危険な"],
+  correct: 1,
+  explanation: "▶ このかばんは／高価だ<br>▶「expensive」は「高価な」。"
+},
+{
+  sentence: "He is <span class='highlight'>strong</span> and kind.",
+  choices: ["強い", "暗い", "外国の", "必要な"],
+  correct: 0,
+  explanation: "▶ 彼は／強くて／やさしい<br>▶「strong」は「強い」。"
+},
+{
+  sentence: "<span class='highlight'>Be careful</span> when you cross the street.",
+  choices: ["静かにしなさい", "人気者になりなさい", "注意しなさい", "そこにいなさい"],
+  correct: 2,
+  explanation: "▶ 注意しなさい／あなたが／渡るときは／道を<br>▶「careful」は「注意深い」。"
+},
+{
+  sentence: "I have <span class='highlight'>many</span> books.",
+  choices: ["少しの", "多くの", "何冊かの", "20冊の"],
+  correct: 1,
+  explanation: "▶ 私は／持っています／多くの／本を<br>▶「many」は「多くの」。"
+},
+{
+  sentence: "Do you have <span class='highlight'>any</span> questions?",
+  choices: ["特別な", "別の", "多くの", "何か"],
+  correct: 3,
+  explanation: "▶ あなたは／持っていますか／何か／質問を<br>▶「any」は疑問文で「何か」。"
+}
+ ]
+  },
+
+
+idiom: {
+    title: "📗 熟語",
+    questions: [
+
+{
+  sentence: "I felt better <span class='highlight'>after a while</span>.",
+  choices: ["すぐに", "しばらくして", "いつも", "ついに"],
+  correct: 1,
+  explanation: "▶ 私は／気分がよくなった／しばらくして<br>▶「after a while」は「しばらくして」という意味です。"
+},
+{
+  sentence: "We finished the work <span class='highlight'>at last</span>.",
+  choices: ["ときどき", "まだ", "すぐに", "ついに"],
+  correct: 3,
+  explanation: "▶ 私たちは／終えた／その仕事を／ついに<br>▶「at last」は「ついに」という意味です。"
+},
+{
+  sentence: "I met him <span class='highlight'>for the first time</span>.",
+  choices: ["何度も", "最後に", "初めて", "ときどき"],
+  correct: 2,
+  explanation: "▶ 私は／会った／彼に／初めて<br>▶「for the first time」は「初めて」という意味です。"
+},
+{
+  sentence: "She left home <span class='highlight'>in a hurry</span>.",
+  choices: ["ゆっくりと", "急いで", "静かに", "突然"],
+  correct: 1,
+  explanation: "▶ 彼女は／出た／家を／急いで<br>▶「in a hurry」は「急いで」という意味です。"
+},
+{
+  sentence: "<span class='highlight'>In fact</span>, he is very kind.",
+  choices: ["実は", "たぶん", "まず", "そのあとで"],
+  correct: 0,
+  explanation: "▶ 実は／彼は／とても親切です<br>▶「in fact」は「実は」という意味です。"
+},
+{
+  sentence: "He is standing <span class='highlight'>in front of the door</span>.",
+  choices: ["ドアの後ろに", "ドアの上に", "ドアの中に", "ドアの前に"],
+  correct: 3,
+  explanation: "▶ 彼は／立っている／ドアの前に<br>▶「in front of」は「〜の前に」という意味です。"
+},
+{
+  sentence: "<span class='highlight'>In my opinion</span>, this book is good.",
+  choices: ["実は", "私の考えでは", "たぶん", "まず"],
+  correct: 1,
+  explanation: "▶ 私の考えでは／この本は／よいです<br>▶「in my opinion」は「私の考えでは」という意味です。"
+},
+{
+  sentence: "I met her <span class='highlight'>on my way to school</span>.",
+  choices: ["学校のあとで", "学校の前で", "学校へ行く途中で", "学校の中で"],
+  correct: 2,
+  explanation: "▶ 私は／会った／彼女に／学校へ行く途中で<br>▶「on my way to」は「〜へ行く途中で」という意味です。"
+},
+{
+  sentence: "I studied <span class='highlight'>all day long</span>.",
+  choices: ["一日中", "少しの間", "すぐに", "ときどき"],
+  correct: 0,
+  explanation: "▶ 私は／勉強した／一日中<br>▶「all day long」は「一日中」という意味です。"
+},
+{
+  sentence: "My bag is <span class='highlight'>over there</span>.",
+  choices: ["ここに", "そばに", "あそこに", "すぐに"],
+  correct: 2,
+  explanation: "▶ 私のかばんは／あそこにあります<br>▶「over there」は場所を表し、「あそこに・向こうに」という意味です。"
+},
+{
+  sentence: "They help <span class='highlight'>each other</span>.",
+  choices: ["お互いに", "一人で", "先生に", "ときどき"],
+  correct: 0,
+  explanation: "▶ 彼らは／助け合う／お互いに<br>▶「each other」は「お互いに」という意味です。"
+},
+{
+  sentence: "<span class='highlight'>First of all</span>, wash your hands.",
+  choices: ["そのあとで", "最後に", "実は", "まず第一に"],
+  correct: 3,
+  explanation: "▶ まず第一に／手を洗いなさい<br>▶「first of all」は「まず第一に」という意味です。"
+},
+{
+  sentence: "I got to the station <span class='highlight'>in time</span>.",
+  choices: ["遅れて", "すぐに", "時間内に", "ときどき"],
+  correct: 2,
+  explanation: "▶ 私は／着いた／駅に／時間内に<br>▶「in time」は「時間に間に合って」という意味です。"
+},
+{
+  sentence: "I am <span class='highlight'>a little</span> tired.",
+  choices: ["とても", "少し", "まったく〜ない", "いつも"],
+  correct: 1,
+  explanation: "▶ 私は／少し／疲れています<br>▶「a little」は「少し」という意味です。"
+}
+ ]
+  },
+
 
 
 
