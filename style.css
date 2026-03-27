@@ -1113,3 +1113,9 @@ box-shadow: 0 0 14px rgba(246, 196, 83, 0.6);
     transform: translate(-50%, -45%) scale(1);
   }
 }
+
+.choice.wrong{
+  background:#f44336;
+  color:white;
+  border-color:#f44336;
+}
