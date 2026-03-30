@@ -5,6 +5,7 @@ const categories = {
 
 tense: {
     title: "📘 【必修】時制",
+    level: "basic",
     questions: [
  {
   sentence: "She <span class='highlight'>plays tennis</span> every day.",
@@ -69,7 +70,7 @@ sentence: "I <span class='highlight'>have</span> already <span class='highlight'
 },
 {
   sentence: "They <span class='highlight'>have been playing tennis</span> for two hours.",
-  choices: ["テニスをした", "テニスをする", "テニスをずっとし続けている", "テニスをする予定だ"],
+  choices: ["テニスをしていた", "テニスをする", "テニスをし続けている", "テニスをする予定だ"],
   correct: 2,
   explanation: "▶ 彼らは／ずっとテニスをしています／2時間<br>▶「have been playing」は現在完了進行形で、動作が過去から現在まで継続していることを表します。"
 }
@@ -80,6 +81,7 @@ sentence: "I <span class='highlight'>have</span> already <span class='highlight'
 
  pronoun01: {
     title: "📘 【必修】代名詞",
+    level: "basic",
     questions: [
 {
   sentence: "Jim showed <span class='highlight'>me</span> his pictures.",
@@ -219,6 +221,7 @@ modal: {
 
 Que: {
     title: "📘 【必修】疑問詞",
+    level: "basic",
     questions: [
 {
   sentence: "<span class='highlight'>Who</span> is your best friend?",
@@ -273,6 +276,7 @@ Que: {
 
 conjunction: {
     title: "📘 【必修】接続詞",
+    level: "basic",
     questions: [
 {
   sentence: "<span class='highlight'>When</span> I got home, it was raining.",
@@ -341,6 +345,7 @@ conjunction: {
 
 pre01: {
     title: "📘 【必修】前置詞",
+    level: "basic",
     questions: [
 {
   sentence: "I get up <span class='highlight'>at seven</span>.",
@@ -414,6 +419,7 @@ pre01: {
 
 infinitive01: {
     title: "📘 【必修】不定詞01",
+    level: "basic",
     questions: [
 {
   sentence: "I had no time <span class='highlight'>to do my homework</span>.",
@@ -468,6 +474,7 @@ infinitive01: {
 
 modal02: {
     title: "📗 助動詞02",
+    level: "normal",
     questions: [
 {
   sentence: "Keiko <span class='highlight'>has to make</span> breakfast for her family.",
@@ -517,6 +524,7 @@ modal02: {
 
 pre02: {
     title: "📗 前置詞02",
+    level: "normal",
     questions: [
 {
   sentence: "I read a book <span class='highlight'>during lunch</span>.",
@@ -550,6 +558,7 @@ pre02: {
 
 conjunction02: {
     title: "📗 接続詞02",
+    level: "normal",
     questions: [
 {
   sentence: "<span class='highlight'>Though</span> he is young, he is very strong.",
@@ -625,6 +634,7 @@ conjunction02: {
 
  pronoun02: {
     title: "📗 代名詞02",
+    level: "normal",
     questions: [
 {
   sentence: "The dog follows <span class='highlight'>them</span>.",
@@ -726,6 +736,7 @@ conjunction02: {
 
 pronoun03: {
     title: "📗 代名詞03",
+    level: "normal",
     questions: [
 
 {
@@ -825,6 +836,7 @@ pronoun03: {
 
 infinitive02: {
     title: "📗 不定詞02",
+    level: "normal",
     questions: [
 {
   sentence: "She bought some eggs <span class='highlight'>to make a cake</span>.",
@@ -917,6 +929,7 @@ infinitive02: {
 
 clauseparticiple: {
     title: "📗 節・分詞で修飾",
+    level: "normal",
     questions: [
 {
   sentence: "I know the boy <span class='highlight'>playing soccer</span>.",
@@ -1013,6 +1026,7 @@ clauseparticiple: {
 
 passive: {
     title: "📗 受動態",
+    level: "normal",
     questions: [
 {
   sentence: "This book <span class='highlight'>is read</span> by many students.",
@@ -1146,6 +1160,7 @@ passive: {
 
 indirect: {
     title: "📗 間接疑問文",
+    level: "normal",
     questions: [
 {
   sentence: "I know <span class='highlight'>what she likes</span>.",
@@ -1242,6 +1257,7 @@ indirect: {
 
 relative: {
     title: "📗 関係代名詞",
+    level: "normal",
     questions: [
 
   {
@@ -1358,6 +1374,7 @@ relative: {
 
 verb: {
     title: "📗 動詞",
+    level: "normal",
     questions: [
 
 {
@@ -1480,6 +1497,7 @@ verb: {
 
 adjective: {
     title: "📗 形容詞",
+    level: "normal",
     questions: [
 {
   sentence: "He is a <span class='highlight'>famous</span> singer.",
@@ -1589,6 +1607,7 @@ adjective: {
 
 idiom: {
     title: "📗 熟語",
+    level: "normal",
     questions: [
 
 {
@@ -1686,7 +1705,6 @@ idiom: {
 
 
 
-
 }
 
 
@@ -1699,6 +1717,8 @@ const state = {
 
   // ===== 現在の画面 =====
   screen: "modeSelect",
+
+   level: "basic",         // ← 追加（必修 or 標準）
 
   // ===== 学習モード =====
   study: {
@@ -2003,6 +2023,10 @@ function render() {
       renderModeSelect(app);
       break;
 
+    case "levelSelect": // ←★追加
+      renderLevelSelect(app);
+      break;
+
     case "studyMenu":
       renderStudyMenu(app);
       break;
@@ -2042,6 +2066,8 @@ function render() {
     default:
       app.textContent = "不明な画面です";
   }
+
+  
  
 }
 
@@ -2268,14 +2294,14 @@ function renderModeSelect(root) {
 
 
 
-    <p class="version">ver 1.85</p>
+    <p class="version">ver 1.86</p>
 
   `;
 
   // ===== ボタンイベント =====
 
   document.getElementById("studyBtn").onclick = () => {
-    state.screen = "studyMenu";
+    state.screen = "levelSelect";
     render();
   };
 
@@ -2308,7 +2334,9 @@ function renderStudyMenu(root) {
     <div class="note">獲得した⭐は右クリック、または長押しで解除できます</div>
 
     <div class="category-list">
-      ${Object.keys(categories).map(key => {
+      ${Object.keys(categories)
+        .filter(key => categories[key].level === state.level)
+        .map(key => {
         const cat = categories[key];
         const total = cat.questions.length;
         const correct = state.studyResults?.[key]?.correct || 0;
@@ -2323,8 +2351,12 @@ function renderStudyMenu(root) {
     </div>
 
     <button class="category-btn" id="resetStarsBtn">⭐ すべてリセット</button>
+   
+
     <div class="bottom-nav">
     <button id="modeBtn" class="mode-btn">🔙 メニューへ</button>
+       <button id="levelBtn" class="mode-btn">📘📗<div>レベル選択へ</div></button>
+     <button id="weakBtn" class="mode-btn">💥 弱点克服へ</button>
     </div>
   `;
 
@@ -2371,6 +2403,16 @@ function renderStudyMenu(root) {
 
   document.getElementById("modeBtn").onclick = goModeSelect;
 
+  document.getElementById("levelBtn").onclick = () => {
+  state.screen = "levelSelect";
+  render();
+};
+
+document.getElementById("weakBtn").onclick = () => {
+  state.screen = "weakChainMenu";
+  render();
+};
+
   document.getElementById("resetStarsBtn").onclick = () => {
 
   const ok = confirm("すべての⭐をリセットしますか？");
@@ -2401,6 +2443,58 @@ function tryRemoveStar(key) {
 }
 
 
+function renderLevelSelect(root) {
+
+  root.innerHTML = `
+
+    <h2>📘📗 レベル選択</h2>
+
+    <div class="mode-hero">
+      <img src="images/cw01.png" class="mode-cat">
+    </div>
+
+    <!-- 必修編 -->
+    <div class="mode-card">
+      <button id="basicBtn" class="mode-btn">
+        📘 必修編
+        <div class="mode-sub">まずはここから</div>
+      </button>
+    </div>
+
+    <!-- 標準編 -->
+    <div class="mode-card">
+      <button id="normalBtn" class="mode-btn">
+        📗 標準編
+        <div class="mode-sub">自身がついたら次のレベルへ</div>
+      </button>
+    </div>
+
+    <!-- ナビ -->
+    <div class="bottom-nav">
+      <button id="modeBtn" class="mode-btn">🔙 メニューへ</button>
+    </div>
+
+  `;
+
+  // ===== イベント =====
+
+  // 必修編
+  document.getElementById("basicBtn").onclick = () => {
+    state.level = "basic";
+    state.screen = "studyMenu";
+    render();
+  };
+
+  // 標準編
+  document.getElementById("normalBtn").onclick = () => {
+    state.level = "normal";
+    state.screen = "studyMenu";
+    render();
+  };
+
+  // メニューへ戻る
+  document.getElementById("modeBtn").onclick = goModeSelect;
+}
 
 function renderStudyQuestion() {
 
