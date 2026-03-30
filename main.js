@@ -2465,7 +2465,7 @@ function renderLevelSelect(root) {
     <div class="mode-card">
       <button id="normalBtn" class="mode-btn">
         📗 標準編
-        <div class="mode-sub">自身がついたら次のレベルへ</div>
+        <div class="mode-sub">自信がついたら次のレベルへ</div>
       </button>
     </div>
 
