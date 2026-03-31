@@ -2288,7 +2288,7 @@ function startChain(mode){
   let questions = [];
 
   if(mode==="basic"){
-    questions = getAllQuestions().slice(0,69);
+    questions = getAllQuestions().slice(0,99);
   }else if(mode==="weak"){
     questions =
       Object.values(state.weakQuestions)
