@@ -64,7 +64,7 @@ sentence: "I <span class='highlight'>have</span> already <span class='highlight'
 },
 {
   sentence: "She <span class='highlight'>has played tennis</span> for ten years.",
-  choices: ["テニスをしていた", "テニスをする", "テニスをし続けている", "テニスをする予定だ"],
+  choices: ["テニスをしていた", "テニスをする", "テニスをしている", "テニスをする予定だ"],
   correct: 2,
   explanation: "▶ 彼女は／ずっとテニスをしている／10年間<br>▶「has played」は現在完了形で、過去から現在まで続いている状態や経験を表します。"
 },
