@@ -2493,7 +2493,7 @@ function renderModeSelect(root) {
 
 function renderStudyMenu(root) {
   root.innerHTML = `
-    <h2>📘 じっくり学習</h2>
+    <h2>📘📗 じっくり学習</h2>
 
 
      <div class="mode-study">
