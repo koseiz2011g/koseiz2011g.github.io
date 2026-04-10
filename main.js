@@ -1412,7 +1412,7 @@ relative: {
   },
   {
     "sentence": "This is <span class='highlight'>the boy that I met yesterday</span>.",
-    "choices": ["昨日私に会った男の子", "昨日私を見た男の子", "昨日私が呼んだ男の子", "昨日私が会った男の子"],
+    "choices": ["昨日私にぶつかった男の子", "昨日私を見た男の子", "昨日私が呼んだ男の子", "昨日私が会った男の子"],
     "correct": 3,
     "explanation": "▶ こちらは／少年です／その人と／私が／出会った<br>▶こちらが私が昨日出会った少年です。<br>▶「that」は目的格の関係代名詞です。that I metがthe boyを説明しています。"
   },
@@ -1454,7 +1454,7 @@ relative: {
   },
   {
     "sentence": "That is <span class='highlight'>the boy whose bike is new</span>.",
-    "choices": ["自転車が新しい男の子", "新しい自転車を買った男の子", "自転車を新しくした男の子", "自転車が古くない男の子"],
+    "choices": ["自転車が新しい男の子", "新しい自転車を買った男の子", "自転車で行った男の子", "自転車が古い男の子"],
     "correct": 0,
     "explanation": "▶ あれは／少年です／その子の自転車は／新しい<br>▶あれは新しい自転車に乗っている男の子です。<br>▶「whose bike」は「その男の子の自転車」という所有の関係を表しています。"
   },
@@ -1714,7 +1714,7 @@ adverb02: {
 {
   sentence: "I have been there <span class='highlight'>twice</span>.",
   choices: ["一度", "まだ", "三度", "二度"],
-  correct: 1,
+  correct: 3,
   explanation: "▶ 私は／行ったことがある／そこに／二度<br>▶「twice」は回数を表し、「二度」という意味です。"
 },
 {
@@ -1744,7 +1744,7 @@ adverb02: {
 {
   sentence: "I went <span class='highlight'>there</span> yesterday.",
   choices: ["ここに", "ついに", "そこへ", "よく"],
-  correct: 1,
+  correct: 2,
   explanation: "▶ 私は／行った／そこへ／昨日<br>▶「there」は場所を表し、「そこへ・そこで」という意味です。"
 },
 {
