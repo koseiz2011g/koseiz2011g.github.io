@@ -381,7 +381,7 @@ conjunction: {
 },
 {
   sentence: "<span class='highlight'>Both</span> Tom <span class='highlight'>and</span> Ken like music.",
-  choices: ["どちらか一方が", "トムとケン両方ともが", "どちらも～ない", "しかし"],
+  choices: ["トムとケンどちらかが", "トムとケン両方ともが", "どちらも～ない", "しかし"],
   correct: 1,
   explanation: "▶ トムとケンの両方ともが／音楽が好きです<br>▶「both A and B」は「AもBも両方」という意味です。"
 },
@@ -392,7 +392,7 @@ conjunction: {
   explanation: "▶ 一生懸命勉強しなさい、そうすれば試験に合格します<br>▶ 命令文＋and は「～しなさい、そうすれば…」という意味です。"
 },
 {
-  sentence: "I stayed home <span class='highlight'>because</span> I was sick.",
+  sentence: "I stayed home <span class='highlight'>because I was sick</span>.",
   choices: ["病気になる前に", "病気だったから", "病気だけれども", "病気の間に"],
   correct: 1,
   explanation: "▶ 私は／家にいました／なぜなら病気だったから<br>▶「because」は理由を表し、「なぜなら～だから」という意味です。"
@@ -404,13 +404,13 @@ conjunction: {
   explanation: "▶ とても寒かった／だから／私はいた／家に<br>▶「so」は結果を表し、「だから」という意味です。"
 },
 {
-  sentence: "Brush your teeth <span class='highlight'>before</span> you go to bed.",
+  sentence: "Brush your teeth <span class='highlight'>before you go to bed</span>.",
   choices: ["寝た後で", "寝るから", "寝る前に", "寝るけれども"],
   correct: 2,
   explanation: "▶ 歯をみがきなさい／寝る前に<br>▶「before」は「～する前に」という意味です。"
 },
 {
-  sentence: "I did my homework <span class='highlight'>after</span> I got home.",
+  sentence: "I did my homework <span class='highlight'>after I got home</span>.",
   choices: ["家に帰る前に", "家に帰った後で", "家に帰るから", "家に帰る間に"],
   correct: 1,
   explanation: "▶ 私はやった／宿題を／家に帰った後で<br>▶「after」は「～した後で」という意味です。"
