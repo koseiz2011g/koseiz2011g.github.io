@@ -357,7 +357,7 @@ conjunction: {
     questions: [
 {
   sentence: "<span class='highlight'>When</span> I got home, it was raining.",
-  choices: ["～するまで", "～して", "もし～なら", "～するとき"],
+  choices: ["家にかえるまで", "家に帰って", "もし家に帰ったら", "家に帰ったとき"],
   correct: 3,
   explanation: "▶ 私が家に帰ったとき／雨が降っていた<br>▶「when」は「～するとき」という意味です。"
 },
@@ -375,15 +375,15 @@ conjunction: {
 },
 {
   sentence: "Do you want tea <span class='highlight'>or</span> juice?",
-  choices: ["そして", "または", "しかし", "だから"],
+  choices: ["そして", "それとも", "しかし", "だから"],
   correct: 1,
   explanation: "▶ あなたは／望んでいますか／お茶を／それともジュースを<br>▶「or」は選択を表し、「または」という意味です。"
 },
 {
   sentence: "<span class='highlight'>Both</span> Tom <span class='highlight'>and</span> Ken like music.",
-  choices: ["どちらか一方", "両方とも", "どちらも～ない", "しかし"],
+  choices: ["どちらか一方が", "トムとケン両方ともが", "どちらも～ない", "しかし"],
   correct: 1,
-  explanation: "▶ トムとケンの両方とも／音楽が好きです<br>▶「both A and B」は「AもBも両方」という意味です。"
+  explanation: "▶ トムとケンの両方ともが／音楽が好きです<br>▶「both A and B」は「AもBも両方」という意味です。"
 },
 {
   sentence: "Study hard, <span class='highlight'>and</span> you will pass the test.",
@@ -393,7 +393,7 @@ conjunction: {
 },
 {
   sentence: "I stayed home <span class='highlight'>because</span> I was sick.",
-  choices: ["～する前に", "なぜなら～だから", "～だけれども", "その間に"],
+  choices: ["病気になる前に", "病気だったから", "病気だけれども", "病気の間に"],
   correct: 1,
   explanation: "▶ 私は／家にいました／なぜなら病気だったから<br>▶「because」は理由を表し、「なぜなら～だから」という意味です。"
 },
@@ -405,13 +405,13 @@ conjunction: {
 },
 {
   sentence: "Brush your teeth <span class='highlight'>before</span> you go to bed.",
-  choices: ["～した後で", "なぜなら～だから", "～する前に", "～だけれども"],
+  choices: ["寝た後で", "寝るから", "寝る前に", "寝るけれども"],
   correct: 2,
   explanation: "▶ 歯をみがきなさい／寝る前に<br>▶「before」は「～する前に」という意味です。"
 },
 {
   sentence: "I did my homework <span class='highlight'>after</span> I got home.",
-  choices: ["～する前に", "～した後で", "だから", "その間に"],
+  choices: ["家に帰る前に", "家に帰った後で", "家に帰るから", "家に帰る間に"],
   correct: 1,
   explanation: "▶ 私はやった／宿題を／家に帰った後で<br>▶「after」は「～した後で」という意味です。"
 },
@@ -2675,7 +2675,7 @@ function renderStudyQuestion() {
 
   root.innerHTML = `
 
-  <h2>📘 じっくり学習</h2>
+  <h2>📘📗 じっくり学習</h2>
 
     <div class="screen study">
       
