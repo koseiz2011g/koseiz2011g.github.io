@@ -1194,7 +1194,7 @@ passive: {
 
 {
   sentence: "The picture <span class='highlight'>was painted</span> by my sister.",
-  choices: ["描いた", "描いている", "描かれている", "描かれていた"],
+  choices: ["描いた", "描いている", "描かれている", "描かれた"],
   correct: 3,
   explanation: "▶ その絵は／描かれた／私の姉（妹）によって<br>▶「was painted」は受動態の過去形で「描かれた」という意味です。"
 },
@@ -1229,7 +1229,7 @@ passive: {
 
 {
   sentence: "The meeting <span class='highlight'>was held</span> in this room.",
-  choices: ["開いている", "開かれている", "開かれていた", "開いた"],
+  choices: ["開いている", "開かれている", "開かれた", "開いた"],
   correct: 2,
   explanation: "▶ その会議は／開かれた／この部屋で<br>▶「was held」は受動態の過去形で「（会議などが）開かれた」という意味になります。"
 },
@@ -1250,7 +1250,7 @@ passive: {
 
 {
   sentence: "The school <span class='highlight'>is located</span> in the city.",
-  choices: ["位置している", "位置した", "位置していた", "位置されている"],
+  choices: ["位置している", "移動した", "位置していた", "移動している"],
   correct: 0,
   explanation: "▶ その学校は／位置している／その都市に<br>▶「be located」は「位置している」という意味で場所を説明するときに使われます。"
 },
@@ -2634,7 +2634,7 @@ function renderLevelSelect(root) {
     <div class="mode-card">
       <button id="normalBtn" class="mode-btn">
         📗 標準編
-        <div class="mode-sub">自信がついたら次のレベルへ</div>
+        <div class="mode-sub">自信がついたら次はこれ！</div>
       </button>
     </div>
 
