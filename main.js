@@ -2895,7 +2895,7 @@ function renderStudyResult(root) {
   const alreadyHad = state.stars[study.categoryKey];
 
   root.innerHTML = `
-    <h2>📘 学習結果</h2>
+    <h2>📘📗 学習結果</h2>
 
     <p class="score">${correct} / ${total}</p>
 
@@ -2924,7 +2924,7 @@ function renderStudyResult(root) {
     }
 
     <button id="reviewBtn" class="mode-btn">最後の問題を見る</button>
-    <button id="menuBtn" class="mode-btn">📘 分野選択へ</button>
+    <button id="menuBtn" class="mode-btn">📘📗 分野選択へ</button>
 
     
       <button id="weakChainBtn" class="mode-btn">
