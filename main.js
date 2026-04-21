@@ -2442,7 +2442,7 @@ function renderModeSelect(root) {
     <!-- 必修連チャン -->
     <div class="mode-card">
       <button id="basicChainBtn" class="mode-btn">
-        📘 必修連チャン
+        🎈 必修連チャン
         <div class="mode-sub">
           🏆 最高 ${state.records.basicChain} 連チャン
         </div>
