@@ -1405,10 +1405,10 @@ relative: {
     "explanation": "▶ あれが／映画です／それが／私を幸せにする<br>▶あれは私を幸せにする映画です。<br>▶「which」は物を表す関係代名詞です。which makes me happyがa movieを説明しています。"
   },
   {
-    "sentence": "She has <span class='highlight'>a friend that I like</span>.",
-    "choices": ["私を好きな友達", "私が好きな友達", "私に似ている友達", "私が見つけた友達"],
+    "sentence": "She has <span class='highlight'>a hat that I like</span>.",
+    "choices": ["私を好きな帽子", "私が好きな帽子", "私に似ている帽子", "私が見つけた帽子"],
     "correct": 1,
-    "explanation": "▶ 彼女は／持っている／友達を／その人を／私が／好き<br>▶彼女には私が好きな友達がいる。<br>▶「that」は目的格の関係代名詞で、I like（私が好きだ）の目的語が a friend であることを示します。"
+    "explanation": "▶ 彼女は／持っている／帽子を／それを／私が／好き<br>▶彼女には私が好きな友達がいる。<br>▶「that」は目的格の関係代名詞で、I like（私が好きだ）の目的語が a hat であることを示します。"
   },
   {
     "sentence": "This is <span class='highlight'>the boy that I met yesterday</span>.",
@@ -1616,7 +1616,7 @@ verb02: {
 },
 {
   sentence: "She <span class='highlight'>brought</span> a cake.",
-  choices: ["作った", "食べた", "持ってきた", "見た"],
+  choices: ["買った", "食べた", "持ってきた", "作った"],
   correct: 2,
   explanation: "▶ 彼女は／持ってきた／ケーキを<br>▶「brought」は「bring」の過去形です。"
 },
