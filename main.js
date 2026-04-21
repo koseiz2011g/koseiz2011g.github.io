@@ -2748,7 +2748,7 @@ document.querySelectorAll(".choice").forEach(btn => {
 
     document.getElementById("explanation").innerHTML = `
       <p>${q.explanation}</p>
-      ${q.youtube ? `<button id="ytBtn">YouTubeで解説を見る</button><div id="yt"></div>` : ""}
+      ${q.youtube ? `<button id="ytBtn" class="youtube-btn">YouTubeで解説を見る</button><div id="yt"></div>` : ""}
     `;
 
     if (q.youtube) {
