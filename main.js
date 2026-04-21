@@ -54,7 +54,8 @@ sentence: "I <span class='highlight'>have</span> already <span class='highlight'
   sentence: "We <span class='highlight'>have been</span> friends since we were children.",
   choices: ["ずっと友達だ", "友達だった", "友達になる予定だ", "友達になりつつある"],
   correct: 0,
-  explanation: "▶ 私達は／ずっと友達だ／子供のころから<br>▶「has played」は現在完了形で、過去から現在まで続いている状態や経験を表します。"
+  explanation: "▶ 私達は／ずっと友達だ／子供のころから<br>▶「has played」は現在完了形で、過去から現在まで続いている状態や経験を表します。",
+  youtube: "https://www.youtube.com/embed/ylnraQa3Ksg"
 },
 {
   sentence: "She <span class='highlight'>is going to play tennis</span> next week.",
