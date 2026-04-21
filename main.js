@@ -3779,7 +3779,7 @@ function renderBasicChainMenu(root) {
 
   root.innerHTML = `
 
-   <h2>📘 必修連チャン</h2>
+   <h2>🎈 必修連チャン</h2>
 
     <div class="mode-study">
       <img src="images/cb01.png" class="mode-cat">
@@ -3796,7 +3796,7 @@ function renderBasicChainMenu(root) {
     </div>
 
     <button class="start-btn" id="startBasicChainBtn">
-      📘 必修連チャンSTART
+      🎈 必修連チャンSTART
     </button>
 
     <div class="bottom-nav">
