@@ -12,7 +12,7 @@ const categories = {
   choices: ["テニスをしていた", "テニスをします", "テニスをする予定だ", "テニスをした"],
   correct: 1,
   explanation: "▶ 彼女は／テニスをします／毎日<br>▶「plays」 は現在形で、習慣的に行われる動作を表します。",
-  youtube: "https://www.youtube.com/embed/=XXXX"
+  youtube: "https://www.youtube.com/embed/s9iCOEUnyD4"
 },
 {
 sentence: "I <span class='highlight'>have been</span> to Canada twice. ",
