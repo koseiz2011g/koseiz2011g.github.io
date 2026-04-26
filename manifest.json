@@ -2,19 +2,19 @@
   "name": "よんたくん 中学英文法",
   "short_name": "よんたくん",
   "start_url": "/",
-  "scope": "/shin4ta/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#f7f9fc",
   "theme_color": "#2f80ed",
   "orientation": "portrait",
   "icons": [
     {
-      "src": "/shin4ta/icon-192.png",
+      "src": "/icon-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/shin4ta/icon-512.png",
+      "src": "/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
