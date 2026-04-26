@@ -1,11 +1,11 @@
 const CACHE_NAME = "yontakun-v2";
 const urlsToCache = [
-  "/shin4ta/",
-  "/shin4ta/index.html",
-  "/shin4ta/style.css",
-  "/shin4ta/script.js",
-  "/shin4ta/icon-192.png",
-  "/shin4ta/icon-512.png"
+  "/",
+  "/index.html",
+  "/style.css",
+  "/script.js",
+  "/icon-192.png",
+  "/icon-512.png"
 ];
 
 // インストール
@@ -26,7 +26,7 @@ self.addEventListener("fetch", (e) => {
   // 👇 ページ遷移の場合
   if (e.request.mode === "navigate") {
     e.respondWith(
-      fetch(e.request).catch(() => caches.match("/shin4ta/index.html"))
+      fetch(e.request).catch(() => caches.match("/index.html"))
     );
     return;
   }
