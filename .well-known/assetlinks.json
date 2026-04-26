@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.koseiz.learning.shin4ta",
+      "sha256_cert_fingerprints": [
+        "78:AB:B2:DA:D8:65:BB:C8:BF:95:AA:BB:D0:4A:DC:BB:34:1D:D7:8B:B6:A0:E2:1D:96:02:39:4C:CD:88:EA:15"
+      ]
+    }
+  }
+]
