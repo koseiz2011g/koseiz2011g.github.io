@@ -234,8 +234,7 @@ pre01: {
   sentence: "Jim showed <span class='highlight'>me</span> his pictures.",
   choices: ["私に", "私は", "私の", "私を"],
   correct: 0,
-  explanation: "▶ ジムは/見せた/私に/彼の写真を<br>▶SVOO第4文型で、Sが人にものをVする、という意味になります。「me」は1人称単数・目的格の人称代名詞で、「私に」という意味で使われています。",
-  youtube: "https://www.youtube.com/embed/=XXXX"
+  explanation: "▶ ジムは/見せた/私に/彼の写真を<br>▶SVOO第4文型で、Sが人にものをVする、という意味になります。「me」は1人称単数・目的格の人称代名詞で、「私に」という意味で使われています。"
 },
 {
   sentence: "<span class='highlight'>I</span> enjoyed playing tennis.",
@@ -597,10 +596,10 @@ adverb: {
   explanation: "▶ ここに来てください<br>▶「here」は場所を表し、「ここに」という意味です。"
 },
 {
-  sentence: "He runs <span class='highlight'>quickly</span>.",
-  choices: ["ゆっくりと", "はっきりと", "すぐに", "速く"],
+  sentence: "He moves <span class='highlight'>quickly</span>.",
+  choices: ["ゆっくりと", "はっきりと", "すぐに", "素早く"],
   correct: 3,
-  explanation: "▶ 彼は／速く走ります<br>▶「quickly」は動作の様子を表し、「速く」という意味です。"
+  explanation: "▶ 彼は／動きます／素早く<br>▶「quickly」は動作の様子を表し、「素早く」という意味です。"
 },
 {
   sentence: "She speaks <span class='highlight'>clearly</span>.",
@@ -1413,7 +1412,7 @@ relative: {
   },
   {
     "sentence": "This is <span class='highlight'>the boy that I met yesterday</span>.",
-    "choices": ["昨日私にぶつかった男の子", "昨日私を見た男の子", "昨日私が呼んだ男の子", "昨日私が会った男の子"],
+    "choices": ["昨日私に会った男の子", "昨日私を見た男の子", "昨日私が呼んだ男の子", "昨日私が会った男の子"],
     "correct": 3,
     "explanation": "▶ こちらは／少年です／その人と／私が／出会った<br>▶こちらが私が昨日出会った少年です。<br>▶「that」は目的格の関係代名詞です。that I metがthe boyを説明しています。"
   },
@@ -1455,7 +1454,7 @@ relative: {
   },
   {
     "sentence": "That is <span class='highlight'>the boy whose bike is new</span>.",
-    "choices": ["自転車が新しい男の子", "新しい自転車を買った男の子", "自転車で行った男の子", "自転車が古い男の子"],
+    "choices": ["自転車が新しい男の子", "新しい自転車を買った男の子", "自転車を新しくした男の子", "自転車が古くない男の子"],
     "correct": 0,
     "explanation": "▶ あれは／少年です／その子の自転車は／新しい<br>▶あれは新しい自転車に乗っている男の子です。<br>▶「whose bike」は「その男の子の自転車」という所有の関係を表しています。"
   },
@@ -2000,10 +1999,16 @@ const STORAGE_KEY = "english-study-app-v1";
 function save() {
   const data = {
     progress: state.progress,
-    maxChain: state.maxChain
+    maxChain: state.maxChain,
+    studyResults: state.studyResults
   };
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+
+  localStorage.setItem(
+    STORAGE_KEY,
+    JSON.stringify(data)
+  );
 }
+
 
 function load() {
   const raw = localStorage.getItem(STORAGE_KEY);
@@ -2011,8 +2016,11 @@ function load() {
 
   try {
     const data = JSON.parse(raw);
+
     state.progress = data.progress || {};
     state.maxChain = data.maxChain || 0;
+    state.studyResults = data.studyResults || {};
+
   } catch (e) {
     console.error("データ読み込み失敗", e);
   }
@@ -2440,7 +2448,7 @@ function renderModeSelect(root) {
 
 
 
-    <p class="version">ver 1.87</p>
+    <p class="version">ver 1.2</p>
 
   `;
 
@@ -2834,6 +2842,8 @@ function finishStudy() {
 
   state.studyResults = state.studyResults || {};
   state.studyResults[study.categoryKey] = { correct };
+  
+  save();
 
   const alreadyHadStar = state.stars[study.categoryKey];
   let newlyEarned = false;
@@ -2938,7 +2948,7 @@ function renderStudyResult(root) {
 
 function getModeTitle(mode){
 
-  if(mode === "basic") return "📘 必修連チャン";
+  if(mode === "basic") return "🎈 必修連チャン";
   if(mode === "weak") return "💥 弱点克服";
 
   return "🔥 連チャン";
@@ -3076,7 +3086,7 @@ function renderChainQuestion(root){
 
   const modeTitle =
     chain.mode === "basic"
-      ? "📘 必修連チャン"
+      ? "🎈 必修連チャン"
       : chain.mode === "weak"
       ? "💥 弱点克服"
       : "🔥 連チャン";
@@ -3097,7 +3107,11 @@ function renderChainQuestion(root){
     </div>
 
   <div class="chain-status">
-  🔥 ${chain.correctStreak}連チャン
+  🔥 ${
+    chain.answered && !chain.answered.isCorrect
+      ? chain.lastStreak
+      : chain.correctStreak
+  }連チャン
   <span>${current}/${total}</span>
 </div>
 
@@ -3479,7 +3493,7 @@ function renderChainResult(root){
 
   const modeTitle =
     chain.mode === "basic"
-      ? "📘 必修連チャン結果"
+      ? "🎈 必修連チャン結果"
       : chain.mode === "weak"
       ? "💥 弱点連チャン結果"
       : "🔥 連チャン結果";
