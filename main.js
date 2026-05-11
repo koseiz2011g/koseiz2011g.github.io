@@ -1830,12 +1830,6 @@ idiom: {
   explanation: "▶ 私の考えでは／この本は／よいです<br>▶「in my opinion」は「私の考えでは」という意味です。"
 },
 {
-  sentence: "<span class='highlight'>In my opinion</span>, this book is good.",
-  choices: ["実は", "私の考えでは", "たぶん", "まず"],
-  correct: 1,
-  explanation: "▶ 私の考えでは／この本は／よいです<br>▶「in my opinion」は「私の考えでは」という意味です。"
-},
-{
   sentence: "<span class='highlight'>First of all</span>, wash your hands.",
   choices: ["そのあとで", "最後に", "実は", "まず第一に"],
   correct: 3,
