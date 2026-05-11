@@ -1830,24 +1830,6 @@ idiom: {
   explanation: "▶ 私の考えでは／この本は／よいです<br>▶「in my opinion」は「私の考えでは」という意味です。"
 },
 {
-  sentence: "<span class='highlight'>First of all</span>, wash your hands.",
-  choices: ["そのあとで", "最後に", "実は", "まず第一に"],
-  correct: 3,
-  explanation: "▶ まず第一に／手を洗いなさい<br>▶「first of all」は「まず第一に」という意味です。"
-},
-{
-  sentence: "I got to the station <span class='highlight'>in time</span>.",
-  choices: ["遅れて", "すぐに", "時間内に", "ときどき"],
-  correct: 2,
-  explanation: "▶ 私は／着いた／駅に／時間内に<br>▶「in time」は「時間に間に合って」という意味です。"
-},
-{
-  sentence: "I am <span class='highlight'>a little</span> tired.",
-  choices: ["とても", "少し", "まったく〜ない", "いつも"],
-  correct: 1,
-  explanation: "▶ 私は／少し／疲れています<br>▶「a little」は「少し」という意味です。"
-},
-{
   sentence: "<span class='highlight'>In my opinion</span>, this book is good.",
   choices: ["実は", "私の考えでは", "たぶん", "まず"],
   correct: 1,
