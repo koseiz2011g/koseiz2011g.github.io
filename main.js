@@ -758,10 +758,33 @@ pre02: {
   correct: 2,
   explanation: "▶ 橋は／あります／川の上に<br>◇ 川の上に橋がかかっている。<br>▶「over」は「～の上に（覆うように）」という意味です。"
 },
-
-
+{
+  sentence: "He talks <span class='highlight'>like</span> a teacher.",
+  choices: ["～として", "～好みの", "～に向かって", "～のように"],
+  correct: 3,
+  explanation: "▶ 彼は／話す／～のように／先生<br>◇ 彼は先生のように話します。<br>▶「like ～」は「～のように」という意味です。"
+},
+{
+  sentence: "The train for Tokyo will leave <span class='highlight'>in</span> five minutes.",
+  choices: ["～の", "～後に", "～の前に", "～と一緒に"],
+  correct: 1,
+  explanation: "▶ 電車は／東京行きの／出発する／～後に／5分<br>◇ 東京行きの電車は5分後に出発します。<br>▶「in ～」は「あと～で」という意味です。"
+},
+{
+  sentence: "Aya bought a nice hat <span class='highlight'>for</span> her mother.",
+  choices: ["～に", "～と", "～から", "～で"],
+  correct: 0,
+  explanation: "▶ アヤは／買った／すてきな／帽子を／～に／彼女の／母<br>◇ アヤはお母さんにすてきな帽子を買った。<br>▶「for」は「～に」という意味です。"
+},
+{
+  sentence: "Ken arrived <span class='highlight'>at</span> the library at three.",
+  choices: ["～と一緒に", "～と", "～は", "～に"],
+  correct: 3,
+  explanation: "▶ ケンは／到着した／図書館に／3時に<br>◇ ケンは3時に図書館に着いた。<br>▶「at the library」の「at」は、場所を表し、「at three」の「at」は、時刻を表します。"
+}
  ]
   },
+
 
 
  pronoun02: {
@@ -1032,7 +1055,6 @@ conjunction02: {
   correct: 3,
   explanation: "▶ 急ぎなさい／そうしないと／あなたは／乗り遅れる／バスに<br>◇ 急がないと、バスに遅れるよ。<br>▶ 命令文＋or は「～しなさい、さもないと…」という意味です。"
 }
-
  ]
   },
 
@@ -1196,63 +1218,54 @@ passive: {
   correct: 3,
   explanation: "▶ その絵は／描かれた／私の姉（妹）によって<br>◇ その絵は私の姉によって描かれた。<br>▶「was painted」は受動態の過去形で「描かれた」という意味です。"
 },
-
 {
   sentence: "This desk <span class='highlight'>is made of</span> wood.",
   choices: ["作った", "作られていた", "作っている", "作られている"],
   correct: 3,
   explanation: "▶ この机は／作られている／木で<br>◇ この机は木製だ。<br>▶「be made of ～」は材料が見て分かるときに使う表現で「～で作られている」という意味です。from と of の違いに注意しましょう。"
 },
-
 {
   sentence: "This wine <span class='highlight'>is made from</span> grapes.",
   choices: ["作られている", "作っている", "作られていた", "作った"],
   correct: 0,
   explanation: "▶ このワインは／作られている／ぶどうから<br>◇ ワインはブドウからできている。<br>▶「be made from ～」は「～から作られている」という意味で、材料が変化して元の形が分からないときに使う表現です。from と of の違いに注意しましょう。"
 },
-
 {
   sentence: "The cup <span class='highlight'>is filled with</span> water.",
   choices: ["満たされている", "満たした", "満たしている", "満たされていた"],
   correct: 0,
   explanation: "▶ そのカップは／満たされている／水で<br>◇ そのカップは水で満たされている。<br>▶「be filled with ～」は「～で満たされている」という意味の受動態表現です。"
 },
-
 {
   sentence: "The book <span class='highlight'>is written in</span> simple English.",
   choices: ["書いている", "書かれていた", "書かれている", "書いた"],
   correct: 2,
   explanation: "▶ その本は／書かれている／簡単な英語で<br>◇ その本は簡単な英語で書かれている。▶「be written in ～」は「～で書かれている」という意味でよく使われる受動態表現です。"
 },
-
 {
   sentence: "The meeting <span class='highlight'>was held</span> in this room.",
   choices: ["開いている", "開かれている", "開かれた", "開いた"],
   correct: 2,
   explanation: "▶ その会議は／開かれた／この部屋で<br>◇ その会議はこの部屋で開かれた。▶「was held」は受動態の過去形で「（会議などが）開かれた」という意味になります。"
 },
-
 {
   sentence: "The car <span class='highlight'>is covered with</span> snow.",
   choices: ["覆われている", "覆っている", "覆われていた", "覆った"],
   correct: 0,
   explanation: "▶ その車は／覆われている／雪で<br◇ その車は雪で覆われている。>▶「be covered with ～」は「～で覆われている」という意味の受動態表現です。"
 },
-
 {
   sentence: "The boy <span class='highlight'>is known to</span> everyone.",
   choices: ["知られている", "知った", "知っている", "知られていた"],
   correct: 0,
   explanation: "▶ その少年は／知られている／みんなに<br>◇ その少年はみんなに知られている。▶「be known to ～」は「～に知られている」という意味の受動態表現です。「to ～」は間違えやすいのでよくテストに出されます。"
 },
-
 {
   sentence: "The school <span class='highlight'>is located</span> in the city.",
   choices: ["位置している", "移動した", "位置していた", "移動している"],
   correct: 0,
   explanation: "▶ その学校は／位置している／市街地に<br>◇ その学校は市内にあります。▶「be located」は「位置している」という意味で場所を説明するときに使われます。"
 },
-
 {
   sentence: "She <span class='highlight'>was satisfied with</span> his report.",
   choices: ["満足している", "満足させた", "満足した", "満足させている"],
@@ -1299,7 +1312,7 @@ indirect: {
 },
 {
   sentence: "Please tell me <span class='highlight'>what time the train leaves</span>.",
-  choices: ["どこへ電車が出発するのか", "いつ電車が出発するのか", "何時に電車が出発するのか", "なぜ電車が出発するのか"],
+  choices: ["どこへ電車が出発するのか", "どの電車が出発するのか", "何時に電車が出発するのか", "なぜ電車が出発するのか"],
   correct: 2,
   explanation: "▶ 教えてください／私に／何時に／電車が出発するのか<br>◇ 電車の出発時刻を教えてください。▶「what time」は時刻を表し、「何時に〜か」という意味になります。"
 },
@@ -1576,8 +1589,6 @@ clauseparticiple: {
   },
 
 
-
-
 verb02: {
     title: "📗 動詞02",
     level: "normal",
@@ -1587,56 +1598,55 @@ verb02: {
   sentence: "They <span class='highlight'>named</span> the dog Pochi.",
   choices: ["呼んだ", "名付けた", "見つけた", "育てた"],
   correct: 1,
-  explanation: "▶ 彼らは／名付けた／その犬を／ポチと<br>▶「named」は「name」の過去形です。"
+  explanation: "▶ 彼らは／名付けた／その犬を／ポチと<br>◇ 彼らはその犬をポチと名付けた。<br>▶「named」は「name」の過去形です。"
 },
 {
   sentence: "I <span class='highlight'>guess</span> the answer is right.",
   choices: ["知っている", "考えた", "推測する", "聞いた"],
   correct: 2,
-  explanation: "▶ 私は／推測する／答えは正しいと<br>▶「guess」は「推測する」という意味です。thinkよりも控え目で、「たぶん～だろうな」"
+  explanation: "▶ 私は／推測する／その答えは／正しい<br>◇ その答えは正しいと思う。<br>▶「guess」は「推測する」という意味です。thinkよりも控え目で、「たぶん～だろうな」"
 },
 {
   sentence: "I <span class='highlight'>borrowed</span> a book from him.",
   choices: ["あげた", "貸した", "買った", "借りた"],
   correct: 3,
-  explanation: "▶ 私は／借りた／本を／彼から<br>▶「borrowed」は「borrow」の過去形です。"
+  explanation: "▶ 私は／借りた／本を／彼から<br>◇ 私は彼から本を借りた。<br>▶「borrowed」は「borrow」の過去形です。"
 },
 {
   sentence: "I <span class='highlight'>received</span> a letter yesterday.",
   choices: ["受け取った", "送った", "書いた", "読んだ"],
   correct: 0,
-  explanation: "▶ 私は／受け取った／手紙を／昨日<br>▶「received」は「receive」の過去形です。"
+  explanation: "▶ 私は／受け取った／手紙を／昨日<br>◇ 私は昨日、手紙を受け取った。<br>▶「received」は「receive」の過去形です。"
 },
 {
   sentence: "I <span class='highlight'>lost</span> my key.",
   choices: ["見つけた", "なくした", "持った", "開けた"],
   correct: 1,
-  explanation: "▶ 私は／なくした／鍵を<br>▶「lost」は「lose」の過去形です。"
+  explanation: "▶ 私は／なくした／鍵を<br>◇ 私は鍵を失くした。<br>▶「lost」は「lose」の過去形です。"
 },
 {
   sentence: "She <span class='highlight'>brought</span> a cake.",
   choices: ["買った", "食べた", "持ってきた", "作った"],
   correct: 2,
-  explanation: "▶ 彼女は／持ってきた／ケーキを<br>▶「brought」は「bring」の過去形です。"
+  explanation: "▶ 彼女は／持ってきた／ケーキを<br>◇ 彼女はケーキを持ってきた。<br>▶「brought」は「bring」の過去形です。"
 },
 {
-  sentence: "I will <span class='highlight'>invite</span> my friend.",
+  sentence: "I am going to <span class='highlight'>invite</span> my friends to the party.",
   choices: ["送る", "招待する", "会う", "教える"],
   correct: 1,
-  explanation: "▶ 私は／招待するつもりです／友だちを<br>▶「invite」は「～を招待する」という意味です。"
+  explanation: "▶ 私は／招待する予定です／友だちを<br>◇ 私は友達を招待する予定です。<br>▶「invite」は「～を招待する」という意味です。"
 },
 {
   sentence: "She <span class='highlight'>wore</span> a blue dress.",
   choices: ["いた", "作った", "着ていた", "見た"],
   correct: 2,
-  explanation: "▶ 彼女は／着ていた／青いドレスを<br>▶「wore」は「wear」の過去形です。"
+  explanation: "▶ 彼女は／着ていた／青いドレスを<br>◇ 彼女は青いドレスを着ていた。<br>▶「wore」は「wear」の過去形です。"
 },
-
 {
-  sentence: "I <span class='highlight'>thought</span> about you.",
+  sentence: "I <span class='highlight'>thought</span> about you when I saw the picture.",
   choices: ["見た", "聞いた", "話した", "考えた"],
   correct: 3,
-  explanation: "▶ 私は／考えた／あなたのことを<br>▶「thought」は「think」の過去形です。"
+  explanation: "▶ 私は／考えた／あなたのことを／私が見たとき／その写真を<br>◇ その写真を見たとき、私はあなたのことを考えた。<br>▶「thought」は「think」の過去形です。"
 }
  ]
   },
@@ -1649,45 +1659,45 @@ adjective02: {
 
 {
   sentence: "It is <span class='highlight'>possible</span> to finish it today.",
-  choices: ["必要な", "可能な", "暗い", "怒っている"],
+  choices: ["必要だ", "可能だ", "暗い", "怒っている"],
   correct: 1,
-  explanation: "▶ それは／可能だ／それを終えることが／今日<br>▶「possible」は「可能な」。"
+  explanation: "▶ それは／可能だ／それを終えることが／今日<br>◇ 今日それを終わらせることは可能だ。<br>▶「possible」は「可能な」。"
 },
 {
-  sentence: "It is <span class='highlight'>dark</span> outside.",
+  sentence: "It is getting <span class='highlight'>dark</span> outside.",
   choices: ["暗い", "強い", "別の", "多くの"],
   correct: 0,
-  explanation: "▶ 外は／暗いです<br>▶「dark」は「暗い」。"
+  explanation: "▶ 暗くなってきた／そとは<br>◇ 外は暗くなってきた。<br>▶「dark」は「暗い」。明るさ、気温、天気などを表現するときの主語は「it」"
 },
 {
   sentence: "This bag is <span class='highlight'>expensive</span>.",
-  choices: ["安い", "高価な", "弱い", "危険な"],
+  choices: ["安い", "高価だ", "弱い", "危険だ"],
   correct: 1,
-  explanation: "▶ このかばんは／高価だ<br>▶「expensive」は「高価な」。"
+  explanation: "▶ このかばんは／高価だ<br>◇ このかばんは高価だ。<br>▶「expensive」は「高価な」。"
 },
 {
   sentence: "He is <span class='highlight'>strong</span> and kind.",
   choices: ["強い", "暗い", "外国の", "必要な"],
   correct: 0,
-  explanation: "▶ 彼は／強くて／やさしい<br>▶「strong」は「強い」。"
+  explanation: "▶ 彼は／強い／そして／やさしい<br>◇ 彼は強くてやさしい。<br>▶「strong」は「強い」。「kind」は「やさしい」"
 },
 {
   sentence: "<span class='highlight'>Be careful</span> when you cross the street.",
   choices: ["静かにしなさい", "人気者になりなさい", "注意しなさい", "そこにいなさい"],
   correct: 2,
-  explanation: "▶ 注意しなさい／あなたが／渡るときは／道を<br>▶「careful」は「注意深い」。"
+  explanation: "▶ 注意深くありなさい／～するとき／あなたが／渡る／道を<br>◇ 道を渡るときは注意しなさい。<br>▶「careful」は「注意深い」。"
 },
 {
   sentence: "I have <span class='highlight'>many</span> books.",
   choices: ["少しの", "多くの", "何冊かの", "20冊の"],
   correct: 1,
-  explanation: "▶ 私は／持っています／多くの／本を<br>▶「many」は「多くの」。"
+  explanation: "▶ 私は／持っている／多くの／本を<br>◇ 私はたくさんの本を持っている。<br>▶「many」は「多くの」。"
 },
 {
   sentence: "Do you have <span class='highlight'>any</span> questions?",
   choices: ["特別な", "別の", "多くの", "何か"],
   correct: 3,
-  explanation: "▶ あなたは／持っていますか／何か／質問を<br>▶「any」は疑問文で「何か」。"
+  explanation: "▶ あなたは／持っているか／何か／質問を<br>◇ 何か質問はありますか。<br>▶「any」は疑問文で「何か」。"
 }
  ]
   },
@@ -1702,55 +1712,55 @@ adverb02: {
   sentence: "I have <span class='highlight'>never</span> been to France.",
   choices: ["今までに", "1度も〜ない", "もう", "よく"],
   correct: 1,
-  explanation: "▶ 私は／一度も行ったことがない／フランスに<br>▶「never」は経験で使い、「一度も〜ない」という意味です。"
+  explanation: "▶ 私は／一度も～ない／行ったことが／フランスに<br>◇ 私は今までに一度もフランスに行ったことがない。<br>▶「never」は経験で使い、「一度も〜ない」という意味です。"
 },
 {
   sentence: "I met him <span class='highlight'>once</span>.",
   choices: ["一度", "二度", "ときどき", "いつも"],
   correct: 0,
-  explanation: "▶ 私は／会った／彼に／一度<br>▶「once」は回数を表し、「一度」という意味です。"
+  explanation: "▶ 私は／会った／彼に／一度<br>◇ 私は一度彼に会った。<br>▶「once」は回数を表し、「一度」という意味です。"
 },
 {
   sentence: "I have been there <span class='highlight'>twice</span>.",
   choices: ["一度", "まだ", "三度", "二度"],
   correct: 3,
-  explanation: "▶ 私は／行ったことがある／そこに／二度<br>▶「twice」は回数を表し、「二度」という意味です。"
+  explanation: "▶ 私は／行ったことがある／そこに／二度<br>◇ 私はそこに二度行ったことがある。<br>▶「twice」は回数を表し、「二度」という意味です。"
 },
 {
   sentence: "I <span class='highlight'>often</span> read books.",
   choices: ["よく", "たいてい", "ときどき", "一度"],
   correct: 0,
-  explanation: "▶ 私は／よく読む／本を<br>▶「often」は頻度を表し、「よく」という意味です。"
+  explanation: "▶ 私は／よく／読む／本を<br>◇ 私はよく本を読みます。<br>▶「often」は頻度を表し、「よく」という意味です。"
 },
 {
   sentence: "Finish your homework, and <span class='highlight'>then</span> you can play.",
   choices: ["すぐに", "そのあとで", "ときどき", "ここに"],
   correct: 1,
-  explanation: "▶ 宿題を終えなさい／そして／そのあとで遊べます<br>▶「then」は順序を表し、「それから・そのあとで」。"
+  explanation: "▶ 終えろ／宿題を／そうすれば／それから／あなたは／遊ぶことができる<br>◇ 宿題を会わらせてから遊んでもいいよ。<br>▶「then」は順序を表し、「それから・そのあとで」。"
 },
 {
   sentence: "He will come <span class='highlight'>soon</span>.",
   choices: ["すぐに", "あとで", "ときどき", "決して〜ない"],
   correct: 0,
-  explanation: "▶ 彼は／来るでしょう／すぐに<br>▶「soon」は時間を表し、「すぐに」という意味です。"
+  explanation: "▶ 彼は／来るでしょう／すぐに<br>◇ 彼はすぐに来るでしょう。<br>▶「soon」は時間を表し、「すぐに」という意味です。"
 },
 {
   sentence: "We <span class='highlight'>finally</span> got home.",
   choices: ["まだ", "ついに", "ときどき", "よく"],
   correct: 1,
-  explanation: "▶ 私たちは／ついに着いた／家に<br>▶「finally」は結果を表し、「ついに」という意味です。"
+  explanation: "▶ 私たちは／ついに／着いた／家に<br>◇ ついに私たちは家に到着した。<br>▶「finally」は結果を表し、「ついに」という意味です。"
 },
 {
   sentence: "I went <span class='highlight'>there</span> yesterday.",
   choices: ["ここに", "ついに", "そこへ", "よく"],
   correct: 2,
-  explanation: "▶ 私は／行った／そこへ／昨日<br>▶「there」は場所を表し、「そこへ・そこで」という意味です。"
+  explanation: "▶ 私は／行った／そこへ／昨日<br>◇ 私は昨日、そこへ行った。<br>▶「there」は場所を表し、「そこへ・そこで」という意味です。"
 },
 {
   sentence: "He is <span class='highlight'>still</span> in the room.",
   choices: ["もう", "まだ", "すぐに", "そこに"],
   correct: 1,
-  explanation: "▶ 彼は／いる／まだ／部屋に<br>▶「still」は継続を表し、「まだ」という意味です。"
+  explanation: "▶ 彼は／いる／まだ／部屋に<br>◇ 彼はまだその部屋にいる。<br>▶「still」は継続を表し、「まだ」という意味です。"
 }
  ]
   },
@@ -1765,85 +1775,85 @@ idiom: {
   sentence: "I felt better <span class='highlight'>after a while</span>.",
   choices: ["すぐに", "しばらくして", "いつも", "ついに"],
   correct: 1,
-  explanation: "▶ 私は／気分がよくなった／しばらくして<br>▶「after a while」は「しばらくして」という意味です。"
+  explanation: "▶ 私は／気分がよくなった／しばらくして<br>◇ しばらくして私は気分が良くなった。<br>▶「after a while」は「しばらくして」という意味です。"
 },
 {
   sentence: "We finished the work <span class='highlight'>at last</span>.",
   choices: ["ときどき", "まだ", "すぐに", "ついに"],
   correct: 3,
-  explanation: "▶ 私たちは／終えた／その仕事を／ついに<br>▶「at last」は「ついに」という意味です。"
+  explanation: "▶ 私たちは／終えた／その仕事を／ついに<br>◇ ついに私たちはその仕事を終えた。<br>▶「at last」は「ついに」という意味です。"
 },
 {
   sentence: "I met him <span class='highlight'>for the first time</span>.",
   choices: ["何度も", "最後に", "初めて", "ときどき"],
   correct: 2,
-  explanation: "▶ 私は／会った／彼に／初めて<br>▶「for the first time」は「初めて」という意味です。"
+  explanation: "▶ 私は／会った／彼に／初めて<br>◇ 私は初めて彼に会った。<br>▶「for the first time」は「初めて」という意味です。"
 },
 {
   sentence: "She left home <span class='highlight'>in a hurry</span>.",
   choices: ["ゆっくりと", "急いで", "静かに", "突然"],
   correct: 1,
-  explanation: "▶ 彼女は／出た／家を／急いで<br>▶「in a hurry」は「急いで」という意味です。"
+  explanation: "▶ 彼女は／出た／家を／急いで<br>◇ 彼女は急いで家を出た。<br>▶「in a hurry」は「急いで」という意味です。"
 },
 {
   sentence: "<span class='highlight'>In fact</span>, he is very kind.",
   choices: ["実は", "たぶん", "まず", "そのあとで"],
   correct: 0,
-  explanation: "▶ 実は／彼は／とても親切です<br>▶「in fact」は「実は」という意味です。"
+  explanation: "▶ 実は／彼は／とても親切です<br>◇ 実際、彼はとても親切だ。<br>▶「in fact」は「実は」という意味です。"
 },
 {
   sentence: "He is standing <span class='highlight'>in front of the door</span>.",
   choices: ["ドアの後ろに", "ドアの上に", "ドアの中に", "ドアの前に"],
   correct: 3,
-  explanation: "▶ 彼は／立っている／ドアの前に<br>▶「in front of」は「〜の前に」という意味です。"
+  explanation: "▶ 彼は／立っている／ドアの前に<br>◇ 彼はドアの前に立っている。<br>▶「in front of」は「〜の前に」という意味です。"
 },
 {
   sentence: "I met her <span class='highlight'>on my way to school</span>.",
   choices: ["学校のあとで", "学校の前で", "学校へ行く途中で", "学校の中で"],
   correct: 2,
-  explanation: "▶ 私は／会った／彼女に／学校へ行く途中で<br>▶「on my way to」は「〜へ行く途中で」という意味です。"
+  explanation: "▶ 私は／会った／彼女に／学校へ行く途中で<br>◇ 学校へ行く途中で彼女に会った。<br>▶「on my way to」は「〜へ行く途中で」という意味です。"
 },
 {
-  sentence: "I studied <span class='highlight'>all day long</span>.",
+  sentence: "This coffee shop is crowded <span class='highlight'>all day long</span>.",
   choices: ["一日中", "少しの間", "すぐに", "ときどき"],
   correct: 0,
-  explanation: "▶ 私は／勉強した／一日中<br>▶「all day long」は「一日中」という意味です。"
+  explanation: "▶ このコーヒーショップは／混雑している／一日中。<br>◇ このカフェは一日中混雑している。<br>▶「all day long」は「一日中」という意味です。"
 },
 {
   sentence: "My bag is <span class='highlight'>over there</span>.",
   choices: ["ここに", "そばに", "あそこに", "すぐに"],
   correct: 2,
-  explanation: "▶ 私のかばんは／あそこにあります<br>▶「over there」は場所を表し、「あそこに・向こうに」という意味です。"
+  explanation: "▶ 私のかばんは／ある／あそこに<br>◇ 私のカバンはあそこにあります。<br>▶「over there」は場所を表し、「あそこに・向こうに」という意味です。"
 },
 {
   sentence: "They help <span class='highlight'>each other</span>.",
   choices: ["お互いに", "一人で", "先生に", "ときどき"],
   correct: 0,
-  explanation: "▶ 彼らは／助け合う／お互いに<br>▶「each other」は「お互いに」という意味です。"
+  explanation: "▶ 彼らは／助ける／お互いに<br>◇ 彼らはお互いに助け合っている。<br>▶「each other」は「お互いに」という意味です。"
 },
 {
   sentence: "<span class='highlight'>In my opinion</span>, this book is good.",
   choices: ["実は", "私の考えでは", "たぶん", "まず"],
   correct: 1,
-  explanation: "▶ 私の考えでは／この本は／よいです<br>▶「in my opinion」は「私の考えでは」という意味です。"
+  explanation: "▶ 私の考えでは／この本は／よい<br>◇ 私の考えでは、この本は良いです。<br>▶「in my opinion」は「私の考えでは」という意味です。"
 },
 {
   sentence: "<span class='highlight'>First of all</span>, wash your hands.",
   choices: ["そのあとで", "最後に", "実は", "まず第一に"],
   correct: 3,
-  explanation: "▶ まず第一に／手を洗いなさい<br>▶「first of all」は「まず第一に」という意味です。"
+  explanation: "▶ まず第一に／洗え／あなたの／手を<br>◇ まず最初に、手を洗ってください。<br>▶「first of all」は「まず第一に」という意味です。"
 },
 {
   sentence: "I got to the station <span class='highlight'>in time</span>.",
   choices: ["遅れて", "すぐに", "時間内に", "ときどき"],
   correct: 2,
-  explanation: "▶ 私は／着いた／駅に／時間内に<br>▶「in time」は「時間に間に合って」という意味です。"
+  explanation: "▶ 私は／着いた／駅に／時間内に<br>◇ 私は時間通りに駅に着いた。<br>▶「in time」は「時間に間に合って」という意味です。"
 },
 {
   sentence: "I am <span class='highlight'>a little</span> tired.",
   choices: ["とても", "少し", "まったく〜ない", "いつも"],
   correct: 1,
-  explanation: "▶ 私は／少し／疲れています<br>▶「a little」は「少し」という意味です。"
+  explanation: "▶ 私は／少し／疲れている<br>◇ 少し疲れているんだ。<br>▶「a little」は「少し」という意味です。"
 }
  ]
   }
@@ -1914,6 +1924,9 @@ const state = {
     basicChain:0,
     weakChain:0
   },
+
+
+  popupMessage: null,
 
   // ===== 今日の記録 =====
   today: JSON.parse(
@@ -2281,10 +2294,11 @@ function startChain(mode){
     questions = getAllQuestions();
   }
 
-  if(questions.length===0){
-    alert("問題がありません");
+   if(questions.length===0){
+    alert("問題がありません\n\n学習モードや連チャンモードで間違えた問題が、ここに登録されます。\nまずは他のモードで練習してみましょう。");
     return;
   }
+
 
   state.chain = {
     questions: shuffleArray(questions),
@@ -2448,6 +2462,14 @@ function renderModeSelect(root) {
 
 
     <p class="version">ver 1.2</p>
+
+${state.popupMessage
+  ? `<div class="milestone-popup">
+      ${state.popupMessage}
+     </div>`
+  : ""
+}
+
 
   `;
 
@@ -3182,6 +3204,13 @@ function renderChainQuestion(root){
        </div>`
     : ""
   }
+
+  ${state.popupMessage
+    ? `<div class="info-popup">
+       ${state.popupMessage}
+       </div>`
+    : ""
+  }
   `;
 
   const buttons = document.querySelectorAll(".choice");
@@ -3669,7 +3698,7 @@ function renderWeakChainMenu(root){
 
   ${
     weakCount === 0
-      ? `<p class="weak-empty">弱点問題はありません 🎉</p>`
+      ? `<p class="weak-empty">弱点問題はありません 🎉<div>学習モードや連チャンモードで間違えた問題が、ここに登録されます。<div>まずは他のモードで練習してみましょう。</p>`
       : weakList.map((w,i)=>{
 
           const remain = 2 - w.success;
@@ -3695,6 +3724,14 @@ function renderWeakChainMenu(root){
       🔙 メニューへ
     </button>
   </div>
+
+${state.popupMessage
+  ? `<div class="milestone-popup">
+      ${state.popupMessage}
+     </div>`
+  : ""
+}
+
   `;
 
 
@@ -3703,7 +3740,7 @@ function renderWeakChainMenu(root){
   const startBtn = document.getElementById("startWeakChainBtn");
 
   if(startBtn){
-    startBtn.onclick = () => startChain("weak");
+    startBtn.onclick = () => startWeakChain();
   }
 
 
@@ -3987,21 +4024,23 @@ function startWeakChain(){
   const weakQuestions = getWeakQuestions();
 
   if(weakQuestions.length === 0){
-    alert("弱点問題がありません");
+
+    state.popupMessage =
+      "⚠️ 弱点問題がありません<br><br>" +
+      "学習モードや連チャンモードで<br>" +
+      "間違えた問題がここに登録されます";
+
+    render();
+
+    setTimeout(()=>{
+      state.popupMessage = null;
+      render();
+    }, 2500);
+
     return;
   }
 
-  state.chain = {
-    mode: "weak",
-    questions: shuffle(weakQuestions),
-    index: 0,
-    streak: 0,
-    maxStreak: 0
-  };
-
-  state.screen = "chainQuestion";
-  render();
-
+  startChain("weak");
 }
 
 function cleanStars(){
@@ -4055,22 +4094,51 @@ function setupStarLongPress() {
 
 function init() {
 
+  load();
   cleanStars();
- //  loadData();
-  render();
 
+  history.pushState(
+    {screen:"modeSelect"},
+    ""
+  );
+
+  render();
 }
 
+
 /*********************************************************
- * 初回描画
+ * 戻るボタン制御
  *********************************************************/
 
-render();
+window.addEventListener("popstate", () => {
+
+  if(state.screen !== "modeSelect"){
+
+    state.screen = "modeSelect";
+    render();
+
+    history.pushState(
+      {screen:"modeSelect"},
+      ""
+    );
+  }
+
+});
+
+
+/*********************************************************
+ * Service Worker
+ *********************************************************/
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("./service-worker.js")
     .then(() => console.log("SW registered"))
     .catch(err => console.error("SW failed", err));
 }
+
+
+/*********************************************************
+ * 起動
+ *********************************************************/
 
 init();
