@@ -1034,7 +1034,7 @@ box-shadow: 0 0 14px rgba(246, 196, 83, 0.7);
 
 .result-step{
   opacity:0;
-  transform:translateY(12px) scale(0.95);
+  transform:translateY(12px);
   transition:
     opacity 0.35s ease,
     transform 0.35s ease;
@@ -1042,7 +1042,7 @@ box-shadow: 0 0 14px rgba(246, 196, 83, 0.7);
 
 .result-step.show{
   opacity:1;
-  transform:translateY(0) scale(1);
+  transform:translateY(0);
 }
 
 
