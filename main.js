@@ -2287,9 +2287,9 @@ function startChain(mode){
   if(mode==="basic"){
     questions = getAllQuestions().slice(0,99);
   }else if(mode==="weak"){
-    questions =
-      Object.values(state.weakQuestions)
-      .map(w=>w.data);
+    questions = Object.values(state.weakQuestions)
+  .map(w => w?.data)
+  .filter(Boolean);
   }else{
     questions = getAllQuestions();
   }
@@ -3179,7 +3179,7 @@ function renderChainQuestion(root){
     </button>
 
     <button id="endBtn" class="mode-btn">
-      記録確定して終了
+      記録確定して<br>終了
     </button>
   </div>
 
@@ -3591,8 +3591,13 @@ function renderChainResult(root){
      
 
     <button class="mode-btn" id="retryBtn">
-      🔁 もう一度
-    </button>
+  ${
+    chain.mode === "weak" &&
+    getWeakQuestions().length === 0
+      ? "🎉 克服完了！"
+      : "🔁 もう一度"
+  }
+</button>
 
   </div>
 
@@ -3602,32 +3607,27 @@ function renderChainResult(root){
       🔙 メニューへ
     </button>
 
-    <button id="menuBtn" class="mode-btn">
-      📋 連チャンスタートへ
-    </button> 
-
   </div>
   `;
 
   showResultSteps(chain);
 
   document.getElementById("retryBtn")
-    ?.addEventListener("click", () => startChain(chain.mode));
+?.addEventListener("click", () => {
 
-  document.getElementById("menuBtn")
-  ?.addEventListener("click", () => {
+  if(chain.mode === "weak"){
 
-    if (chain.mode === "basic") {
-      goBasicChainMenu();
-    }
-    else if (chain.mode === "weak") {
-      goWeakChainMenu();
-    }
-    else {
-      goChainMenu();
+    if(getWeakQuestions().length === 0){
+      goModeSelect();
+    }else{
+      startWeakChain();
     }
 
-  });
+  }else{
+    startChain(chain.mode);
+  }
+
+});
 
   document.getElementById("backBtn")
     ?.addEventListener("click", goModeSelect);
