@@ -3726,7 +3726,7 @@ function renderWeakChainMenu(root){
   </div>
 
 ${state.popupMessage
-  ? `<div class="milestone-popup">
+  ? `<div class="info-popup">
       ${state.popupMessage}
      </div>`
   : ""
