@@ -627,8 +627,8 @@ box-shadow: 0 0 14px rgba(246, 196, 83, 0.7);
   font-weight: 800;
   letter-spacing: 3px;
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 
   background: linear-gradient(45deg, #1f4cf0, #56ccf2);
   background-clip: text;
@@ -1141,4 +1141,36 @@ box-shadow: 0 0 14px rgba(246, 196, 83, 0.6);
   word-wrap: break-word;
 
   z-index: 999;
+}
+
+.study-progress {
+  width: 90%;
+  height: 15px;
+  background: #eee;
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 8px 0 6px;
+}
+
+.study-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ffd54f, #ffca28);
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.star-count {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.sound-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 12px;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  background: #f3f3f3;
 }
