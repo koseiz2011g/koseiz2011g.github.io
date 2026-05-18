@@ -1933,6 +1933,10 @@ const state = {
   localStorage.getItem("todayRecord")
 ) || {
 
+  soundEnabled: JSON.parse(
+  localStorage.getItem("soundEnabled") ?? "true"
+),
+
   date: "",
 
   maxChain: 0,
@@ -1945,6 +1949,8 @@ const state = {
 
 
 function playSound(type){
+
+  if(!state.soundEnabled) return;
 
   const sounds = {
 
@@ -2377,7 +2383,7 @@ function renderModeSelect(root) {
 
   root.innerHTML = `
 
-     <h3>-英語を日本語に-</h3><h3>4択で やさしく読める</h3>
+     <h3>- 4択で やさしく読める 中学英語 -</h3>
 
 
 <h1 class="logo">
@@ -2398,12 +2404,22 @@ function renderModeSelect(root) {
     <div class="mode-card">
       <button id="studyBtn" class="mode-btn">
         📘 じっくり学習
+       
         <div class="mode-sub02">
-       ${starIcons}
-       <div class="star-count">
-       ${totalStars} / ${MAX_STARS}
+
+        <div class="study-progress">
+         <div class="study-progress-fill"
+         style="width:${(totalStars / MAX_STARS) * 100}%">
+         </div>
         </div>
-      </div>
+
+        <div class="star-count">
+        ⭐ ${totalStars} / ${MAX_STARS}
+        </div>
+
+</div>
+
+        </div>
       </button>
     </div>
 
@@ -2433,8 +2449,9 @@ function renderModeSelect(root) {
 
 </div>
 
-
-
+  <div align=center class="chain-guide">
+  ⬇ どこまで連続正解できる？
+</div>
 
 
     <!-- 必修連チャン -->
@@ -2457,6 +2474,11 @@ function renderModeSelect(root) {
         </div>
       </button>
     </div>
+
+
+    <button id="soundToggleBtn" class="sound-btn">
+  ${state.soundEnabled ? "🔊 効果音 ON" : "🔇 効果音 OFF"}
+</button>
 
 
 
@@ -2495,6 +2517,22 @@ ${state.popupMessage
     render();
   };
 
+  document.getElementById("soundToggleBtn").onclick = () => {
+
+  state.soundEnabled = !state.soundEnabled;
+
+  localStorage.setItem(
+    "soundEnabled",
+    JSON.stringify(state.soundEnabled)
+  );
+
+  if(state.soundEnabled){
+    playSound("correct");
+  }
+
+  render();
+};
+
 }
 
 function renderStudyMenu(root) {
@@ -2525,7 +2563,7 @@ function renderStudyMenu(root) {
       }).join("")}
     </div>
 
-    <button class="category-btn" id="resetStarsBtn">⭐ すべてリセット</button>
+    <button class="category-btn" id="resetStarsBtn">⭐ リセット（必修、標準のすべての⭐がリセットされます）</button>
    
 
     <div class="bottom-nav">
@@ -3034,13 +3072,14 @@ function renderChainMenu(root) {
     <p align=center>🏆最高記録：${record}連チャン！</p>
 
     <div class="reset-link" id="resetChainBtn">
-    ⚠ 長押しで記録リセット
+    ⚠ 長押しで最高記録リセット
   </div>
 
     <button class="start-btn" id="startBtn">🔥 GAME START</button>
-   
 
-     <div class="bottom-nav">
+    <div class="mode-sub">連続正解にチャレンジ！</div>
+   
+    <div class="bottom-nav">
     <button id="backBtn" class="mode-btn">🔙 メニューへ</button>
     </div>
   `;
@@ -3688,6 +3727,9 @@ function renderWeakChainMenu(root){
   </div>
 
   <div align="center">弱点問題：${weakCount}問</div>
+
+  <div align="center" class="weak-skull">☠ の数だけ正解すると、その問題はリストから消えます。</div>
+
   <div align="center">克服しよう！</div>
 
   <button class="start-btn" id="startWeakChainBtn">
@@ -3698,7 +3740,7 @@ function renderWeakChainMenu(root){
 
   ${
     weakCount === 0
-      ? `<p class="weak-empty">弱点問題はありません 🎉<div>学習モードや連チャンモードで間違えた問題が、ここに登録されます。<div>まずは他のモードで練習してみましょう。</p>`
+      ? `<p class="weak-empty">弱点問題はありません 🎉</p><div class="mode-sub">学習モードや連チャンモードで間違えた問題が、ここに登録されます。まずは他のモードで練習してみましょう。</div>`
       : weakList.map((w,i)=>{
 
           const remain = 2 - w.success;
@@ -3819,7 +3861,7 @@ function renderBasicChainMenu(root) {
     <p align=center>🏆最高記録：${state.records.basicChain}連チャン！</p>
 
     <div id="resetBasicChainBtn" class="reset-link">
-      ⚠ 長押しで記録リセット
+      ⚠ 長押しで最高記録リセット
     </div>
 
     <button class="start-btn" id="startBasicChainBtn">
