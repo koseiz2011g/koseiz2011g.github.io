@@ -486,10 +486,11 @@ button:disabled {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 12px;
 }
 
 .result-cat {
-  width: 220px;
+  width: 300px;
   height: 220px;
   object-fit: contain;
 }
