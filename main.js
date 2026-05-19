@@ -4136,6 +4136,10 @@ function setupStarLongPress() {
 
 function init() {
 
+    state.soundEnabled = JSON.parse(
+    localStorage.getItem("soundEnabled") ?? "true"
+  );
+
   load();
   cleanStars();
 
