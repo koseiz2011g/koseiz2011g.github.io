@@ -2181,7 +2181,7 @@ function render() {
 
    cleanStars();  // ←🔥 これを追加
 
-   window.scrollTo(0, 0); // ←追加
+  
 
   console.log("render called", state.screen);
   
