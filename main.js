@@ -2711,7 +2711,8 @@ function renderLevelSelect(root) {
 
 function renderStudyQuestion() {
 
-
+window.scrollTo(0, 0); // ←追加
+   
   const root = document.getElementById("app");
   const study = state.study;
   const q = study.questions[study.index];
