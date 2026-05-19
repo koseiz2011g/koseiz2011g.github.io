@@ -2563,7 +2563,7 @@ function renderStudyMenu(root) {
       }).join("")}
     </div>
 
-    <button class="category-btn" id="resetStarsBtn">⭐ リセット（必修、標準のすべての⭐がリセットされます）</button>
+    <button class="category-btn" id="resetStarsBtn">⭐ リセット<div>（必修、標準のすべての⭐がリセットされます）</div></button>
    
 
     <div class="bottom-nav">
