@@ -3730,8 +3730,8 @@ function renderWeakChainMenu(root){
 
   <p align="center">克服しよう！</P>
 
-  <div class="weak-skull">☠☠<span class="weak-skull02">：あと2回で</span></div>
-  <div class="weak-skull">☠　<span class="weak-skull02">：あと1回でリストから消えます。</span></div>
+  <div class="weak-skull">☠☠<span class="weak-skull02">：あと2回正解で</span></div>
+  <div class="weak-skull">☠　<span class="weak-skull02">：あと1回正解でリストから消えます。</span></div>
 
   <button class="start-btn" id="startWeakChainBtn">
     💥 弱点連チャンSTART
