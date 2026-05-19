@@ -3575,8 +3575,8 @@ function renderChainResult(root){
 
     <h2>${modeTitle}</h2>
 
-    <div class="mode-cat result-step" id="stepCat">
-      <img src="${catImg}" class="mode-cat">
+    <div align="center" class="mode-cat result-step" id="stepCat">
+      <img src="${catImg}" class="result-cat">
     </div>
 
     <p class="chain-score result-step" id="stepScore">
