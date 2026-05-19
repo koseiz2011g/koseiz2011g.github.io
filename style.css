@@ -482,12 +482,16 @@ button:disabled {
   animation: float 3s ease-in-out infinite;
 }
 
+.result-cat-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .result-cat {
-   
-   max-width: 90%;
-  aspect-ratio: 1 / 1;
+  width: 220px;
+  height: 220px;
   object-fit: contain;
-  animation: float 3s ease-in-out infinite;
 }
 
 /* ふわふわ浮く */
