@@ -3728,9 +3728,9 @@ function renderWeakChainMenu(root){
 
   <div align="center">弱点問題：${weakCount}問</div>
 
-  <div align="center" class="weak-skull">☠ の数だけ正解すると、その問題はリストから消えます。</div>
+  <p align="center">克服しよう！</p>
 
-  <div align="center">克服しよう！</div>
+  <div align="center" class="weak-skull">☠☠：あと2回で、☠：あと1回でリストから消えます。</div>
 
   <button class="start-btn" id="startWeakChainBtn">
     💥 弱点連チャンSTART
