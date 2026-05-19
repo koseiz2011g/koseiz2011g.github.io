@@ -482,6 +482,14 @@ button:disabled {
   animation: float 3s ease-in-out infinite;
 }
 
+.result-cat {
+   
+   max-width: 90%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  animation: float 3s ease-in-out infinite;
+}
+
 /* ふわふわ浮く */
 @keyframes float {
   0% { transform: translateY(0px); }
