@@ -3575,9 +3575,9 @@ function renderChainResult(root){
 
     <h2>${modeTitle}</h2>
 
-    <div align="center" class="mode-cat result-step" id="stepCat">
-      <img src="${catImg}" class="result-cat">
-    </div>
+       <div class="result-cat-wrap result-step" id="stepCat">
+  <img src="${catImg}" class="result-cat">
+</div>
 
     <p class="chain-score result-step" id="stepScore">
       🔥 ${streak} 連チャン！
