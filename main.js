@@ -2960,7 +2960,7 @@ function renderStudyResult(root) {
 
     ${
       newlyEarned
-        ? `<p class="new-record">🎉 ⭐獲得！</p>`
+        ? `<div class="new-record">🎉 ⭐獲得！</div>`
         : ""
     }
 
