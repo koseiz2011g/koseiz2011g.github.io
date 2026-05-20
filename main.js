@@ -1015,7 +1015,7 @@ conjunction02: {
 },
 {
   sentence: "She can speak <span class='highlight'>not only</span> English <span class='highlight'>but also</span> French.",
-  choices: ["英語とフランス語のどちらも話せない", "英語とフランス語のどちらか一方は話せる", "英語だけでなくフランス語も話せる", "英語は話せる、フランス語はだめだけど"],
+  choices: ["〇〇と△△のどちらも話せない", "〇〇と△△のどちらか一方は話せる", "〇〇だけでなく△△も話せる", "〇〇は話せる、△△はだめだけど"],
   correct: 2,
   explanation: "▶ 彼女は／話すことができる／英語だけでなくフランス語も<br>◇ 彼女は英語だけでなくフランス語も話すことができる。<br>▶「not only A but also B」は「AだけでなくBも」という意味です。"
 },
@@ -1078,7 +1078,7 @@ infinitive02: {
 },
 {
   sentence: "She tried <span class='highlight'>to open</span> the window.",
-  choices: ["窓を開けるために", "窓を開けて", "窓を開けることを", "窓を開けるべき"],
+  choices: ["開けるために", "開けて", "開けることを", "開けるべき"],
   correct: 2,
   explanation: "▶彼女は／トライした／開けることを／窓を<br>◇ 彼女は窓を開けようとした。<br>▶「to open」は「開けることを」という意味で、「tried」 の目的語になる名詞的用法です。"
 },
