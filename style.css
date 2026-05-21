@@ -300,11 +300,7 @@ button:disabled {
   border-radius: 8px;
 }
 
-.screen {
-  min-height: 100vh;
-  padding: 16px;
-  box-sizing: border-box;
-}
+
 
 
 .question {
@@ -362,7 +358,11 @@ button:disabled {
   background: #fafafa;
 }
 
-
+.screen {
+  
+  padding: 16px;
+  box-sizing: border-box;
+}
 
 .screen {
   padding-bottom: 80px;
