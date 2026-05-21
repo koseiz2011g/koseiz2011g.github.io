@@ -141,7 +141,7 @@ modal: {
   sentence: "<span class='highlight'>May I sit</span> here?",
   choices: ["座らなければなりませんか", "座るべきですか", "座ってもよろしいですか", "座れますか"],
   correct: 2,
-  explanation: "▶ 座ってもよろしいですか／ここに<br>◇ 彼女は10年間テニスをしています。<br>▶「May I ～?」は丁寧に許可を求める表現です。"
+  explanation: "▶ 座ってもよろしいですか／ここに<br>◇ ここに座ってもよろしいですか。<br>▶「May I ～?」は丁寧に許可を求める表現です。"
 },
 {
   sentence: "Ken <span class='highlight'>may be</span> late.",
