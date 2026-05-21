@@ -1869,6 +1869,7 @@ idiom: {
 
 const state = {
 
+  
   // ===== 現在の画面 =====
   screen: "modeSelect",
 
@@ -1946,7 +1947,6 @@ const state = {
 }
 
 };
-
 
 function playSound(type){
 
@@ -2181,7 +2181,7 @@ function render() {
 
    cleanStars();  // ←🔥 これを追加
 
-  
+   
 
   console.log("render called", state.screen);
   
@@ -2370,9 +2370,9 @@ function goWeakChainMenu() {
 
 function renderModeSelect(root) {
 
+  window.scrollTo(0, 0); // ←追加
 
   const totalStars = getTotalStars();  
-
   
   const starIcons =
   "⭐".repeat(totalStars) +
@@ -2712,7 +2712,7 @@ function renderLevelSelect(root) {
 function renderStudyQuestion() {
 
 window.scrollTo(0, 0); // ←追加
-   
+
   const root = document.getElementById("app");
   const study = state.study;
   const q = study.questions[study.index];
@@ -2932,6 +2932,8 @@ function finishStudy() {
 }
 
 function renderStudyResult(root) {
+
+  window.scrollTo(0, 0); // ←追加
   const study = state.study;
   const total = study.questions.length;
   const correct = study.correctCount;
@@ -3131,6 +3133,8 @@ function setupChainReset() {
 
 
 function renderChainQuestion(root){
+
+  window.scrollTo(0, 0); // ←追加
 
   const chain = state.chain;
   const q = chain.questions[chain.index];
@@ -3555,6 +3559,8 @@ console.log("todayBest:", todayBest);
 
 function renderChainResult(root){
 
+  window.scrollTo(0, 0); // ←追加
+
   const chain = state.chain;
   const streak = chain.maxStreak;
   const todayBest = state.today?.maxChain || 0;
@@ -3576,7 +3582,7 @@ function renderChainResult(root){
 
     <h2>${modeTitle}</h2>
 
-       <div class="result-cat-wrap result-step" id="stepCat">
+    <div class="result-cat-wrap result-step" id="stepCat">
   <img src="${catImg}" class="result-cat">
 </div>
 
@@ -3715,6 +3721,7 @@ function showResultSteps(chain){
 
 function renderWeakChainMenu(root){
 
+  window.scrollTo(0, 0); // ←追加
   const weakList = Object.values(state.weakQuestions || {});
   sortWeakList(weakList);
   const weakCount = weakList.length;
@@ -4138,7 +4145,7 @@ function setupStarLongPress() {
 
 function init() {
 
-    state.soundEnabled = JSON.parse(
+   state.soundEnabled = JSON.parse(
     localStorage.getItem("soundEnabled") ?? "true"
   );
 
