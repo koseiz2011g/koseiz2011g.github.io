@@ -469,7 +469,6 @@ button:disabled {
 
 .result-cat {
   width: min(260px, 70vw);
-  max-width: 100%;
   height: auto;
 
   display: block;
