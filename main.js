@@ -500,7 +500,7 @@ adjective: {
 },
 {
   sentence: "This game is <span class='highlight'>popular</span> in Japan.",
-  choices: ["人気がある", "危険な", "暗い", "高価な"],
+  choices: ["人気がある", "危険だ", "暗い", "高価だ"],
   correct: 0,
   explanation: "▶ このゲームは／人気がある／日本で<br>◇ このゲームは日本で人気がある。▶「popular」は「人気がある」。"
 },
@@ -512,13 +512,13 @@ adjective: {
 },
 {
   sentence: "Water is <span class='highlight'>necessary</span> for life.",
-  choices: ["必要な", "別の", "多くの", "暗い"],
+  choices: ["必要だ", "別の", "多い", "暗い"],
   correct: 0,
   explanation: "▶ 水は／必要だ／生活に<br>◇ 水は生活に必要です。▶「necessary」は「必要な」。"
 },
 {
   sentence: "I am <span class='highlight'>thirsty</span> now.",
-  choices: ["30の", "危険な", "のどが渇いている", "可能な"],
+  choices: ["30の", "危険だ", "のどが渇いている", "可能だ"],
   correct: 2,
   explanation: "▶ 私は／のどが渇いる／今<br>◇ 私は今、のどが渇いている。▶「thirsty」は「のどが渇いている」。"
 },
@@ -526,29 +526,29 @@ adjective: {
   sentence: "I want <span class='highlight'>another</span> cup of tea.",
   choices: ["多くの", "少しの", "貴重な", "もう1つの"],
   correct: 3,
-  explanation: "▶ 私は／欲している／もう1杯の紅茶を<br>◇ 私はもう一杯紅茶が欲しい。▶「another」は「もう1つの・別の」。"
+  explanation: "▶ 私は／欲している／もう1杯の／紅茶を<br>◇ 私はもう一杯紅茶が欲しい。▶「another」は「もう1つの・別の」。"
 },
 {
   sentence: "He studies a <span class='highlight'>foreign</span> language.",
   choices: ["外国の", "暗い", "強い", "必要な"],
   correct: 0,
-  explanation: "▶ 彼は／勉強している／外国の言語を<br>◇ 彼は外国の言語を勉強しています。<br>▶「foreign」は「外国の・海外の」。"
+  explanation: "▶ 彼は／勉強している／外国の／言語を<br>◇ 彼は外国の言語を勉強しています。<br>▶「foreign」は「外国の・海外の」。"
 },
 {
   sentence: "I have <span class='highlight'>other</span> plans today.",
   choices: ["人気がある", "別の", "危険な", "可能な"],
   correct: 1,
-  explanation: "▶ 私は／持っている／別の予定を／今日<br>◇ 私は今日、別の予定がある。<br>▶「other」は「ほかの・別の」。"
+  explanation: "▶ 私は／持っている／別の／予定を／今日<br>◇ 私は今日、別の予定がある。<br>▶「other」は「ほかの・別の」。"
 },
 {
   sentence: "This road is <span class='highlight'>dangerous</span>.",
-  choices: ["暗い", "危険な", "多くの", "強い"],
+  choices: ["暗い", "危険だ", "多くの", "強い"],
   correct: 1,
   explanation: "▶ この道は／危険だ<br>◇ この道は危険だ。<br>▶「dangerous」は「危険な」。"
 },
 {
   sentence: "He is <span class='highlight'>weak</span> after the game.",
-  choices: ["弱っている", "人気がある", "外国の", "高価な"],
+  choices: ["弱っている", "人気がある", "外国の", "高価だ"],
   correct: 0,
   explanation: "▶ 彼は／弱っている／試合の後で<br>◇ 彼は試合の後、弱っている。<br>▶「weak」は「弱い」。"
 }
@@ -563,23 +563,23 @@ adverb: {
   sentence: "I have <span class='highlight'>already</span> finished my homework.",
   choices: ["まだ", "ときどき", "もう", "すぐに"],
   correct: 2,
-  explanation: "▶ 私は／すでに終わらせた／宿題を<br>◇ 私はもう宿題を終わらせた。<br>▶「already」は肯定文で使い、「すでに・もう」という意味です。"
+  explanation: "▶ 私は／すでに／終わらせた／宿題を<br>◇ 私はもう宿題を終わらせた。<br>▶「already」は肯定文で使い、「すでに・もう」という意味です。"
 },
 {
   sentence: "I <span class='highlight'>sometimes</span> play soccer after school.",
-  choices: ["ときどき", "いつも", "すぐに", "決して〜ない"],
+  choices: ["ときどき", "いつも", "すぐに", "よく"],
   correct: 0,
-  explanation: "▶ 私は／ときどきする／サッカーを／放課後に<br>◇ 私はときどき、放課後サッカーをする。<br>▶「sometimes」は頻度を表し、「ときどき」という意味です。"
+  explanation: "▶ 私は／ときどき／する／サッカーを／放課後に<br>◇ 私はときどき、放課後サッカーをする。<br>▶「sometimes」は頻度を表し、「ときどき」という意味です。"
 },
 {
   sentence: "Go <span class='highlight'>straight</span> and turn left at the corner.",
   choices: ["そこに", "ゆっくりと", "すぐに", "まっすぐに"],
   correct: 3,
-  explanation: "▶ まっすぐ行って／そして／左に曲がって／その角で<br>◇ まっすぐ進んで、その角で左に曲がってください。<br>▶「straight」は方向を表し、「まっすぐに」という意味です。"
+  explanation: "▶ 行って／まっすぐ／そして／曲がって／左に／その角で<br>◇ まっすぐ進んで、その角で左に曲がってください。<br>▶「straight」は方向を表し、「まっすぐに」という意味です。"
 },
 {
   sentence: "She <span class='highlight'>always</span> gets up early.",
-  choices: ["ときどき", "いつも", "決して〜ない", "まだ"],
+  choices: ["ときどき", "いつも", "たまに", "まだ"],
   correct: 1,
   explanation: "▶ 彼女は／いつも／起きる／早く<br>◇ 彼女はいつも早起きする。<br>▶「always」は頻度を表し、「いつも」という意味です。"
 },
@@ -593,7 +593,7 @@ adverb: {
   sentence: "Come <span class='highlight'>here</span>, please.",
   choices: ["ここに", "そこに", "あそこに", "まっすぐに"],
   correct: 0,
-  explanation: "▶ ここに来て／どうか<br>◇ こちらにお越しください。<br>▶「here」は場所を表し、「ここに」という意味です。"
+  explanation: "▶ 来て／ここに／どうぞ<br>◇ こちらにお越しください。<br>▶「here」は場所を表し、「ここに」という意味です。"
 },
 {
   sentence: "He moves <span class='highlight'>quickly</span>.",
@@ -603,9 +603,9 @@ adverb: {
 },
 {
   sentence: "She speaks <span class='highlight'>clearly</span>.",
-  choices: ["速く", "はっきりと", "ゆっくりと", "ときどき"],
+  choices: ["速く", "はっきりと", "ゆっくりと", "もごもごと"],
   correct: 1,
-  explanation: "▶ 彼女は／話す／はっきりと<br>◇ 彼女ははっきりと話します。<br>▶「clearly」は様子を表し、「はっきりと」という意味です。"
+  explanation: "▶ 彼女は／話す／はっきりと<br>◇ 彼女は、はっきりと話します。<br>▶「clearly」は様子を表し、「はっきりと」という意味です。"
 },
 {
   sentence: "Please listen <span class='highlight'>carefully</span>.",
@@ -615,7 +615,7 @@ adverb: {
 },
 {
   sentence: "I <span class='highlight'>usually</span> watch TV at night.",
-  choices: ["ときどき", "よく", "ふだん", "決して〜ない"],
+  choices: ["ときどき", "よく", "ふだん", "たまに"],
   correct: 2,
   explanation: "▶ 私は／普段／見る／テレビを／夜に<br>◇ 私はふだん、夜にテレビを見ます。<br>▶「usually」は頻度を表し、「たいてい」という意味です。"
 }
@@ -3072,15 +3072,19 @@ function renderChainMenu(root) {
       <img src="images/cmi01.png" class="mode-cat">
     </div>
 
+    <p class="message">連続正解にチャレンジしよう</p>
+
     <p align=center>🏆最高記録：${record}連チャン！</p>
+
+
 
     <div class="reset-link" id="resetChainBtn">
     ⚠ 長押しで最高記録リセット
   </div>
 
-    <button class="start-btn" id="startBtn">🔥 GAME START</button>
+    <button class="start-btn" id="startBtn">🔥 GAME START 🔥</button>
 
-    <div class="mode-sub">連続正解にチャレンジ！</div>
+   
    
     <div class="bottom-nav">
     <button id="backBtn" class="mode-btn">🔙 メニューへ</button>
@@ -3736,13 +3740,13 @@ function renderWeakChainMenu(root){
 
   <div align="center">弱点問題：${weakCount}問</div>
 
-  <p align="center">克服しよう！</P>
+  <p class="message">弱点を克服しよう</P>
 
   <div class="weak-skull">☠☠<span class="weak-skull02">：あと2回正解で</span></div>
   <div class="weak-skull">☠　<span class="weak-skull02">：あと1回正解でリストから消えます。</span></div>
 
   <button class="start-btn" id="startWeakChainBtn">
-    💥 弱点連チャンSTART
+    💥 弱点連チャンSTART 💥
   </button>
 
   <div class="weak-list">
@@ -3863,7 +3867,7 @@ function renderBasicChainMenu(root) {
       <img src="images/cb01.png" class="mode-cat">
     </div>
 
-    <p class="mode-desc" align=center>
+    <p class="message" align=center>
       必修問題だけで連チャンに挑戦
     </p>
 
@@ -3874,7 +3878,7 @@ function renderBasicChainMenu(root) {
     </div>
 
     <button class="start-btn" id="startBasicChainBtn">
-      🎈 必修連チャンSTART
+      🎈 必修連チャンSTART 🎈
     </button>
 
     <div class="bottom-nav">
