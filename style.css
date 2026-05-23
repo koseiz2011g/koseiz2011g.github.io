@@ -388,7 +388,7 @@ button:disabled {
 .new-record {
   font-size: 32px;
   font-weight: bold;
-  color: #ff9800;
+  color: #ff2a00;
   
   text-align: center;
    animation: recordPop 0.6s ease;
