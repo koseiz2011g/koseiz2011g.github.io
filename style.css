@@ -70,9 +70,12 @@ button:disabled {
   background: #ffffff;
   border-radius: 8px;
   padding: 12px;
-  margin-top: 12px;
+  
   line-height: 1.6;
+  font-size: 0.8rem;
+  margin-top:5px;
 }
+
 
 /* ===== YouTube ===== */
 .youtube-btn {
@@ -191,6 +194,9 @@ button:disabled {
   transition:transform 0.15s ease, box-shadow 0.15s ease;
 }
 
+.start-btn:active{
+  transform:scale(0.98);
+}
 
 .star {
   margin-left: 6px;
@@ -263,10 +269,12 @@ button:disabled {
 }
 
 .question {
-  margin: 20px 0;
-  font-size: 18px;
+  margin: 16px 0;
+  font-size: 1.2rem;
   line-height: 1.6;
+  margin-bottom: 16px;
 }
+
 
 #explanation {
   margin: 20px 0 120px; /* 下はナビ分多め */
@@ -283,16 +291,6 @@ button:disabled {
   color: #856404;
   border-radius: 8px;
 }
-
-
-
-
-.question {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin-bottom: 16px;
-}
-
 
 .evaluation-image img {
   max-width: 300px;
@@ -685,7 +683,7 @@ box-shadow: 0 0 14px rgba(246, 196, 83, 0.7);
 .choice{
   display: block;
   width: 100%;
-  margin: 10px 0;
+  margin: 6px 0;
   padding:12px;
   border-radius:10px;
   border:2px solid #ddd;
@@ -738,10 +736,6 @@ box-shadow: 0 0 14px rgba(246, 196, 83, 0.7);
 
 
 
-.explanation{
-  font-size:12px;
-  margin-top:5px;
-}
 
 @keyframes correctPop{
   0%{transform:scale(1)}
@@ -1111,4 +1105,3 @@ box-shadow: 0 0 14px rgba(246, 196, 83, 0.6);
   font-size: 1.2rem;
   color: blue;
 }
-
