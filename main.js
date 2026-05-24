@@ -362,7 +362,7 @@ conjunction: {
   explanation: "🧩 私が家に帰ったとき／雨が降っていた<br><br>💬 私が家に着いたとき、雨が降っていました。<br><br>📘 「when」は「～するとき」という意味です。"
 },
 {
-  sentence: "I like math, <span class='highlight'>but</span> I don’t like science.",
+  sentence: "I like math, <span class='highlight'>but</span> I don't like science.",
   choices: ["そして", "だから", "しかし", "もし～なら"],
   correct: 2,
   explanation: "🧩 私は／好んでいる／数学を／しかし／私は／好んでいない／理科を<br><br>💬 私は数学が好きだ、でも理科はそうではない。<br><br>📘 「but」は逆接で「しかし」という意味です。"
