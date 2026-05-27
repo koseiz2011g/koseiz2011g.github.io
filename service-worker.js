@@ -1,4 +1,4 @@
-const CACHE_NAME = "yontakun-v3";
+const CACHE_NAME = "yontakun-v4";
 
 const urlsToCache = [
   "/shin4ta/",
