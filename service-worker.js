@@ -4,7 +4,7 @@ const urlsToCache = [
   "/shin4ta/",
   "/shin4ta/index.html",
   "/shin4ta/style.css",
-  "/shin4ta/script.js",
+  "/shin4ta/main.js",
   "/shin4ta/manifest.json",
   "/shin4ta/icon-192.png",
   "/shin4ta/icon-512.png",
