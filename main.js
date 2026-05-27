@@ -1949,35 +1949,15 @@ const state = {
 };
 
 function playSound(type){
-
-  if(!state.soundEnabled) return;
-
-  const sounds = {
-
-    // 既存
-    correct : "sounds/correct.mp3",
-    wrong   : "sounds/wrong.mp3",
-    select  : "sounds/select.mp3",
-    finish  : "sounds/finish.mp3",
-    next    : "sounds/next.mp3",
-    tryagain: "sounds/tryagain.mp3",
-
-    // 結果画面
-    result    : "sounds/result.mp3",
-    milestone : "sounds/milestone.mp3",
-    record    : "sounds/record.mp3",
-    perfect   : "sounds/perfect.mp3",
-    today     : "sounds/mew01.mp3"
-
-  };
-
   const src = sounds[type];
   if(!src) return;
 
   const audio = new Audio(src);
   audio.volume = 0.8;
-  audio.play();
 
+  audio.play()
+    .then(() => console.log("played:", src))
+    .catch(err => console.error("audio error:", err));
 }
 
 
