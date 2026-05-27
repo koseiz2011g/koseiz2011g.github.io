@@ -44,7 +44,6 @@ const urlsToCache = [
 "/sounds/perfect.mp3",
 "/sounds/record.mp3",
 "/sounds/result.mp3",
-"/sounds/shakiin.mp3",
 "/sounds/tryagain.mp3",
 "/sounds/wrong.mp3"
 ];
