@@ -88,18 +88,27 @@ self.addEventListener("activate", (e) => {
 });
 
 // fetch
-self.addEventListener("fetch", (e) => {
-  e.respondWith(
-    caches.match(e.request).then((response) => {
-      if (response) {
-        return response;
-      }
+self.addEventListener("fetch", (event) => {
+  event.respondWith(
+    caches.match(event.request).then((cached) => {
+      if (cached) return cached;
 
-      return fetch(e.request).then((networkResponse) => {
-        return caches.open(CACHE_NAME).then((cache) => {
-          cache.put(e.request, networkResponse.clone());
-          return networkResponse;
-        });
+      return fetch(event.request).then((response) => {
+
+        // 206 (Partial Content) はキャッシュしない
+        if (response.status === 206) {
+          return response;
+        }
+
+        // 正常レスポンスだけキャッシュ
+        if (response.ok) {
+          const copy = response.clone();
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, copy);
+          });
+        }
+
+        return response;
       });
     })
   );
