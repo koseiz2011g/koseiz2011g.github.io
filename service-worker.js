@@ -1,4 +1,4 @@
-const CACHE_NAME = "yontakun-v7";
+const CACHE_NAME = "yontakun-v8";
 
 const urlsToCache = [
   "/",
@@ -87,59 +87,59 @@ self.addEventListener("activate", (event) => {
   );
 });
 
-// fetch（オフライン音声再生対応版）
+// fetch（Android / Windows 複数回再生バグ完全対策版）
 self.addEventListener("fetch", (event) => {
   const url = new URL(event.request.url);
-
-  // 音声ファイル（.mp3）へのリクエストかチェック
   const isAudio = url.pathname.endsWith(".mp3");
 
   event.respondWith(
     (async () => {
-      // 1. キャッシュを探す
+      // 1. まずキャッシュを探す
       const cachedResponse = await caches.match(event.request);
 
-      // 2. 音声ファイル、かつキャッシュがある場合のiOSバグ対策
-      if (isAudio && cachedResponse) {
-        // リクエストに Range ヘッダーがあるか確認
+      if (cachedResponse) {
         const rangeHeader = event.request.headers.get("range");
 
-        if (rangeHeader) {
-          // キャッシュされたデータをバイナリ（Blob）として取得
-          const audioBlob = await cachedResponse.blob();
-          const size = audioBlob.size;
+        // 音声ファイル、かつ Range 要求がある場合（Android / Windows / iOS 共通対策）
+        if (isAudio && rangeHeader) {
+          try {
+            // response.blob() を呼ぶと元の cachedResponse は消費されるため注意
+            const audioBlob = await cachedResponse.blob();
+            const size = audioBlob.size;
 
-          // Rangeヘッダーから読み込み開始位置と終了位置を解析 (例: bytes=0-)
-          const parts = rangeHeader.replace(/bytes=/, "").split("-");
-          const start = parseInt(parts[0], 10);
-          const end = parts[1] ? parseInt(parts[1], 10) : size - 1;
+            // Rangeヘッダーの解析 (例: bytes=0-)
+            const parts = rangeHeader.replace(/bytes=/, "").split("-");
+            const start = parseInt(parts[0], 10);
+            const end = parts[1] ? parseInt(parts[1], 10) : size - 1;
 
-          // 対象の部分だけデータを切り出す
-          const slicedBlob = audioBlob.slice(start, end + 1, audioBlob.type);
+            // 安全にデータを切り出す
+            const slicedBlob = audioBlob.slice(start, end + 1, audioBlob.type);
 
-          // iOSが要求する「206 Partial Content」のレスポンスを擬似的に自作して返す
-          return new Response(slicedBlob, {
-            status: 206,
-            statusText: "Partial Content",
-            headers: {
-              "Content-Range": `bytes ${start}-${end}/${size}`,
-              "Content-Length": slicedBlob.size,
-              "Content-Type": audioBlob.type,
-            },
-          });
+            // 206 Partial Content レスポンスを完全に自作
+            return new Response(slicedBlob, {
+              status: 206,
+              statusText: "Partial Content",
+              headers: {
+                "Content-Range": `bytes ${start}-${end}/${size}`,
+                "Content-Length": slicedBlob.size,
+                "Content-Type": audioBlob.type,
+                "Accept-Ranges": "bytes"
+              },
+            });
+          } catch (e) {
+            console.error("Audio cache process error:", e);
+          }
         }
+
+        // Range要求がない、または音声以外ならキャッシュをそのまま返す
+        // ※何度も使い回せるように必ず clone() して返すのがAndroid対策の肝です
+        return cachedResponse.clone();
       }
 
-      // 3. 通常のキャッシュがあればそれを返す（音声以外の画像やHTMLなど）
-      if (cachedResponse) {
-        return cachedResponse;
-      }
-
-      // 4. キャッシュがない場合はネットワークから取得
+      // 2. キャッシュがない場合はネットワークから取得（オンライン時）
       try {
         const response = await fetch(event.request);
 
-        // 正常な応答（200）であれば次回のためにキャッシュに保存
         if (response.ok && response.status === 200) {
           const copy = response.clone();
           const cache = await caches.open(CACHE_NAME);
@@ -148,10 +148,15 @@ self.addEventListener("fetch", (event) => {
 
         return response;
       } catch (error) {
-        // オフラインかつキャッシュもない場合のネットワークエラー
+        // オフライン時の最終防衛ライン
+        // 音声かつRange要求で、上記処理が失敗していた場合のフォールバック
+        if (isAudio && cachedResponse) {
+          return cachedResponse.clone();
+        }
         throw error;
       }
     })()
   );
 });
+
 
