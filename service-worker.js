@@ -1,4 +1,4 @@
-const CACHE_NAME = "yontakun-v9";
+const CACHE_NAME = "yontakun-v10";
 
 const urlsToCache = [
   "/",
@@ -142,18 +142,24 @@ self.addEventListener("fetch", (event) => {
         return cachedResponse.clone();
       }
 
-      // 2. キャッシュがない場合はネットワークから取得（オンライン時）
+            // 2. キャッシュがない場合はネットワークから取得（オンライン時）
       try {
         const response = await fetch(event.request);
+
+        // 💡 拡張機能などの通信（chrome-extension://等）はキャッシュしないように除外する
+        if (!url.protocol.startsWith('http')) {
+          return response;
+        }
 
         if (response.ok && response.status === 200) {
           const copy = response.clone();
           const cache = await caches.open(CACHE_NAME);
-          await cache.put(event.request, copy);
+          await cache.put(event.request, copy); // ← ここでエラーが起きていました
         }
 
         return response;
       } catch (error) {
+
         // オフライン時のフォールバック
         const cache = await caches.open(CACHE_NAME);
         const fallbackResponse = await cache.match(event.request.url);
