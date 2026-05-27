@@ -1,4 +1,4 @@
-const CACHE_NAME = "yontakun-v10";
+const CACHE_NAME = "yontakun-v11";
 
 const urlsToCache = [
   "/",
@@ -56,11 +56,26 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     (async () => {
       const cache = await caches.open(CACHE_NAME);
-      // ループで1つずつ追加する現在の方法は、エラー検知しやすいためそのままでOKです
+      
       for (const url of urlsToCache) {
         try {
-          await cache.add(url);
-          console.log("OK:", url);
+          // 💡 音声ファイルの場合は、サーバーから強制的に 200 OK（丸ごと）で取得するリクエストを作る
+          const isAudio = url.endsWith(".mp3");
+          const request = isAudio 
+            ? new Request(url, { headers: { "Range": "bytes=0-" } }) // 一部ブラウザで206回避のため
+            : new Request(url);
+
+          // cache.add(url) の代わりに fetch して中身をチェックして保存する
+          const response = await fetch(request);
+          
+          // サーバーがどうしても206を返してくる場合でも強制保存できるように不透明（Opaque）にするか、
+          // あるいはそのまま put します。安全のため status が 200 または 206 でも受け入れる構造にします。
+          if (response.ok || response.status === 206) {
+            await cache.put(url, response);
+            console.log("OK:", url);
+          } else {
+            throw new Error(`Status: ${response.status}`);
+          }
         } catch (err) {
           console.error("NG:", url, err);
         }
@@ -70,6 +85,7 @@ self.addEventListener("install", (event) => {
 
   self.skipWaiting();
 });
+
 
 // 有効化（古いキャッシュの削除）
 self.addEventListener("activate", (event) => {
