@@ -1968,12 +1968,8 @@ function playSound(type){
 
   const audio = new Audio(src);
   audio.volume = 0.8;
-
-  audio.play()
-    .then(() => console.log("played:", src))
-    .catch(err => console.error("audio error:", err));
+  audio.play();
 }
-
 
 
 
