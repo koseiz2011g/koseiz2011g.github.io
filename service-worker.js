@@ -35,17 +35,18 @@ const urlsToCache = [
 "/shin4ta/images/cw03.png",
 
 // 効果音
-  "/shin4ta/sounds/correct.mp3",
-  "/shin4ta/sounds/wrong.mp3",
-  "/shin4ta/sounds/select.mp3",
-  "/shin4ta/sounds/finish.mp3",
-  "/shin4ta/sounds/next.mp3",
-  "/shin4ta/sounds/tryagain.mp3",
-  "/shin4ta/sounds/result.mp3",
-  "/shin4ta/sounds/milestone.mp3",
-  "/shin4ta/sounds/record.mp3",
-  "/shin4ta/sounds/perfect.mp3",
-  "/shin4ta/sounds/mew01.mp3"
+   "/shin4ta/sounds/correct.mp3",
+"/shin4ta/sounds/finish.mp3",
+"/shin4ta/sounds/mew01.mp3",
+"/shin4ta/sounds/mile.mp3",
+"/shin4ta/sounds/milestone.mp3",
+"/shin4ta/sounds/next.mp3",
+"/shin4ta/sounds/perfect.mp3",
+"/shin4ta/sounds/record.mp3",
+"/shin4ta/sounds/result.mp3",
+"/shin4ta/sounds/shakiin.mp3",
+"/shin4ta/sounds/tryagain.mp3",
+"/shin4ta/sounds/wrong.mp3"
 ];
 
 // インストール
