@@ -50,11 +50,24 @@ const urlsToCache = [
 ];
 
 // インストール
-self.addEventListener("install", (e) => {
-  e.waitUntil(
-    caches.open(CACHE_NAME)
-      .then((cache) => cache.addAll(urlsToCache))
+self.addEventListener("install", (event) => {
+  console.log("SW install start");
+
+  event.waitUntil(
+    (async () => {
+      const cache = await caches.open(CACHE_NAME);
+
+      for (const url of urlsToCache) {
+        try {
+          await cache.add(url);
+          console.log("OK:", url);
+        } catch (err) {
+          console.error("NG:", url, err);
+        }
+      }
+    })()
   );
+
   self.skipWaiting();
 });
 
