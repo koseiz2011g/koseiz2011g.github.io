@@ -88,27 +88,32 @@ self.addEventListener("activate", (event) => {
   );
 });
 
-// fetch（Android / Windows 複数回再生バグ完全対策版）
+// fetch（Android / Windows / iOS 完全対応・修正版）
 self.addEventListener("fetch", (event) => {
   const url = new URL(event.request.url);
   const isAudio = url.pathname.endsWith(".mp3");
 
   event.respondWith(
     (async () => {
-      // 1. まずキャッシュを探す
-      const cachedResponse = await caches.match(event.request);
+      // 1. まず通常のキャッシュマッチを試みる（音声の場合はURL文字列だけで再検索できるようにする）
+      let cachedResponse = await caches.match(event.request);
 
       if (cachedResponse) {
         const rangeHeader = event.request.headers.get("range");
 
-        // 音声ファイル、かつ Range 要求がある場合（Android / Windows / iOS 共通対策）
+        // 音声ファイル、かつ Range 要求がある場合
         if (isAudio && rangeHeader) {
           try {
-            // response.blob() を呼ぶと元の cachedResponse は消費されるため注意
-            const audioBlob = await cachedResponse.blob();
+            // 原因①＆②対策：URLを指定して新しくフレッシュなレスポンスを取得し、blob化する
+            const cache = await caches.open(CACHE_NAME);
+            const freshCachedResponse = await cache.match(event.request.url);
+            
+            if (!freshCachedResponse) return cachedResponse.clone();
+
+            const audioBlob = await freshCachedResponse.blob();
             const size = audioBlob.size;
 
-            // Rangeヘッダーの解析 (例: bytes=0-)
+            // Rangeヘッダーの解析
             const parts = rangeHeader.replace(/bytes=/, "").split("-");
             const start = parseInt(parts[0], 10);
             const end = parts[1] ? parseInt(parts[1], 10) : size - 1;
@@ -116,7 +121,7 @@ self.addEventListener("fetch", (event) => {
             // 安全にデータを切り出す
             const slicedBlob = audioBlob.slice(start, end + 1, audioBlob.type);
 
-            // 206 Partial Content レスポンスを完全に自作
+            // 206 Partial Content レスポンスを返却
             return new Response(slicedBlob, {
               status: 206,
               statusText: "Partial Content",
@@ -129,11 +134,11 @@ self.addEventListener("fetch", (event) => {
             });
           } catch (e) {
             console.error("Audio cache process error:", e);
+            return cachedResponse.clone();
           }
         }
 
-        // Range要求がない、または音声以外ならキャッシュをそのまま返す
-        // ※何度も使い回せるように必ず clone() して返すのがAndroid対策の肝です
+        // 音声以外、またはRange要求がない場合はそのままクローンを返す
         return cachedResponse.clone();
       }
 
@@ -149,10 +154,11 @@ self.addEventListener("fetch", (event) => {
 
         return response;
       } catch (error) {
-        // オフライン時の最終防衛ライン
-        // 音声かつRange要求で、上記処理が失敗していた場合のフォールバック
-        if (isAudio && cachedResponse) {
-          return cachedResponse.clone();
+        // オフライン時のフォールバック
+        const cache = await caches.open(CACHE_NAME);
+        const fallbackResponse = await cache.match(event.request.url);
+        if (fallbackResponse) {
+          return fallbackResponse.clone();
         }
         throw error;
       }
