@@ -36,6 +36,7 @@ const urlsToCache = [
 
   // 効果音
   "/sounds/correct.mp3",
+  "/sounds/select.mp3", // 💡ここに1行追加する
   "/sounds/finish.mp3",
   "/sounds/mew01.mp3",
   "/sounds/mile.mp3",
