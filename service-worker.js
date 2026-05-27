@@ -10,7 +10,6 @@ const urlsToCache = [
   "/shin4ta/icon-512.png",
 
   // 画像
-"/shin4ta/images/4c002.png",
 "/shin4ta/images/4cats.png",
 "/shin4ta/images/cat00.jpg",
 "/shin4ta/images/cb01.png",
@@ -30,7 +29,6 @@ const urlsToCache = [
 "/shin4ta/images/cs01.png",
 "/shin4ta/images/cs02.png",
 "/shin4ta/images/cs03.png",
-"/shin4ta/images/cs03new.png",
 "/shin4ta/images/cs04.png",
 "/shin4ta/images/cw01.png",
 "/shin4ta/images/cw02.png",
