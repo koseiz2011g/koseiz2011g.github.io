@@ -1948,38 +1948,70 @@ const state = {
 
 };
 
+// 1. 音声ファイルの定義（先頭に / をつけてサービスワーカーと統一）
 const sounds = {
-  correct : "sounds/correct.mp3",
-  wrong   : "sounds/wrong.mp3",
-  select  : "sounds/select.mp3",
-  finish  : "sounds/finish.mp3",
-  next    : "sounds/next.mp3",
-  tryagain: "sounds/tryagain.mp3",
-  result  : "sounds/result.mp3",
-  milestone : "sounds/milestone.mp3",
-  record  : "sounds/record.mp3",
-  perfect : "sounds/perfect.mp3",
-  today   : "sounds/mew01.mp3"
+  correct  : "/sounds/correct.mp3",
+  wrong    : "/sounds/wrong.mp3",
+  select   : "/sounds/select.mp3", // 💡SWのurlsToCacheにも追加されているか確認してください
+  finish   : "/sounds/finish.mp3",
+  next     : "/sounds/next.mp3",
+  tryagain : "/sounds/tryagain.mp3",
+  result   : "/sounds/result.mp3",
+  milestone: "/sounds/milestone.mp3",
+  record   : "/sounds/record.mp3",
+  perfect  : "/sounds/perfect.mp3",
+  today    : "/sounds/mew01.mp3"
 };
 
-function playSound(type){
-  const src = sounds[type];
-  if(!src) return;
+// 2. 生成した音声オブジェクトを使い回すための箱
+const audioPool = {};
 
-  const audio = new Audio(src);
-  audio.volume = 0.8;
-  audio.play();
+// 3. アプリ起動時にすべての音声を1回だけ生成する関数
+function initSounds() {
+  for (const type in sounds) {
+    if (Object.prototype.hasOwnProperty.call(sounds, type)) {
+      const audio = new Audio(sounds[type]);
+      audio.volume = 0.8;
+      audio.load(); // 事前読み込みを指示
+      audioPool[type] = audio;
+    }
+  }
 }
 
+// 4. 音を鳴らす関数（毎回 new しない使い回し方式）
+function playSound(type) {
+  const audio = audioPool[type];
+  if (!audio) return;
+
+  // 再生中の場合は先頭に巻き戻す（連打対策）
+  audio.currentTime = 0;
+  
+  // 再生（ブラウザの自動再生ブロック対策でcatchを入れておきます）
+  audio.play().catch(err => {
+    console.warn(`${type} の再生に失敗しました:`, err);
+  });
+}
+
+// 5. 【超重要】定義した後に必ず初期化関数を呼び出す
+initSounds();
 
 
 function getStudyEvaluation(correct, total) {
+  // 分母が0の場合の安全対策（エラー防止）
+  if (total === 0) {
+    return {
+      label: "復習しよう",
+      image: "/images/cw03.png",
+      sound: "tryagain"
+    };
+  }
+
   const rate = correct / total;
 
   if (rate === 1) {
     return {
       label: "パーフェクト！",
-      image: "images/cs04.png",
+      image: "/images/cs04.png", // 💡先頭に / を追加
       sound: "finish"
     };
   }
@@ -1987,17 +2019,18 @@ function getStudyEvaluation(correct, total) {
   if (rate >= 0.7) {
     return {
       label: "よくできました！",
-      image: "images/cmi02.png",
+      image: "/images/cmi02.png", // 💡先頭に / を追加
       sound: "today"
     };
   }
 
   return {
     label: "復習しよう",
-    image: "images/cw03.png",
+    image: "/images/cw03.png", // 💡先頭に / を追加
     sound: "tryagain"
   };
 }
+
 
 /*********************************************************
  * localStorage 保存・読込
