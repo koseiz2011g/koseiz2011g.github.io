@@ -1,4 +1,4 @@
-const CACHE_NAME = "yontakun-v11";
+const CACHE_NAME = "yontakun-v12";
 
 const urlsToCache = [
   "/",
@@ -187,5 +187,4 @@ self.addEventListener("fetch", (event) => {
     })()
   );
 });
-
 
