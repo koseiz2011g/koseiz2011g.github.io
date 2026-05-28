@@ -1952,7 +1952,6 @@ const state = {
 const sounds = {
   correct  : "/sounds/correct.mp3",
   wrong    : "/sounds/wrong.mp3",
-  select   : "/sounds/select.mp3", // 💡SWのurlsToCacheにも追加されているか確認してください
   finish   : "/sounds/finish.mp3",
   next     : "/sounds/next.mp3",
   tryagain : "/sounds/tryagain.mp3",
