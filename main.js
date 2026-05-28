@@ -1980,6 +1980,8 @@ function initSounds() {
 
 // 4. 音を鳴らす関数（毎回 new しない使い回し方式）
 function playSound(type) {
+  if (!state.soundEnabled) return;
+
   const audio = audioPool[type];
   if (!audio) return;
 
