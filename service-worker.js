@@ -1,4 +1,4 @@
-const CACHE_NAME = "yontakun-v12";
+const CACHE_NAME = "yontakun-v13";
 
 const urlsToCache = [
   "/",
