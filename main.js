@@ -2502,7 +2502,7 @@ function renderModeSelect(root) {
 
 
     <button id="soundToggleBtn" class="sound-btn">
-  ${state.soundEnabled ? "🔊 効果音 ON" : "🔇 効果音 OFF"}
+  ${state.soundEnabled ? "🔊 効果音 ON になっています" : "🔇 効果音 OFF になっています"}
 </button>
 
 
