@@ -1105,3 +1105,37 @@ box-shadow: 0 0 14px rgba(246, 196, 83, 0.6);
   font-size: 1.2rem;
   color: blue;
 }
+
+.confirm-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.5);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 9999;
+}
+
+.confirm-box{
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  width: min(320px, 90vw);
+  text-align: center;
+}
+
+.confirm-message{
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.confirm-buttons{
+  display: flex;
+  gap: 10px;
+}
+
+.confirm-buttons button{
+  flex: 1;
+}
