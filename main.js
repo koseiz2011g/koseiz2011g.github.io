@@ -1925,9 +1925,10 @@ const state = {
     basicChain:0,
     weakChain:0
   },
-
-
+  
   popupMessage: null,
+
+  confirmDialog: null,
 
   // ===== 今日の記録 =====
   today: JSON.parse(
@@ -2590,6 +2591,7 @@ function renderStudyMenu(root) {
 
     <button class="category-btn" id="resetStarsBtn">⭐ リセット<div>（必修、標準のすべての⭐がリセットされます）</div></button>
    
+    ${getConfirmDialogHtml()}
 
     <div class="bottom-nav">
     <button id="modeBtn" class="mode-btn">🔙 メニューへ</button>
@@ -2598,7 +2600,35 @@ function renderStudyMenu(root) {
     </div>
   `;
 
-  document.querySelectorAll(".category-btn").forEach(btn => {
+ 
+  const confirmCancelBtn =
+  document.getElementById("confirmCancelBtn");
+
+if (confirmCancelBtn) {
+  confirmCancelBtn.onclick = () => {
+    state.confirmDialog = null;
+    render();
+  };
+}
+
+const confirmOkBtn =
+  document.getElementById("confirmOkBtn");
+
+if (confirmOkBtn) {
+  confirmOkBtn.onclick = () => {
+
+    const callback =
+      state.confirmDialog?.onOk;
+
+    state.confirmDialog = null;
+
+    if (callback) callback();
+
+    render();
+  };
+}
+
+ document.querySelectorAll(".category-btn").forEach(btn => {
   const key = btn.dataset.key;
 
 
@@ -2653,9 +2683,10 @@ document.getElementById("weakBtn").onclick = () => {
 
   document.getElementById("resetStarsBtn").onclick = () => {
 
-  const ok = confirm("すべての⭐をリセットしますか？");
+  state.confirmDialog = {
+    message: "すべての⭐をリセットしますか？",
+    onOk: () => {
 
-  if (!ok) return;
 
   // ⭐データ削除
   localStorage.removeItem("stars");
@@ -2665,19 +2696,63 @@ document.getElementById("weakBtn").onclick = () => {
 
   // 再描画
   render();
+  }
+  };
+
+  render();
 };
 }
 
+function getConfirmDialogHtml() {
+
+  if (!state.confirmDialog) return "";
+
+  return `
+    <div class="confirm-overlay">
+      <div class="confirm-box">
+
+        <div class="confirm-message">
+          ${state.confirmDialog.message}
+        </div>
+
+        <div class="confirm-buttons">
+          <button id="confirmCancelBtn">
+            キャンセル
+          </button>
+
+          <button id="confirmOkBtn">
+            OK
+          </button>
+        </div>
+
+      </div>
+    </div>
+  `;
+}
+
+
+
 // ⭐解除処理を関数化
 function tryRemoveStar(key) {
-  if (state.stars[key]) {
-    const ok = confirm("⭐を解除しますか？");
-    if (ok) {
+
+  if (!state.stars[key]) return;
+
+  state.confirmDialog = {
+    message: "この分野の⭐を解除しますか？",
+    onOk: () => {
+
       delete state.stars[key];
-      localStorage.setItem("stars", JSON.stringify(state.stars));
+
+      localStorage.setItem(
+        "stars",
+        JSON.stringify(state.stars)
+      );
+
       render();
     }
-  }
+  };
+
+  render();
 }
 
 
@@ -2773,6 +2848,8 @@ window.scrollTo(0, 0); // ←追加
         <div id="explanation"></div>
       </div>
 
+      ${getConfirmDialogHtml()}
+
       <div class="bottom-nav">
         <button id="menuBtn" class="nav-menu">分野選択へ</button>
   <button id="prevBtn" class="nav-prev">前へ</button>
@@ -2781,7 +2858,32 @@ window.scrollTo(0, 0); // ←追加
     </div>
   `;
 
-  
+  const confirmCancelBtn =
+  document.getElementById("confirmCancelBtn");
+
+if (confirmCancelBtn) {
+  confirmCancelBtn.onclick = () => {
+    state.confirmDialog = null;
+    render();
+  };
+}
+
+const confirmOkBtn =
+  document.getElementById("confirmOkBtn");
+
+if (confirmOkBtn) {
+  confirmOkBtn.onclick = () => {
+
+    const callback =
+      state.confirmDialog?.onOk;
+
+    state.confirmDialog = null;
+
+    if (callback) callback();
+
+    render();
+  };
+}
 
   // 選択肢
 document.querySelectorAll(".choice").forEach(btn => {
@@ -2867,10 +2969,29 @@ nextBtn.onclick = () => {
   render();
 };
 
-  const menuBtn = document.getElementById("menuBtn");
+const menuBtn = document.getElementById("menuBtn");
+
 if (menuBtn) {
   menuBtn.onclick = () => {
-    if (answered && !confirm("途中ですが、メニューに戻りますか？")) return;
+
+    const hasAnswered =
+      study.answers.some(a => a !== null);
+
+    if (hasAnswered) {
+
+      state.confirmDialog = {
+        message: "途中ですが、メニューに戻りますか？",
+        onOk: () => {
+
+          study.viewingPrevious = false;
+          goStudyMenu();
+        }
+      };
+
+      render();
+      return;
+    }
+
     study.viewingPrevious = false;
     goStudyMenu();
   };
@@ -2997,16 +3118,17 @@ function renderStudyResult(root) {
     }
 
     <button id="reviewBtn" class="mode-btn">最後の問題を見る</button>
-    <button id="menuBtn" class="mode-btn">📘📗 分野選択へ</button>
-
     
-      <button id="weakChainBtn" class="mode-btn">
-        💥 弱点克服へ
-      </button>
     
 
     <div class="bottom-nav">
-    <button id="modeBtn" class="mode-btn">🔙 メニューへ</button></div>
+    <button id="modeBtn" class="mode-btn">🔙 メニューへ</button>
+    <button id="menuBtn" class="mode-btn">📘📗<div>分野選択へ</div></button>
+    <button id="weakChainBtn" class="mode-btn">
+        💥 弱点克服へ
+      </button>
+    
+    </div>
   `;
 
   // 効果音
@@ -3108,12 +3230,39 @@ function renderChainMenu(root) {
 
     <button class="start-btn" id="startBtn">🔥 GAME START 🔥</button>
 
-   
+   ${getConfirmDialogHtml()}
    
     <div class="bottom-nav">
     <button id="backBtn" class="mode-btn">🔙 メニューへ</button>
     </div>
   `;
+
+const confirmCancelBtn =
+  document.getElementById("confirmCancelBtn");
+
+if (confirmCancelBtn) {
+  confirmCancelBtn.onclick = () => {
+    state.confirmDialog = null;
+    render();
+  };
+}
+
+const confirmOkBtn =
+  document.getElementById("confirmOkBtn");
+
+if (confirmOkBtn) {
+  confirmOkBtn.onclick = () => {
+
+    const callback = state.confirmDialog?.onOk;
+
+    state.confirmDialog = null;
+
+    if (callback) callback();
+
+    render();
+  };
+}
+
 
   document.getElementById("startBtn").onclick =
   () => startChain("normal");
@@ -3133,7 +3282,10 @@ function setupChainReset() {
 
     pressTimer = setTimeout(() => {
 
-      if (!confirm("連チャン記録をリセットしますか？")) return;
+       state.confirmDialog = {
+    message: "連チャン記録をリセットしますか？",
+    onOk: () => {
+
 
       state.records.normalChain = 0;
 
@@ -3143,6 +3295,11 @@ function setupChainReset() {
       );
 
       render();
+    }
+  };
+
+  render();
+
 
     }, 800); // 長押し時間
 
@@ -3283,7 +3440,38 @@ function renderChainQuestion(root){
        </div>`
     : ""
   }
+
+  ${getConfirmDialogHtml()}
+
   `;
+
+
+  const confirmCancelBtn =
+  document.getElementById("confirmCancelBtn");
+
+if (confirmCancelBtn) {
+  confirmCancelBtn.onclick = () => {
+    state.confirmDialog = null;
+    render();
+  };
+}
+
+const confirmOkBtn =
+  document.getElementById("confirmOkBtn");
+
+if (confirmOkBtn) {
+  confirmOkBtn.onclick = () => {
+
+    const callback =
+      state.confirmDialog?.onOk;
+
+    state.confirmDialog = null;
+
+    if (callback) callback();
+
+    render();
+  };
+}
 
   const buttons = document.querySelectorAll(".choice");
 
@@ -3447,15 +3635,20 @@ if(chain.answered){
 }
 
   document.getElementById("menuBtn").onclick = ()=>{
-    if(!confirm("連チャンを中断しますか？"))
-      return;
 
-    goModeSelect();
+  state.confirmDialog = {
+    message: "連チャンを中断しますか？",
+    onOk: () => {
+      goModeSelect();
+    }
   };
 
-  document.getElementById("endBtn").onclick = ()=>{
-    finishChain();
-  };
+  render();
+};
+
+document.getElementById("endBtn").onclick = ()=>{
+  finishChain();
+};
 
 }
 
@@ -3680,6 +3873,8 @@ function renderChainResult(root){
     <button id="backBtn" class="mode-btn">
       🔙 メニューへ
     </button>
+     <button id="weakChainBtn" class="mode-btn">💥 弱点克服へ</button>
+
 
   </div>
   `;
@@ -3705,6 +3900,12 @@ function renderChainResult(root){
 
   document.getElementById("backBtn")
     ?.addEventListener("click", goModeSelect);
+
+  document.getElementById("weakChainBtn").onclick = () => {
+    state.screen = "weakChainMenu";
+    render();
+  };
+
 
 }
 
@@ -3905,91 +4106,88 @@ function renderBasicChainMenu(root) {
       🎈 必修連チャンSTART 🎈
     </button>
 
+    ${getConfirmDialogHtml()}
+
     <div class="bottom-nav">
       <button id="backBtn" class="mode-btn">🔙 メニューへ</button>
     </div>
   `;
+
+  const confirmCancelBtn =
+  document.getElementById("confirmCancelBtn");
+
+if (confirmCancelBtn) {
+  confirmCancelBtn.onclick = () => {
+    state.confirmDialog = null;
+    render();
+  };
+}
+
+const confirmOkBtn =
+  document.getElementById("confirmOkBtn");
+
+if (confirmOkBtn) {
+  confirmOkBtn.onclick = () => {
+
+    const callback = state.confirmDialog?.onOk;
+
+    state.confirmDialog = null;
+
+    if (callback) callback();
+
+    render();
+  };
+}
 
   document.getElementById("startBasicChainBtn").onclick =
   () => startChain("basic");
   document.getElementById("backBtn").onclick = goModeSelect;
 
   const resetBtn = document.getElementById("resetBasicChainBtn");
-  if (!resetBtn) return;
+if (!resetBtn) return;
 
-  let pressTimer;
+let pressTimer;
 
-  const startPress = () => {
+const startPress = () => {
 
-    pressTimer = setTimeout(() => {
+  pressTimer = setTimeout(() => {
 
-      if (!confirm("必修連チャン記録をリセットしますか？")) return;
+    state.confirmDialog = {
+      message: "必修連チャン記録をリセットしますか？",
+      onOk: () => {
 
-      state.records.basicChain = 0;
+        state.records.basicChain = 0;
 
-      localStorage.setItem(
-        "records",
-        JSON.stringify(state.records)
-      );
+        localStorage.setItem(
+          "records",
+          JSON.stringify(state.records)
+        );
 
-      render();
-
-    }, 800); // 長押し時間
-
-  
-
-  const cancelPress = () => clearTimeout(pressTimer);
-
-  resetBtn.addEventListener("mousedown", startPress);
-  resetBtn.addEventListener("mouseup", cancelPress);
-  resetBtn.addEventListener("mouseleave", cancelPress);
-
-  resetBtn.addEventListener("touchstart", startPress);
-  resetBtn.addEventListener("touchend", cancelPress);
-  resetBtn.addEventListener("touchmove", cancelPress);
-
+        render();
+      }
+    };
 
     render();
-  };
-setupBasicChainReset();
-}
 
-function setupBasicChainReset() {
+  }, 800);
 
-  const resetBtn = document.getElementById("resetBasicChainBtn");
-  if (!resetBtn) return;
+};
 
-  let pressTimer;
+const cancelPress = () => {
+  clearTimeout(pressTimer);
+};
 
-  const startPress = () => {
+resetBtn.addEventListener("mousedown", startPress);
+resetBtn.addEventListener("mouseup", cancelPress);
+resetBtn.addEventListener("mouseleave", cancelPress);
 
-    pressTimer = setTimeout(() => {
+resetBtn.addEventListener("touchstart", startPress);
+resetBtn.addEventListener("touchend", cancelPress);
+resetBtn.addEventListener("touchmove", cancelPress);
 
-      if (!confirm("必修連チャン記録をリセットしますか？")) return;
+  }
 
-      state.records.basicChain = 0;
 
-      localStorage.setItem(
-        "records",
-        JSON.stringify(state.records)
-      );
-
-      render();
-
-    }, 800); // 長押し時間
-
-  };
-
-  const cancelPress = () => clearTimeout(pressTimer);
-
-  resetBtn.addEventListener("mousedown", startPress);
-  resetBtn.addEventListener("mouseup", cancelPress);
-  resetBtn.addEventListener("mouseleave", cancelPress);
-
-  resetBtn.addEventListener("touchstart", startPress);
-  resetBtn.addEventListener("touchend", cancelPress);
-  resetBtn.addEventListener("touchmove", cancelPress);
-}
 
 
 function getAllQuestions() {
