@@ -72,7 +72,7 @@ button:disabled {
   padding: 12px;
   
   line-height: 1.6;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   margin-top:5px;
 }
 
@@ -278,7 +278,7 @@ button:disabled {
 
 #explanation {
   margin: 20px 0 120px; /* 下はナビ分多め */
-  font-size: 15px;
+  font-size: 0.9rem;
 }
 
 .review-flag {
@@ -537,7 +537,7 @@ box-shadow: 0 0 14px rgba(246, 196, 83, 0.7);
 }
 
 .chain-explanation {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   line-height: 1.6;
   margin-top: 12px;
 }
@@ -1109,13 +1109,13 @@ box-shadow: 0 0 14px rgba(246, 196, 83, 0.6);
 .confirm-overlay{
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,.5);
-
+  background: rgba(0,0,0,0.3);
   display: flex;
   align-items: center;
   justify-content: center;
 
   z-index: 9999;
+  backdrop-filter: blur(4px); /* 背景をほんのりぼかすと高級感が出ます */
 }
 
 .confirm-box{
@@ -1128,14 +1128,26 @@ box-shadow: 0 0 14px rgba(246, 196, 83, 0.6);
 
 .confirm-message{
   margin-bottom: 20px;
+  font-size: 0.9rem;
+  font-weight: 500; /* 文字を少しだけ太くして読みやすく */
+  color: #2d3748; /* 真っ黒ではなく濃いグレーで洗練された印象に */
   line-height: 1.6;
 }
 
-.confirm-buttons{
+.confirm-buttons {
   display: flex;
-  gap: 10px;
+  gap: 12px;
 }
 
-.confirm-buttons button{
+/* ボタンのデフォルトスタイルを完全にリセットし、美しく整える */
+.confirm-buttons button {
   flex: 1;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.0rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
+
