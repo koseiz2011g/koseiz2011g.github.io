@@ -2529,7 +2529,7 @@ function renderModeSelect(root) {
 
 
 
-    <p class="version">ver 1.0.3</p>
+    <p class="version">ver 1.0.4</p>
 
 ${state.popupMessage
   ? `<div class="milestone-popup">
