@@ -2614,9 +2614,9 @@ function renderStudyMenu(root) {
     ${getConfirmDialogHtml()}
 
     <div class="bottom-nav">
-    <button id="modeBtn" class="mode-btn">🔙 メニューへ</button>
+    <button id="modeBtn" class="mode-btn">🔙<div>メニューへ</button>
        <button id="levelBtn" class="mode-btn">📘📗<div>レベル選択へ</div></button>
-     <button id="weakBtn" class="mode-btn">💥 弱点克服へ</button>
+     <button id="weakBtn" class="mode-btn">💥<div>弱点克服へ</button>
     </div>
   `;
 
