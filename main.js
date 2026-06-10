@@ -625,7 +625,7 @@ adverb: {
 
 
 infinitive01: {
-    title: "📘 【必修】不定詞01",
+    title: "📘 【必修】不定詞",
     level: "basic", 
     questions: [
 {
@@ -680,8 +680,143 @@ infinitive01: {
   },
 
 
+passive: {
+    title: "📘 【必修】受動態",
+    level: "basic",
+    questions: [
+{
+  sentence: "This book <span class='highlight'>is read</span> by many students.",
+  choices: ["読んでいる", "読んでしまった", "読まれていた", "読まれている"],
+  correct: 3,
+  explanation: "🧩 この本は／読まれている／多くの学生によって<br><br>💬 この本は多くの学生によって読まれている。<br><br>📘「is read」は「be + 過去分詞」の受動態（現在形）で「～される／～されている」という意味になります。"
+},
+
+{
+  sentence: "The room <span class='highlight'>is cleaned</span> every day.",
+  choices: ["掃除した", "掃除されていた", "掃除している", "掃除されている"],
+  correct: 3,
+  explanation: "🧩 その部屋は／掃除されている／毎日<br><br>💬 その部屋は毎日掃除されています。<br><br>📘「is cleaned」は受動態の現在形で「～されている」という意味です。習慣的に行われる動作にもよく使われます。"
+},
+
+{
+  sentence: "English <span class='highlight'>is spoken</span> in many countries.",
+  choices: ["話している", "話された", "話されている", "話していた"],
+  correct: 2,
+  explanation: "🧩 英語は／話されている／多くの国で<br><br>💬 英語は多くの国で話されている。<br><br>📘「is spoken」は受動態の現在形で「～で話されている」という意味を表します。"
+},
+
+{
+  sentence: "The window <span class='highlight'>was broken</span> by Tom.",
+  choices: ["壊した", "壊されている", "壊している", "壊された"],
+  correct: 3,
+  explanation: "🧩 その窓は／壊された／トムによって<br><br>💬 その窓はトムによって壊された。<br><br>📘「was broken」は受動態の過去形で「壊された」という意味です。「by～」は「～によって」と誰が行ったかを表します"
+},
+
+{
+  sentence: "The cake <span class='highlight'>was made</span> by my mother.",
+  choices: ["作られている", "作った", "作っている", "作られた"],
+  correct: 3,
+  explanation: "🧩 そのケーキは／作られた／私の母によって<br><br>💬 そのケーキは母によって作られた。<br><br>📘「was made」は受動態の過去形で「作られた」という意味になります。"
+},
+
+{
+  sentence: "The game <span class='highlight'>was played</span> after school.",
+  choices: ["行われている", "行った", "行っている", "行われた"],
+  correct: 3,
+  explanation: "🧩 その試合は／行われた／放課後に<br><br>💬 その試合は、放課後に行われた。<br><br>📘「was played」は受動態の過去形で「行われた」という意味です。「after school」で「放課後」"
+},
+
+{
+  sentence: "The song <span class='highlight'>is loved</span> by many people.",
+  choices: ["愛している", "愛されている", "愛された", "愛していた"],
+  correct: 1,
+  explanation: "🧩 その歌は／愛されている／多くの人に<br><br>💬 その歌はたくさんの人に愛されている。<br><br>📘「is loved」は受動態現在形で「愛されている」という意味です。"
+},
+
+{
+  sentence: "The letter <span class='highlight'>was written</span> by Ken.",
+  choices: ["書いている", "書かれている", "書いていた", "書かれた"],
+  correct: 3,
+  explanation: "🧩 その手紙は／書かれた／ケンによって<br><br>💬 その手紙はケンによって書かれた。<br><br>📘「was written」は受動態の過去形で「書かれた」という意味になります。"
+},
+
+{
+  sentence: "The picture <span class='highlight'>was painted</span> by my sister.",
+  choices: ["描いた", "描いている", "描かれている", "描かれた"],
+  correct: 3,
+  explanation: "🧩 その絵は／描かれた／私の姉（妹）によって<br><br>💬 その絵は私の姉によって描かれた。<br><br>📘「was painted」は受動態の過去形で「描かれた」という意味です。"
+}
+ ]
+  },
+
+relative: {
+    title: "📘 【必修】関係代名詞",
+    level: "basic",
+    questions: [
+
+  {
+    "sentence": "I have <span class='highlight'>a friend who lives in Osaka</span>.",
+    "choices": ["大阪に住んでいた友達", "大阪に住みそうな友達", "大阪に住んでいる友達", "大阪に住む予定の友達"],
+    "correct": 2,
+    "explanation": "🧩 私は／持っています／友達を／その人は／住んでいる／大阪に<br><br>💬 私には大阪に住んでいる友達がいる。<br><br>📘「who」は人を表す関係代名詞です。who lives in Osaka という節の主語で、節全体で直前の a friend を修飾しています。"
+  },
+  {
+    "sentence": "She knows <span class='highlight'>a boy who can swim</span> fast.",
+    "choices": ["泳げる少年", "泳いだ少年", "泳ぎたい少年", "泳げない少年"],
+    "correct": 0,
+    "explanation": "🧩 彼女は／知っている／少年を／その人は／泳ぐことができる／はやく<br><br>💬 彼女は速く泳げる少年を知っている。<br><br>📘 a boy を「who can swim fast」という節が修飾しています。「who」は節の主語なので、主格の関係代名詞です。"
+  },
+  {
+    "sentence": "This is <span class='highlight'>the teacher who helps me</span>.",
+    "choices": ["私を助けてくれた先生", "私を助けてくれる先生", "私を助けたい先生", "私に助けられた先生"],
+    "correct": 1,
+    "explanation": "🧩 こちらが／先生です／その人は／助けます／私を<br><br>💬 こちらが私を助けてくれる先生です。<br><br>📘the teacher を「who helps me」が修飾しています。helps が現在形なので「（いつも）助けてくれる」。"
+  },
+  {
+    "sentence": "This is <span class='highlight'>a dog that runs</span> very fast.",
+    "choices": ["走る犬", "走った犬", "走っている犬", "走れない犬"],
+    "correct": 0,
+    "explanation": "🧩 こちらが／その犬です／それは／走ります／とてもはやく<br><br>💬 こちらがとても速く走る犬です。<br><br>📘「that」は人以外（動物）にも使える関係代名詞です。a dogを 「that runs very fast」が説明をしています。"
+  },
+  {
+    "sentence": "I like <span class='highlight'>books that are easy to read</span>.",
+    "choices": ["読むのが難しい本", "読むのが簡単な本", "読み終わった本", "読みたい本"],
+    "correct": 1,
+    "explanation": "🧩 私は／好きです／本が／それらは／簡単だ／読むことが<br><br>💬 私は読みやすい本が好き。<br><br>📘「that」は主格の関係代名詞です。booksを「that are easy to read」が説明をしています。"
+  },
+  {
+    "sentence": "That is <span class='highlight'>a movie which makes me happy</span>.",
+    "choices": ["私が幸せにした映画", "私を幸せに見せる映画", "私を幸せにしてくれる映画", "私に幸せを見せた映画"],
+    "correct": 2,
+    "explanation": "🧩 あれが／映画です／それが／する／私を／幸せに<br><br>💬 あれは私を幸せにする映画です。<br><br>📘「which」は物を表す関係代名詞です。a movieを「which makes me happy」が説明しています。"
+  },
+  {
+    "sentence": "She is wearing <span class='highlight'>a hat that I like</span>.",
+    "choices": ["私を好きな帽子", "私が好きな帽子", "私に似ている帽子", "私が見つけた帽子"],
+    "correct": 1,
+    "explanation": "🧩 彼女は／身に着けている／帽子を／それを／私が／好き<br><br>💬 彼女は私が好きな帽子をかぶっている。<br><br>📘「that」は目的格の関係代名詞で、I like（私が好きだ）の目的語が a hat であることを示します。"
+  },
+  {
+    "sentence": "This is <span class='highlight'>the boy that I met</span> yesterday.",
+    "choices": ["私と話した男の子", "私を見た男の子", "私が呼んだ男の子", "私が出会った男の子"],
+    "correct": 3,
+    "explanation": "🧩 こちらは／少年です／その人と／私が／出会った<br><br>💬 こちらが私が昨日出会った少年です。<br><br>📘「that」は目的格の関係代名詞です。the boyを「that I met yesterday」が説明しています。"
+  },
+  {
+    "sentence": "He is <span class='highlight'>the teacher that we saw</span>.",
+    "choices": ["私たちと話した先生", "私たちを教えた先生", "私たちが見た先生", "私たちを呼んだ先生"],
+    "correct": 2,
+    "explanation": "🧩 彼は／先生です／その人を／私達が／見た<br><br>💬 彼は私たちが見た先生です。<br><br>📘the teacher を「that we saw」が 修飾しています。thatはwe saw（私たちが見た）の目的語です。"
+  }
+]
+  },
+
+
+
+
+
 modal02: {
-    title: "📗 助動詞02",
+    title: "📗 助動詞【２】",
     level: "normal",
     questions: [
 {
@@ -732,7 +867,7 @@ modal02: {
 
 
 pre02: {
-    title: "📗 前置詞02",
+    title: "📗 前置詞【２】",
     level: "normal",
     questions: [
 {
@@ -788,7 +923,7 @@ pre02: {
 
 
 pronoun02: {
-  title: "📗 代名詞02",
+  title: "📗 代名詞【２】",
   level: "normal",
   questions: [
 {
@@ -886,7 +1021,7 @@ pronoun02: {
 
 
  pronoun03: {
-    title: "📗 代名詞03",
+    title: "📗 代名詞【３】",
     level: "normal",
     questions: [
 
@@ -985,7 +1120,7 @@ pronoun02: {
 
 
 conjunction02: {
-    title: "📗 接続詞02",
+    title: "📗 接続詞【２】",
     level: "normal",
     questions: [
 {
@@ -1038,9 +1173,9 @@ conjunction02: {
 },
 {
   sentence: "I know <span class='highlight'>that</span> she is kind.",
-  choices: ["～するとき", "～ということ", "もし～なら", "だから"],
+  choices: ["～するとき", "～ということを", "もし～なら", "だから"],
   correct: 1,
-  explanation: "🧩 私は／知っている／～ということを／彼女が／親切だ<br><br>💬 私は彼女が親切だということを知っています。<br><br>📘「that」は名詞節を導き、「～ということ」という意味になります。"
+  explanation: "🧩 私は／知っている／～ということを／彼女は／親切だ<br><br>💬 私は彼女が親切だということを知っています。<br><br>📘「that」は名詞節を導き、「～ということ」という意味になります。"
 },
 {
   sentence: "<span class='highlight'>If</span> it is sunny tomorrow, we will play soccer.",
@@ -1060,14 +1195,20 @@ conjunction02: {
 
 
 infinitive02: {
-    title: "📗 不定詞02",
+    title: "📗 不定詞【２】",
     level: "normal",
     questions: [
 {
   sentence: "She bought some eggs <span class='highlight'>to make a cake</span>.",
   choices: ["ケーキを作るために", "ケーキを作ることを", "ケーキを作って", "ケーキを作るべき"],
   correct: 0,
-  explanation: "🧩 彼女は／買った／卵を／作るために／ケーキを<br><br>💬 彼女はケーキを作るために卵をいくつか買った。<br><br>📘「to make」は「作るために」という意味で、目的を表す副詞的用法です。"
+  explanation: "🧩 彼女は／買った／いくつかの／卵を／作るために／ケーキを<br><br>💬 彼女はケーキを作るために卵をいくつか買った。<br><br>📘「to make」は「作るために」という意味で、目的を表す副詞的用法です。"
+},
+{
+  sentence: "She enjoys <span class='highlight'>playing</span> tennis.",
+  choices: ["することを", "している", "するために", "するための"],
+  correct: 0,
+  explanation: "🧩 彼女は／楽しみます／することを／テニスを<br><br>💬 彼女はテニスをして楽しみます。<br><br>📘「playing tennis」は動名詞で、「enjoys」の目的語になり、「テニスをすることを」という意味になります。「enjoy」の目的語に「不定詞」は使われません。"
 },
 {
   sentence: "My dream is <span class='highlight'>to be</span> a tennis player.",
@@ -1088,6 +1229,12 @@ infinitive02: {
   explanation: "🧩 私は／持っている／1つのことを／言うべき／それについて<br><br>💬 それについて一つ言いたいことがある。<br><br>📘「to say」は「言うべき」という意味で、「thing」を説明する形容詞的用法です。"
 },
 {
+  sentence: "<span class='highlight'>Reading</span> books is fun.",
+  choices: ["読むために", "読んで", "読むことは", "読むための"],
+  correct: 2,
+  explanation: "🧩 読むことは／本を／楽しい。<br><br>💬 本を読むことは楽しい。<br><br>📘「Reading books」は動名詞が主語になり、「本を読むことは」という意味になります。"
+},
+{
   sentence: "I am sad <span class='highlight'>to hear that</span>.",
   choices: ["それを聞いて", "それを聞くことを", "それを聞くために", "それを聞くべき"],
   correct: 0,
@@ -1103,25 +1250,13 @@ infinitive02: {
   sentence: "<span class='highlight'>To become</span> a pilot, he studies English hard.",
   choices: ["～になることを", "～になるために", "～になって", "～になることは"],
   correct: 1,
-  explanation: "🧩 ～になるために／パイロット／彼は／勉強している／英語を／懸命に<br><br>💬 パイロットになるために、彼は一生懸命に英語を勉強している。<br><br>📘 「to become」は「なるために」という意味で、目的を表す副詞的用法です。"
+  explanation: "🧩 なるために／パイロットに／彼は／勉強している／英語を／懸命に<br><br>💬 パイロットになるために、彼は英語を一生懸命勉強している。<br><br>📘 「to become」は「なるために」という意味で、目的を表す副詞的用法です。"
 },
 {
   sentence: "You need <span class='highlight'>to get up</span> early every morning.",
   choices: ["起きるために", "起きて", "起きるべき", "起きることを"],
   correct: 3,
   explanation: "🧩 あなたは／必要としている／起きることを／早く／毎朝<br><br>💬 あなたは毎朝早起きする必要がある。<br><br>📘「to get up」は「起きることを」という意味で、「need」 の目的語になる名詞的用法です。"
-},
-{
-  sentence: "<span class='highlight'>Reading</span> books is fun.",
-  choices: ["読むために", "読んで", "読むことは", "読むための"],
-  correct: 2,
-  explanation: "🧩 読むことは／本を／楽しい。<br><br>💬 本を読むことは楽しい。<br><br>📘「Reading books」は動名詞が主語になり、「本を読むことは」という意味になります。"
-},
-{
-  sentence: "<span class='highlight'>Playing</span> soccer is exciting.",
-  choices: ["するための", "することは", "して", "するために"],
-  correct: 1,
-  explanation: "🧩 することは／サッカーを／わくわくする。<br><br>💬 サッカーをすることはワクワクする。<br><br>📘「Playing soccer」は動名詞が主語になり、「サッカーをすることは」という意味になります。"
 },
 {
   sentence: "<span class='highlight'>Learning</span> English is important.",
@@ -1136,10 +1271,10 @@ infinitive02: {
   explanation: "🧩 私は／好んでいる／読むことを／本を<br><br>💬 私は読書が好きです。<br><br>📘「reading books」は動名詞で、「like」の目的語になり、「本を読むことを」という意味になります。"
 },
 {
-  sentence: "She enjoys <span class='highlight'>playing</span> tennis.",
-  choices: ["することを", "している", "するために", "するための"],
-  correct: 0,
-  explanation: "🧩 彼女は／楽しみます／することを／テニスを<br><br>💬 彼女はテニスをして楽しみます。<br><br>📘「playing tennis」は動名詞で、「enjoys」の目的語になり、「テニスをすることを」という意味になります。「enjoy」の目的語に「不定詞」は使われません。"
+  sentence: "<span class='highlight'>Playing</span> soccer is exciting.",
+  choices: ["するための", "することは", "して", "するために"],
+  correct: 1,
+  explanation: "🧩 することは／サッカーを／わくわくする。<br><br>💬 サッカーをすることはワクワクする。<br><br>📘「Playing soccer」は動名詞が主語になり、「サッカーをすることは」という意味になります。"
 },
 {
   sentence: "We started <span class='highlight'>studying</span> English.",
@@ -1151,72 +1286,12 @@ infinitive02: {
   },
 
 
-passive: {
-    title: "📗 受動態",
+
+passive02: {
+    title: "📗 受動態【２】",
     level: "normal",
     questions: [
-{
-  sentence: "This book <span class='highlight'>is read</span> by many students.",
-  choices: ["読んでいる", "読んでしまった", "読まれていた", "読まれている"],
-  correct: 3,
-  explanation: "🧩 この本は／読まれている／多くの学生によって<br><br>💬 この本は多くの学生によって読まれている。<br><br>📘「is read」は「be + 過去分詞」の受動態（現在形）で「～される／～されている」という意味になります。"
-},
 
-{
-  sentence: "The room <span class='highlight'>is cleaned</span> every day.",
-  choices: ["掃除した", "掃除されていた", "掃除している", "掃除されている"],
-  correct: 3,
-  explanation: "🧩 その部屋は／掃除されている／毎日<br><br>💬 その部屋は毎日掃除されています。<br><br>📘「is cleaned」は受動態の現在形で「～されている」という意味です。習慣的に行われる動作にもよく使われます。"
-},
-
-{
-  sentence: "English <span class='highlight'>is spoken</span> in many countries.",
-  choices: ["話している", "話された", "話されている", "話していた"],
-  correct: 2,
-  explanation: "🧩 英語は／話されている／多くの国で<br><br>💬 英語は多くの国で話されている。<br><br>📘「is spoken」は受動態の現在形で「～で話されている」という意味を表します。"
-},
-
-{
-  sentence: "The window <span class='highlight'>was broken</span> by Tom.",
-  choices: ["壊した", "壊されている", "壊している", "壊された"],
-  correct: 3,
-  explanation: "🧩 その窓は／壊された／トムによって<br><br>💬 その窓はトムによって壊された。<br><br>📘「was broken」は受動態の過去形で「壊された」という意味です。「by～」は「～によって」と誰が行ったかを表します"
-},
-
-{
-  sentence: "The cake <span class='highlight'>was made</span> by my mother.",
-  choices: ["作られている", "作った", "作っている", "作られた"],
-  correct: 3,
-  explanation: "🧩 そのケーキは／作られた／私の母によって<br><br>💬 そのケーキは母によって作られた。<br><br>📘「was made」は受動態の過去形で「作られた」という意味になります。"
-},
-
-{
-  sentence: "The game <span class='highlight'>was played</span> after school.",
-  choices: ["行われている", "行った", "行っている", "行われた"],
-  correct: 3,
-  explanation: "🧩 その試合は／行われた／放課後に<br><br>💬 その試合は、放課後に行われた。<br><br>📘「was played」は受動態の過去形で「行われた」という意味です。「after school」で「放課後」"
-},
-
-{
-  sentence: "The song <span class='highlight'>is loved</span> by many people.",
-  choices: ["愛している", "愛されている", "愛された", "愛していた"],
-  correct: 1,
-  explanation: "🧩 その歌は／愛されている／多くの人に<br><br>💬 その歌はたくさんの人に愛されている。<br><br>📘「is loved」は受動態現在形で「愛されている」という意味です。"
-},
-
-{
-  sentence: "The letter <span class='highlight'>was written</span> by Ken.",
-  choices: ["書いている", "書かれている", "書いていた", "書かれた"],
-  correct: 3,
-  explanation: "🧩 その手紙は／書かれた／ケンによって<br><br>💬 その手紙はケンによって書かれた。<br><br>📘「was written」は受動態の過去形で「書かれた」という意味になります。"
-},
-
-{
-  sentence: "The picture <span class='highlight'>was painted</span> by my sister.",
-  choices: ["描いた", "描いている", "描かれている", "描かれた"],
-  correct: 3,
-  explanation: "🧩 その絵は／描かれた／私の姉（妹）によって<br><br>💬 その絵は私の姉によって描かれた。<br><br>📘「was painted」は受動態の過去形で「描かれた」という意味です。"
-},
 {
   sentence: "This desk <span class='highlight'>is made of</span> wood.",
   choices: ["作った", "作られていた", "作っている", "作られている"],
@@ -1365,7 +1440,7 @@ indirect: {
 },
 {
   sentence: "I don't know <span class='highlight'>why he is late</span>.",
-  choices: ["どこで遅れているのか彼が", "なぜ遅れているのか彼が", "いつ遅れているのか彼が", "だれが遅れているのか"],
+  choices: ["どこで彼が遅れているのか", "なぜ彼が遅れているのか", "いつ彼が遅れているのか", "だれが遅れているのか"],
   correct: 1,
   explanation: "🧩 私は／知らない／なぜ／彼が／遅れているのか<br><br>💬 彼がなぜ遅れているのかわからない。<br><br>📘「why」は理由を表し、彼が遅れている理由をしらない、という意味になります。"
 }
@@ -1373,65 +1448,12 @@ indirect: {
   },
 
 
-relative: {
-    title: "📗 関係代名詞",
+
+relative02: {
+    title: "📗 関係代名詞【２】",
     level: "normal",
     questions: [
 
-  {
-    "sentence": "I have <span class='highlight'>a friend who lives in Osaka</span>.",
-    "choices": ["大阪に住んでいた友達", "大阪に住みそうな友達", "大阪に住んでいる友達", "大阪に住む予定の友達"],
-    "correct": 2,
-    "explanation": "🧩 私は／持っています／友達を／その人は／住んでいる／大阪に<br><br>💬 私には大阪に住んでいる友達がいる。<br><br>📘「who」は人を表す関係代名詞です。who lives in Osaka という節の主語で、節全体で直前の a friend を修飾しています。"
-  },
-  {
-    "sentence": "She knows <span class='highlight'>a boy who can swim</span> fast.",
-    "choices": ["泳げる少年", "泳いだ少年", "泳ぎたい少年", "泳げない少年"],
-    "correct": 0,
-    "explanation": "🧩 彼女は／知っている／少年を／その人は／泳ぐことができる／はやく<br><br>💬 彼女は速く泳げる少年を知っている。<br><br>📘 a boy を「who can swim fast」という節が修飾しています。「who」は節の主語なので、主格の関係代名詞です。"
-  },
-  {
-    "sentence": "This is <span class='highlight'>the teacher who helps me</span>.",
-    "choices": ["私を助けてくれた先生", "私を助けてくれる先生", "私を助けたい先生", "私に助けられた先生"],
-    "correct": 1,
-    "explanation": "🧩 こちらが／先生です／その人が／助けます／私を<br><br>💬 こちらが私を助けてくれる先生です。<br><br>📘the teacher を「who helps me」が修飾しています。helps が現在形なので「（いつも）助けてくれる」。"
-  },
-  {
-    "sentence": "This is <span class='highlight'>a dog that runs</span> very fast.",
-    "choices": ["走る犬", "走った犬", "走っている犬", "走れない犬"],
-    "correct": 0,
-    "explanation": "🧩 こちらが／その犬です／それは／走ります／とてもはやく<br><br>💬 こちらがとても速く走る犬です。<br><br>📘「that」は人以外（動物）にも使える関係代名詞です。a dogを 「that runs very fast」が説明をしています。"
-  },
-  {
-    "sentence": "I like <span class='highlight'>books that are easy to read</span>.",
-    "choices": ["読むのが難しい本", "読むのが簡単な本", "読み終わった本", "読みたい本"],
-    "correct": 1,
-    "explanation": "🧩 私は／好きです／本が／それらは／読みやすいく<br><br>💬 私は読みやすい本が好き。<br><br>📘「that」は主格の関係代名詞です。booksを「that are easy to read」が説明をしています。"
-  },
-  {
-    "sentence": "That is <span class='highlight'>a movie which makes me happy</span>.",
-    "choices": ["私が幸せにした映画", "私を幸せに見せる映画", "私を幸せにしてくれる映画", "私に幸せを見せた映画"],
-    "correct": 2,
-    "explanation": "🧩 あれが／映画です／それが／私を／幸せにする<br><br>💬 あれは私を幸せにする映画です。<br><br>📘「which」は物を表す関係代名詞です。a movieを「which makes me happy」が説明しています。"
-  },
-  {
-    "sentence": "She has <span class='highlight'>a hat that I like</span>.",
-    "choices": ["私を好きな帽子", "私が好きな帽子", "私に似ている帽子", "私が見つけた帽子"],
-    "correct": 1,
-    "explanation": "🧩 彼女は／持っている／帽子を／それを／私が／好き<br><br>💬 彼女は私が好きな帽子を持っている。<br><br>📘「that」は目的格の関係代名詞で、I like（私が好きだ）の目的語が a hat であることを示します。"
-  },
-  {
-    "sentence": "This is <span class='highlight'>the boy that I met</span> yesterday.",
-    "choices": ["私と話した男の子", "私を見た男の子", "私が呼んだ男の子", "私が出会った男の子"],
-    "correct": 3,
-    "explanation": "🧩 こちらは／少年です／その人と／私が／出会った<br><br>💬 こちらが私が昨日出会った少年です。<br><br>📘「that」は目的格の関係代名詞です。the boyを「that I met yesterday」が説明しています。"
-  },
-  {
-    "sentence": "He is <span class='highlight'>the teacher that we saw</span>.",
-    "choices": ["私たちと話した先生", "私たちを教えた先生", "私たちが見た先生", "私たちを呼んだ先生"],
-    "correct": 2,
-    "explanation": "🧩 彼は／先生です／その人を／私達が／見た<br><br>💬 彼は私たちが見た先生です。<br><br>📘the teacher を「that we saw」が 修飾しています。thatはwe saw（私たちが見た）の目的語です。"
-  },
   {
     "sentence": "This is <span class='highlight'>the book that I bought</span>.",
     "choices": ["私が書いた本", "私が借りた本", "私が持っている本", "私が買った本"],
@@ -1445,7 +1467,7 @@ relative: {
     "explanation": "🧩 あれが／そのゲームです／それを／私達が／した／先週<br><br>💬 あれは先週、私たちがしたゲームです。<br><br>📘 the game を「which we played」が修飾しています。which は we played（私たちがした）の目的語です。"
   },
   {
-    "sentence": "I found <span class='highlight'>a key that I lost</span>.",
+    "sentence": "I found <span class='highlight'>the key that I lost</span>.",
     "choices": ["私が見つけた鍵", "私がなくした鍵", "私が使った鍵", "私が持っていた鍵"],
     "correct": 1,
     "explanation": "🧩 私は／見つけた／鍵を／それを／私が／失くした<br><br>💬 私は私がなくしたカギをみつけた。<br><br>📘 a key を「that I lost」が修飾しています。that は I lost（私がなくした）の目的語です。"
@@ -1457,28 +1479,28 @@ relative: {
     "explanation": "🧩 私は／持っている／友達を／その人のお父さんは／医者である<br><br>💬 私には父親が医者である友達がいる。<br><br>📘「whose」は所有格の関係代名詞で、「a friend whose father」で、その友達の父親という意味を表します。"
   },
   {
-    "sentence": "She met <span class='highlight'>a girl whose bag was red</span>.",
+    "sentence": "He met <span class='highlight'>a girl whose bag was red</span>.",
     "choices": ["カバンを持っている赤い少女", "赤い少女が持っているカバン", "青い少女が持っているカバン", "カバンが赤色の女の子"],
     "correct": 3,
-    "explanation": "🧩 彼女は／出会った／少女に／その人のカバンが／赤かった<br><br>💬 彼女は赤いカバンの少女に出会った。<br><br>📘「whose」は所有格の関係代名詞で、「a girl whose bag」は「その女の子のカバン」という意味。"
+    "explanation": "🧩 彼は／出会った／少女に／その人のカバンは／赤かった<br><br>💬 彼は赤いカバンを持っている少女に出会った。<br><br>📘「whose」は所有格の関係代名詞で、「whose bag」は「その女の子のカバン」という意味。"
   },
   {
-    "sentence": "That is <span class='highlight'>the boy whose bike is new</span>.",
-    "choices": ["自転車が新しい少年", "古い自転車を買った少年", "自転車をなくした少年", "自転車が中古の少年"],
-    "correct": 0,
-    "explanation": "🧩 あれは／少年です／その子の自転車は／新しい<br><br>💬 あれは新しい自転車に乗っている男の子です。<br><br>📘「whose bike」は「その男の子の自転車」という所有の関係を表しています。"
+    "sentence": "I know <span class='highlight'>the boy whose bike is new</span>.",
+    "choices": ["きれいな自転車の少年", "自転車をなくした少年", "新しい自転車の少年", "古い自転車を買った少年"],
+    "correct": 2,
+    "explanation": "🧩 私は／知っている／少年を／その子の自転車は／新しい<br><br>💬 私は新しい自転車に乗っている男の子を知っている。<br><br>📘「whose bike」は「その男の子の自転車」という所有の関係を表しています。"
   },
   {
     "sentence": "I saw <span class='highlight'>a house whose roof is blue</span>.",
     "choices": ["青い家の窓", "窓が赤い家", "赤い家の屋根", "屋根が青い家"],
     "correct": 3,
-    "explanation": "🧩 私は／見た／家を／その家の屋根が／青い<br><br>💬 私は青い屋根の家を見た。<br><br>📘「a house whose roof」は「その家の屋根」という所有の関係を表します。"
+    "explanation": "🧩 私は／見た／家を／その家の屋根は／青い<br><br>💬 私は青い屋根の家を見た。<br><br>📘「whose roof」は「その家の屋根」という所有の関係を表します。"
   },
   {
     "sentence": "This is <span class='highlight'>a tree whose leaves are big</span>.",
     "choices": ["巨木の葉", "葉が大きい木", "葉が少ない木", "葉がたくさんある木"],
     "correct": 1,
-    "explanation": "🧩 これは／木です／その木の葉は／大きい<br><br>💬 これは、葉の大きな木です。<br><br>📘「whose tree」は「その木の葉」がという所有の関係を表します。"
+    "explanation": "🧩 これは／木です／その木の葉は／大きい<br><br>💬 これは、葉の大きな木です。<br><br>📘「whose tree」は「その木の葉」という所有の関係を表します。"
   },
   {
     "sentence": "That is <span class='highlight'>a school whose students are kind</span>.",
@@ -1528,7 +1550,7 @@ clauseparticiple: {
   sentence: "I read the book <span class='highlight'>written in English</span>.",
   choices: ["英語で書かれた", "英語が書いている", "英語を書く", "英語に書かれた"],
   correct: 0,
-  explanation: "🧩 私は／読んだ／本を／英語で書かれた<br><br>💬 私は英語で書かれた本を読んだ。<br><br>📘「the book」を「written in English」が修飾し、「英語で書かれた本」という意味。「written」は「write」の過去分詞です。"
+  explanation: "🧩 私は／読んだ／本を／書かれた／英語で<br><br>💬 私は英語で書かれた本を読んだ。<br><br>📘「the book」を「written in English」が修飾し、「英語で書かれた本」という意味。「written」は「write」の過去分詞です。"
 },
 {
   sentence: "She ate the cake <span class='highlight'>made</span> by her mother.",
@@ -1589,7 +1611,7 @@ clauseparticiple: {
 
 
 verb02: {
-    title: "📗 動詞02",
+    title: "📗 動詞【２】",
     level: "normal",
     questions: [
 
@@ -1652,7 +1674,7 @@ verb02: {
 
 
 adjective02: {
-    title: "📗 形容詞02",
+    title: "📗 形容詞【２】",
     level: "normal",
     questions: [
 
@@ -1703,7 +1725,7 @@ adjective02: {
 
 
 adverb02: {
-    title: "📗 副詞02",
+    title: "📗 副詞【２】",
     level: "normal",
     questions: [
 
@@ -1856,8 +1878,6 @@ idiom: {
 }
  ]
   }
-
-
 
 }
 
@@ -2071,7 +2091,7 @@ function load() {
 }
 
 
-const MAX_STARS = 24; // 単元数が追加されたら増やす
+const MAX_STARS = 26; // 単元数が追加されたら増やす
 
 
 
@@ -2317,7 +2337,7 @@ function startChain(mode){
   let questions = [];
 
   if(mode==="basic"){
-    questions = getAllQuestions().slice(0,99);
+    questions = getAllQuestions().slice(0,117);
   }else if(mode==="weak"){
     questions = Object.values(state.weakQuestions)
   .map(w => w?.data)
