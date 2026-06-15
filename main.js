@@ -693,8 +693,8 @@ passive: {
 
 {
   sentence: "The room <span class='highlight'>is cleaned</span> every day.",
-  choices: ["掃除した", "掃除されていた", "掃除している", "掃除されている"],
-  correct: 3,
+  choices: ["掃除した", "掃除されている", "掃除している", "掃除されていた"],
+  correct: 1,
   explanation: "🧩 その部屋は／掃除されている／毎日<br><br>💬 その部屋は毎日掃除されています。<br><br>📘「is cleaned」は受動態の現在形で「～されている」という意味です。習慣的に行われる動作にもよく使われます。"
 },
 
@@ -714,15 +714,15 @@ passive: {
 
 {
   sentence: "The cake <span class='highlight'>was made</span> by my mother.",
-  choices: ["作られている", "作った", "作っている", "作られた"],
-  correct: 3,
+  choices: ["作られている", "作った", "作られた", "作っている"],
+  correct: 2,
   explanation: "🧩 そのケーキは／作られた／私の母によって<br><br>💬 そのケーキは母によって作られた。<br><br>📘「was made」は受動態の過去形で「作られた」という意味になります。"
 },
 
 {
   sentence: "The game <span class='highlight'>was played</span> after school.",
-  choices: ["行われている", "行った", "行っている", "行われた"],
-  correct: 3,
+  choices: ["行われた", "行った", "行っている", "行われている"],
+  correct: 0,
   explanation: "🧩 その試合は／行われた／放課後に<br><br>💬 その試合は、放課後に行われた。<br><br>📘「was played」は受動態の過去形で「行われた」という意味です。「after school」で「放課後」"
 },
 
@@ -742,8 +742,8 @@ passive: {
 
 {
   sentence: "The picture <span class='highlight'>was painted</span> by my sister.",
-  choices: ["描いた", "描いている", "描かれている", "描かれた"],
-  correct: 3,
+  choices: ["描いた", "描いている", "描かれた", "描かれている"],
+  correct: 2,
   explanation: "🧩 その絵は／描かれた／私の姉（妹）によって<br><br>💬 その絵は私の姉によって描かれた。<br><br>📘「was painted」は受動態の過去形で「描かれた」という意味です。"
 }
  ]
@@ -1374,7 +1374,7 @@ indirect: {
 },
 {
   sentence: "Can you tell me <span class='highlight'>how you make this</span>?",
-  choices: ["なぜあなたがこれを作るのか", "どこであなたがこれを作るのか", "どのようにあなたがこれを作るのか", "いつあなたがこれを作るのか"],
+  choices: ["あなたがなぜこれを作るのか", "あなたがどこでこれを作るのか", "あなたがどのようにこれを作るのか", "あなたがいつこれを作るのか"],
   correct: 2,
   explanation: "🧩 教えてくれますか／私に／どのように／あなたは／作るのか／これを<br><br>💬 これの作り方を教えていただけますか。<br><br>📘「how」は方法を表し、作る方法を教えてほしいという意味になります。"
 },
@@ -1392,13 +1392,13 @@ indirect: {
 },
 {
   sentence: "Can you tell me <span class='highlight'>who that boy is</span>?",
-  choices: ["だれなのかあの少年が", "どこにあの少年がいるのか", "なぜあの少年がいるのか", "いつあの少年が来たのか"],
+  choices: ["あの少年がだれなのか", "どこにあの少年がいるのか", "なぜあの少年がいるのか", "いつあの少年が来たのか"],
   correct: 0,
   explanation: "🧩 教えてくれますか／私に／誰なのか／あの少年が<br><br>💬 あの少年が誰なのか教えてくれませんか。<br><br>📘「who」は人を表し、「だれなのか」教えてほしい、という意味になります。"
 },
 {
   sentence: "I know <span class='highlight'>which color you like</span>.",
-  choices: ["どこの色をあなたが好きなのか", "どの色をあなたが好きなのか", "なぜその色をあなたが好きなのか", "いつからその色をあなたが好きなのか"],
+  choices: ["あなたがどこの色を好きなのか", "あなたがどの色を好きなのか", "あなたがなぜその色を好きなのか", "あなたがいつからその色を好きなのか"],
   correct: 1,
   explanation: "🧩 私は／知っている／どの色を／あなたが／好んでいるか<br><br>💬 あなたは何色が好きか、知ってるよ。<br><br>📘「which」は選択を表し、「which color」で「どの色」という意味になります。"
 },
@@ -1410,13 +1410,13 @@ indirect: {
 },
 {
   sentence: "She asked me <span class='highlight'>why you looked sad</span>.",
-  choices: ["なぜあなたが悲しそうだったのか", "どこであなたが悲しそうだったのか", "いつあなたが悲しそうだったのか", "だれが悲しそうだったのか"],
+  choices: ["あなたがなぜ悲しそうだったのか", "あなたがどこで悲しそうだったのか", "あなたがいつ悲しそうだったのか", "だれが悲しそうだったのか"],
   correct: 0,
   explanation: "🧩 彼女は／たずねた／私に／なぜ／あなたが／悲しそうだったのか<br><br>💬 なぜあなたが悲しそうだったのかと、彼女は私に聞いた。<br><br>📘「why」は理由を表し、「なぜ〜か」という意味になります。"
 },
 {
   sentence: "I know <span class='highlight'>who she is</span>.",
-  choices: ["彼女がだれなのか", "どこに彼女がいるのか", "なぜ彼女がいるのか", "いつ彼女が来たのか"],
+  choices: ["彼女がだれなのか", "彼女がどこにいるのか", "彼女がなぜいるのか", "彼女がいつ来たのか"],
   correct: 0,
   explanation: "🧩 私は／知っている／誰なのか／彼女が<br><br>💬 彼女が誰なのかを私は知っている。<br><br>📘「who」は人を表し、「だれなのか」という意味になります。"
 },
@@ -2590,8 +2590,7 @@ function renderStudyMenu(root) {
       <img src="images/cw01.png" class="mode-cat">
     </div>
 
-    <div class="note">獲得した⭐は右クリック、または長押しで解除できます</div>
-
+    
     <div class="category-list">
       ${Object.keys(categories)
         .filter(key => categories[key].level === state.level)
@@ -2609,7 +2608,10 @@ function renderStudyMenu(root) {
       }).join("")}
     </div>
 
-    <button class="category-btn" id="resetStarsBtn">⭐ リセット<div>（必修、標準のすべての⭐がリセットされます）</div></button>
+     <div class="note">⬆ 単元ごとの⭐を[長押し][右クリック]すると解除できます</div>
+
+    <button class="category-btn" id="resetStarsBtn">⭐全解除ボタン</button>
+    <div class="note02">⬆ 必修、標準のすべての⭐が解除されます</div>
    
     ${getConfirmDialogHtml()}
 
@@ -3142,10 +3144,10 @@ function renderStudyResult(root) {
     
 
     <div class="bottom-nav">
-    <button id="modeBtn" class="mode-btn">🔙 メニューへ</button>
+    <button id="modeBtn" class="mode-btn">🔙<div>メニューへ</button>
     <button id="menuBtn" class="mode-btn">📘📗<div>分野選択へ</div></button>
     <button id="weakChainBtn" class="mode-btn">
-        💥 弱点克服へ
+        💥<div>弱点克服へ
       </button>
     
     </div>
@@ -3405,10 +3407,7 @@ function renderChainQuestion(root){
       ).join("")}
     </div>
 
-    ${chain.showFeedback
-      ? `<div class="feedback-correct">✅ 正解！</div>`
-      : ""
-    }
+    
 
     ${chain.answered && !chain.answered.isCorrect
       ? `<p class="wrong-text">不正解</p>
@@ -3524,95 +3523,92 @@ buttons.forEach((b,i)=>{
       const isCorrect =
         selected === Number(q.correct);
 
-      if(isCorrect){
+          if(isCorrect){
 
         btn.classList.add("correct");
-        
-
         chain.answered = {selected,isCorrect:true};
-
         chain.correctStreak++;
-
-
-if (
-  chain.correctStreak > chain.startTodayBest &&
-  !chain.todayNewRecord
-) {
-  chain.todayNewRecord = true;
-
-  chain.showTodayRecordUpdate = true;
-  playSound("today");
-  render();
-
-  setTimeout(()=>{
-    chain.showTodayRecordUpdate = false;
-     
-    render();
-  }, 800);
-}
-   
 
         if(chain.mode==="weak"){
           successWeakQuestion(q);
         }
 
-        chain.maxStreak =
-          Math.max(chain.maxStreak,
-                   chain.correctStreak);
+        chain.maxStreak = Math.max(chain.maxStreak, chain.correctStreak);
 
+        // --- 【重要】最高記録の比較対象を、画面表示と完全に一致させる ---
+        const currentRecord =
+          chain.mode === "basic" ? state.records.basicChain :
+          chain.mode === "weak" ? state.records.weakChain : state.records.normalChain;
+
+        // 最高記録を1超えた瞬間だけ true
         const isNewRecord =
-  chain.correctStreak >
-  chain.startMaxRecord &&
-  chain.correctStreak === chain.startMaxRecord + 1;
+          chain.correctStreak > Number(currentRecord) &&
+          chain.correctStreak === Number(currentRecord) + 1;
 
-        const isMilestone =
-          chain.correctStreak % 10 === 0;
+        // 今日の記録更新の判定（すでに1回出していたら出さない）
+        const isTodayNewRecord =
+          chain.correctStreak > Number(chain.startTodayBest) && !chain.todayNewRecord;
+
+        if (isTodayNewRecord) {
+          chain.todayNewRecord = true; // フラグを立てて次回以降スキップ
+        }
+
+        // 10連毎の達成判定
+        const isMilestone = chain.correctStreak % 10 === 0;
 
         chain.showFeedback = true;
-
         playSound("correct");
+        render(); // 正解の緑色とフィードバックを表示
 
-       
+        // --- 全ての演出を順番にコントロールする非同期関数 ---
+        const runPopups = async () => {
+          const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-        
-
-        setTimeout(()=>{
-
+          // 1. 正解フィードバックを少し見せる
+          await delay(600);
           chain.showFeedback = false;
+          render();
 
-          if(isNewRecord){
-            chain.newRecord = true;
-            playSound("record");
+          // 2. 今日の記録更新ポップアップ
+          if (isTodayNewRecord) {
+            chain.showTodayRecordUpdate = true;
+            playSound("today");
+            render();
+            await delay(1000); // 1秒間表示
+            chain.showTodayRecordUpdate = false;
             render();
           }
 
-          setTimeout(()=>{
-
-            chain.newRecord = false;
-
-            if(isMilestone){
-              chain.milestone =
-                chain.correctStreak;
-                playSound("record");
-              render();
-            }
-
-            setTimeout(()=>{
-              chain.milestone = null;
-
-             
-
-              goNext();
-
+          // 3. 最高記録更新ポップアップ （これで確実に順番が回ってきます！）
+          if (isNewRecord) {
+            chain.newRecord = true;
+            playSound("record");
             render();
+            await delay(1000); // 1秒間表示
+            chain.newRecord = false;
+            render();
+          }
 
-            },600);
+          // 4. 10連毎の達成ポップアップ
+          if (isMilestone) {
+            chain.milestone = chain.correctStreak;
+            playSound("record");
+            render();
+            await delay(1000); // 1秒間表示
+            chain.milestone = null;
+            render();
+          }
 
-          },400);
+          // 全てのポップアップ演出が終わったら次の問題へ
+          goNext();
+          render();
+        };
 
-        },200);
+        // 演出を開始
+        runPopups();
 
       }else{
+
 
         btn.classList.add("wrong");
 
