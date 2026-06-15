@@ -608,10 +608,14 @@ box-shadow: 0 0 14px rgba(246, 196, 83, 0.7);
 }
 
 .note {
-  font-size: 12px;
+  font-size: 0.7rem;
+  margin-top: 5px;
+   margin-bottom: 25px;
 }
 
-
+.note02 {
+  font-size: 0.7rem;
+}
 
 .weak-list{
   margin-top:20px;
@@ -1150,4 +1154,5 @@ box-shadow: 0 0 14px rgba(246, 196, 83, 0.6);
   cursor: pointer;
   transition: all 0.2s ease;
 }
+
 
