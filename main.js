@@ -152,6 +152,7 @@ modal: {
  ]
   },
 
+
 pre01: {
     title: "📘 【必修】前置詞",
     level: "basic", 
@@ -303,7 +304,7 @@ Que: {
   sentence: "<span class='highlight'>Who</span> is your best friend?",
   choices: ["だれ", "どこに", "いつ", "何を"],
   correct: 0,
-  explanation: "🧩 だれ／あなたのいちばんの友だちは<br><br>💬 あなたの親友は誰ですか。<br><br>📘「Who」 は「だれ」という意味の疑問代名詞で、この例文では補語になります。"
+  explanation: "🧩 だれですか／あなたのいちばんの友だちは<br><br>💬 あなたの親友は誰ですか。<br><br>📘「Who」 は「だれ」という意味の疑問代名詞で、この例文では補語になります。"
 },
 {
   sentence: "<span class='highlight'>What</span> do you like?",
@@ -357,9 +358,9 @@ conjunction: {
     questions: [
 {
   sentence: "<span class='highlight'>When</span> I got home, it was raining.",
-  choices: ["家にかえるまで", "家に帰って", "もし家に帰ったら", "家に帰ったとき"],
+  choices: ["～まで", "～して", "もし～したら", "～するとき"],
   correct: 3,
-  explanation: "🧩 私が家に帰ったとき／雨が降っていた<br><br>💬 私が家に着いたとき、雨が降っていました。<br><br>📘 「when」は「～するとき」という意味です。"
+  explanation: "🧩 ～するとき／私が／帰った／家に／雨が降っていた<br><br>💬 私が家に着いたとき、雨が降っていました。<br><br>📘 「when」は「～するとき」という意味です。"
 },
 {
   sentence: "I like math, <span class='highlight'>but</span> I don't like science.",
@@ -369,21 +370,21 @@ conjunction: {
 },
 {
   sentence: "I play soccer <span class='highlight'>and</span> tennis.",
-  choices: ["または", "しかし", "そして", "だから"],
+  choices: ["または", "しかし", "〇〇と△△", "だから"],
   correct: 2,
-  explanation: "🧩 私は／します／サッカーとテニスを<br><br>💬 私はサッカーとテニスをする。<br><br>📘 「and」は「傷して」という意味で語と語を結びます。"
+  explanation: "🧩 私は／します／サッカーとテニスを<br><br>💬 私はサッカーとテニスをする。<br><br>📘 「and」は「〇〇と△△／〇〇そして△△」という意味で語と語を結びます。"
 },
 {
   sentence: "Do you want tea <span class='highlight'>or</span> juice?",
-  choices: ["そして", "それとも", "しかし", "だから"],
+  choices: ["そして", "あるいは", "しかし", "だから"],
   correct: 1,
-  explanation: "🧩 あなたは／望んでいますか／お茶を／あるいはジュースを<br><br>💬 あなたはお茶とジュース、どちらがほしいですか。<br><br>📘 「or」は選択を表し、「または」という意味です。"
+  explanation: "🧩 あなたは／望んでいますか／お茶を／あるいはジュースを<br><br>💬 あなたはお茶とジュース、どちらがほしいですか。<br><br>📘 「or」は選択を表し、「または／あるいは」という意味です。"
 },
 {
   sentence: "<span class='highlight'>Both</span> Tom <span class='highlight'>and</span> Ken like music.",
-  choices: ["トムとケンどちらかが", "トムとケン両方ともが", "どちらも～ない", "しかし"],
+  choices: ["〇〇と△△どちらかが", "〇〇と△△両方が", "どちらも～ない", "しかし"],
   correct: 1,
-  explanation: "🧩 トムとケンの両方ともが／音楽が好きです<br><br>💬 トムもケンも音楽が好きだ。<br><br>📘 「both A and B」は「AもBも両方」という意味です。"
+  explanation: "🧩 トムとケンの両方が／好んでいる／音楽を<br><br>💬 トムもケンも音楽が好きだ。<br><br>📘 「both A and B」は「AもBも両方」という意味です。この例文では主語として使われています。"
 },
 {
   sentence: "Study hard, <span class='highlight'>and</span> you will pass the test.",
@@ -395,25 +396,25 @@ conjunction: {
   sentence: "I stayed home <span class='highlight'>because I was sick</span>.",
   choices: ["病気になる前に", "病気だったから", "病気だけれども", "病気の間に"],
   correct: 1,
-  explanation: "🧩 私は／家にいました／なぜなら病気だったから<br><br>💬 私は病気だったから家にいました。<br><br>📘 「because ～」は理由を表し、「なぜなら～だから」という意味です。"
+  explanation: "🧩 私は／いました／家に／なぜなら／私は／病気だった<br><br>💬 私は病気だったから家にいました。<br><br>📘 「because ～」は理由を表し、「なぜなら～だから」。"
 },
 {
   sentence: "It was very cold yesterday, <span class='highlight'>so</span> I stayed home.",
   choices: ["だから", "しかし", "～する前に", "その間に"],
   correct: 0,
-  explanation: "🧩 とても寒かった／昨日／だから／私はいた／家に<br><br>💬 昨日はとても寒かった、だから私は家にいました。<br><br>📘 「so」は結果を表し、「だから」という意味です。"
+  explanation: "🧩 とても寒かった／昨日／だから／私は／いた／家に<br><br>💬 昨日はとても寒かった、だから私は家にいました。<br><br>📘 「so」は結果を表し、「だから」という意味です。"
 },
 {
   sentence: "Brush your teeth <span class='highlight'>before you go to bed</span>.",
   choices: ["寝た後で", "寝るから", "寝る前に", "寝るけれども"],
   correct: 2,
-  explanation: "🧩 歯をみがきなさい／～する前に／あなたが／ねる<br><br>💬 寝る前に歯を磨きなさい。<br><br>📘 「before ～」は「～する前に」という意味です。"
+  explanation: "🧩 みがきなさい／歯を／～する前に／あなたが／ねる<br><br>💬 寝る前に歯を磨きなさい。<br><br>📘 「before ～」は「～する前に」という意味です。"
 },
 {
   sentence: "I did my homework <span class='highlight'>after I got home</span>.",
   choices: ["家に帰る前に", "家に帰った後で", "家に帰るから", "家に帰る間に"],
   correct: 1,
-  explanation: "🧩 私はやった／宿題を／家に帰った後で<br><br>💬 私は家に帰った後で宿題をやりました。<br><br>📘 「after ～」は「～した後で」という意味です。"
+  explanation: "🧩 私は／やった／宿題を／～した後で／私が／帰った／家へ<br><br>💬 私は家に帰った後で宿題をやりました。<br><br>📘 「after ～」は「～した後で」という意味です。"
 },
  ]
   },
@@ -749,6 +750,7 @@ passive: {
  ]
   },
 
+
 relative: {
     title: "📘 【必修】関係代名詞",
     level: "basic",
@@ -794,25 +796,22 @@ relative: {
     "sentence": "She is wearing <span class='highlight'>a hat that I like</span>.",
     "choices": ["私を好きな帽子", "私が好きな帽子", "私に似ている帽子", "私が見つけた帽子"],
     "correct": 1,
-    "explanation": "🧩 彼女は／身に着けている／帽子を／それを／私が／好き<br><br>💬 彼女は私が好きな帽子をかぶっている。<br><br>📘「that」は目的格の関係代名詞で、I like（私が好きだ）の目的語が a hat であることを示します。"
+    "explanation": "🧩 彼女は／身に着けている／帽子を／それを／私は／好んでいる<br><br>💬 彼女は私が好きな帽子をかぶっている。<br><br>📘「that」は目的格の関係代名詞で、I like（私が好きだ）の目的語が a hat であることを示します。"
   },
   {
     "sentence": "This is <span class='highlight'>the boy that I met</span> yesterday.",
     "choices": ["私と話した男の子", "私を見た男の子", "私が呼んだ男の子", "私が出会った男の子"],
     "correct": 3,
-    "explanation": "🧩 こちらは／少年です／その人と／私が／出会った<br><br>💬 こちらが私が昨日出会った少年です。<br><br>📘「that」は目的格の関係代名詞です。the boyを「that I met yesterday」が説明しています。"
+    "explanation": "🧩 こちらは／少年です／その人と／私は／出会った／昨日<br><br>💬 こちらが私が昨日出会った少年です。<br><br>📘「that」は目的格の関係代名詞です。the boyを「that I met yesterday」が説明しています。"
   },
   {
     "sentence": "He is <span class='highlight'>the teacher that we saw</span>.",
     "choices": ["私たちと話した先生", "私たちを教えた先生", "私たちが見た先生", "私たちを呼んだ先生"],
     "correct": 2,
     "explanation": "🧩 彼は／先生です／その人を／私達が／見た<br><br>💬 彼は私たちが見た先生です。<br><br>📘the teacher を「that we saw」が 修飾しています。thatはwe saw（私たちが見た）の目的語です。"
-  }
-]
+}
+ ]
   },
-
-
-
 
 
 modal02: {
@@ -939,12 +938,6 @@ pronoun02: {
   explanation: "🧩 彼の自転車は／新しい<br><br>💬 彼の自転車は新しい。<br><br>📘「His」 は3人称単数男性・所有格の人称代名詞で、「彼の」という意味で使われています。"
 },
 {
-  sentence: "<span class='highlight'>Its</span> tail is long.",
-  choices: ["それは", "それを", "それの", "それに"],
-  correct: 2,
-  explanation: "🧩 それのしっぽは／長い<br><br>💬 そのしっぽは長い。<br><br>📘「Its」 は3人称単数・所有格の人称代名詞で、「それの」という意味で使われています。"
-},
-{
   sentence: "<span class='highlight'>They</span> play soccer after school.",
   choices: ["彼女は", "彼は", "彼らに", "彼らは"],
   correct: 3,
@@ -969,22 +962,10 @@ pronoun02: {
   explanation: "🧩 その国は／有名です／それの美しい湖で<br><br>💬 その国は美しい湖で有名です。<br><br>📘「its」 は3人称単数・所有格の人称代名詞で、「それの」という意味で使われています。"
 },
 {
-  sentence: "<span class='highlight'>Her</span> dress is blue.",
-  choices: ["彼女を", "彼の", "彼女は", "彼女の"],
-  correct: 3,
-  explanation: "🧩 彼女のドレスは／青い<br><br>💬 彼女のドレスは青い。<br><br>📘「Her」 は3人称単数女性・所有格の人称代名詞で、「彼女の」という意味で使われています。"
-},
-{
   sentence: "The red bag is <span class='highlight'>ours</span>, not theirs.",
   choices: ["私たちのもの", "私たちは", "私たちに", "私たちの"],
   correct: 0,
   explanation: "🧩 その赤いかばんは／私たちのものです／彼らのものではありません<br><br>💬 その赤いカバンは私たちのもので、彼らのものではありません。<br><br>📘「ours」 は1人称複数の所有代名詞で、「私たちのもの」という意味で使われています。"
-},
-{
-  sentence: "<span class='highlight'>Their</span> house is near the park.",
-  choices: ["彼らの", "彼女の", "彼らのもの", "彼に"],
-  correct: 0,
-  explanation: "🧩 彼らの家は／あります／公園の近くに<br><br>💬 彼らの家は公園の近くにあります。<br><br>📘「Their」 は3人称複数・所有格の人称代名詞で、「彼らの」という意味で使われています。"
 },
 {
   sentence: "<span class='highlight'>Our</span> teacher tells us interesting stories.",
@@ -993,22 +974,10 @@ pronoun02: {
   explanation: "🧩 私たちの先生は／話します／私たちに／面白い話を<br><br>💬 私たちの先生は私たちに面白い話をしてくれます。<br><br>📘「Our は1人称複数・所有格の人称代名詞で、「私たちの」という意味で使われています。"
 },
 {
-  sentence: "The book is <span class='highlight'>his</span>.",
-  choices: ["彼らのもの", "彼女に", "彼のもの", "彼女の"],
-  correct: 2,
-  explanation: "🧩 その本＝彼のもの<br><br>💬 その本は彼のものです。<br><br>📘「his」 は3人称単数男性の所有代名詞で、「彼のもの」という意味で使われています。"
-},
-{
   sentence: "The pencil is <span class='highlight'>hers</span>.",
   choices: ["彼女を", "彼の", "彼に", "彼女のもの"],
   correct: 3,
   explanation: "🧩 そのえんぴつ＝彼女のもの<br><br>💬 その鉛筆は彼女のものです。<br><br>📘「hers」 は3人称単数女性の所有代名詞で、「彼女のもの」という意味で使われています。"
-},
-{
-  sentence: "The blue notebook is <span class='highlight'>mine</span>, not yours.",
-  choices: ["私のもの", "私の", "私は", "私に"],
-  correct: 0,
-  explanation: "🧩 その青いノート＝私のもの、あなたのものではない<br><br>💬 その青いノートは私のもので、あなたのものではない。<br><br>📘「mine」は1人称単数の所有代名詞で、「私のもの」という意味で使われています。"
 },
 {
   sentence: "The red bag is ours, not <span class='highlight'>theirs</span>.",
@@ -1017,14 +986,43 @@ pronoun02: {
   explanation: "🧩 その赤いかばんは／私たちのものです／彼らのものではありません<br><br>💬 その赤いカバンは私たちのもので、彼らのものではない。<br><br>📘「theirs」 は3人称複数の所有代名詞で、「彼らのもの」という意味で使われています。"
 }
  ]
-},
+  },
 
 
  pronoun03: {
     title: "📗 代名詞【３】",
     level: "normal",
     questions: [
-
+{
+  sentence: "<span class='highlight'>Its</span> tail is long.",
+  choices: ["それは", "それを", "それの", "それに"],
+  correct: 2,
+  explanation: "🧩 それのしっぽは／長い<br><br>💬 そのしっぽは長い。<br><br>📘「Its」 は3人称単数・所有格の人称代名詞で、「それの」という意味で使われています。"
+},
+{
+  sentence: "The blue notebook is <span class='highlight'>mine</span>, not yours.",
+  choices: ["私のもの", "私の", "私は", "私に"],
+  correct: 0,
+  explanation: "🧩 その青いノート＝私のもの、あなたのものではない<br><br>💬 その青いノートは私のもので、あなたのものではない。<br><br>📘「mine」は1人称単数の所有代名詞で、「私のもの」という意味で使われています。"
+},
+{
+  sentence: "<span class='highlight'>Her</span> dress is blue.",
+  choices: ["彼女を", "彼の", "彼女は", "彼女の"],
+  correct: 3,
+  explanation: "🧩 彼女のドレスは／青い<br><br>💬 彼女のドレスは青い。<br><br>📘「Her」 は3人称単数女性・所有格の人称代名詞で、「彼女の」という意味で使われています。"
+},
+{
+  sentence: "<span class='highlight'>Their</span> house is near the park.",
+  choices: ["彼らの", "彼女の", "彼らのもの", "彼に"],
+  correct: 0,
+  explanation: "🧩 彼らの家は／あります／公園の近くに<br><br>💬 彼らの家は公園の近くにあります。<br><br>📘「Their」 は3人称複数・所有格の人称代名詞で、「彼らの」という意味で使われています。"
+},
+{
+  sentence: "The book is <span class='highlight'>his</span>.",
+  choices: ["彼らのもの", "彼女に", "彼のもの", "彼女の"],
+  correct: 2,
+  explanation: "🧩 その本＝彼のもの<br><br>💬 その本は彼のものです。<br><br>📘「his」 は3人称単数男性の所有代名詞で、「彼のもの」という意味で使われています。"
+},
 {
   sentence: "This classroom is <span class='highlight'>ours</span>.",
   choices: ["私たちの", "私たちのもの", "私たちは", "私たちに"],
@@ -1049,6 +1047,20 @@ pronoun02: {
   correct: 2,
   explanation: "🧩 あれ＝私の自転車<br><br>💬 あれは私の自転車です。<br><br>📘「that」は指示代名詞で、単数を表し、「あれは」という意味で使われています。"
 },
+{
+  sentence: "They enjoyed the party <span class='highlight'>themselves</span>.",
+  choices: ["彼らのもの", "彼らを", "彼らに", "彼ら自身で"],
+  correct: 3,
+  explanation: "🧩 彼らは／楽しんだ／そのパーティーを／彼ら自身で<br><br>💬 彼ら自身もパーティーを楽しんだ。<br><br>📘「themselves」は3人称複数の再帰代名詞で、「彼ら自身で」という意味で使われています。"
+}
+ ]
+  },
+
+
+pronoun04: {
+    title: "📗 代名詞【４】",
+    level: "normal",
+    questions: [
 {
   sentence: "<span class='highlight'>That</span> bike is new.",
   choices: ["あれに", "あの", "あれは", "あれを"],
@@ -1108,16 +1120,9 @@ pronoun02: {
   choices: ["私たちを", "私たち自身で", "私たちのもの", "私たちに"],
   correct: 1,
   explanation: "🧩 私たちは／建てた／その家を／私たち自身で<br><br>💬 私たちはその家を自分たちで建てた。<br><br>📘「by ourselves」は1人称複数の再帰代名詞で、「私たち自身で」という意味で使われています。"
-},
-{
-  sentence: "They enjoyed the party <span class='highlight'>themselves</span>.",
-  choices: ["彼らのもの", "彼らを", "彼らに", "彼ら自身で"],
-  correct: 3,
-  explanation: "🧩 彼らは／楽しんだ／そのパーティーを／彼ら自身で<br><br>💬 彼ら自身もパーティーを楽しんだ。<br><br>📘「themselves」は3人称複数の再帰代名詞で、「彼ら自身で」という意味で使われています。"
 }
  ]
   },
-
 
 conjunction02: {
     title: "📗 接続詞【２】",
@@ -1155,7 +1160,7 @@ conjunction02: {
 },
 {
   sentence: "<span class='highlight'>Neither</span> my father <span class='highlight'>nor</span> my mother is at home.",
-  choices: ["だから", "両方とも～である", "どちらか一方", "どちらも～ない"],
+  choices: ["だから", "どちらも～である", "どちらか一方", "どちらも～ない"],
   correct: 3,
   explanation: "🧩 父も母も／いない／家に<br><br>💬 父も母も家にいません。<br><br>📘「neither A nor B」は「AもBも～ない」という意味です。"
 },
@@ -1163,13 +1168,13 @@ conjunction02: {
   sentence: "You can choose <span class='highlight'>either</span> this book <span class='highlight'>or</span> that one.",
   choices: ["両方とも", "どちらも～ない", "どちらか一方", "そして"],
   correct: 2,
-  explanation: "🧩 あなたは／選ぶことができる／どちらか一方を／この本かあの本<br><br>💬 あなたはこの本かあの本のどちらか一方を選ぶことができる。<br><br>📘「either A or B」は「AかBのどちらか」という意味です。"
+  explanation: "🧩 あなたは／選ぶことができる／どちらか一方を／この本かあの本か<br><br>💬 あなたはこの本かあの本のどちらか一方を選ぶことができる。<br><br>📘「either A or B」は「AかBのどちらか」という意味です。"
 },
 {
   sentence: "He was <span class='highlight'>so</span> tired <span class='highlight'>that</span> he went to bed early.",
   choices: ["とても～なので…", "もし～なら", "～だけれども", "～するとき"],
   correct: 0,
-  explanation: "🧩 彼は／とても疲れていた／だから／彼は／寝た／早く<br><br>💬 彼はとても疲れていたから早く寝ました。<br><br>📘「so ～ that …」は「とても～なので…」という結果を表します。"
+  explanation: "🧩 彼は／とても／疲れていた／だから／彼は／寝た／早く<br><br>💬 彼はとても疲れていたから早く寝ました。<br><br>📘「so ～ that …」は「とても～なので…」という結果を表します。"
 },
 {
   sentence: "I know <span class='highlight'>that</span> she is kind.",
@@ -1191,7 +1196,6 @@ conjunction02: {
 }
  ]
   },
-
 
 
 infinitive02: {
@@ -1235,30 +1239,6 @@ infinitive02: {
   explanation: "🧩 読むことは／本を／楽しい。<br><br>💬 本を読むことは楽しい。<br><br>📘「Reading books」は動名詞が主語になり、「本を読むことは」という意味になります。"
 },
 {
-  sentence: "I am sad <span class='highlight'>to hear that</span>.",
-  choices: ["それを聞いて", "それを聞くことを", "それを聞くために", "それを聞くべき"],
-  correct: 0,
-  explanation: "🧩 私は／悲しい／聞いて／それを<br><br>💬 私はそれを聞いて悲しい。<br><br>📘「to hear」は「～を聞いて」という意味で、「sad」 という感情の原因を表しています。"
-},
-{
-  sentence: "We have a lot of homework <span class='highlight'>to do</span>.",
-  choices: ["するために", "することを", "するべき", "するべきこと"],
-  correct: 2,
-  explanation: "🧩 私たちは／持っている／たくさんの宿題を／やるべき<br><br>💬 私達にはやらなければならない宿題がたくさんある。<br><br>📘「to do」は「やるべき」という意味で、「homework」 を説明する形容詞的用法です。"
-},
-{
-  sentence: "<span class='highlight'>To become</span> a pilot, he studies English hard.",
-  choices: ["～になることを", "～になるために", "～になって", "～になることは"],
-  correct: 1,
-  explanation: "🧩 なるために／パイロットに／彼は／勉強している／英語を／懸命に<br><br>💬 パイロットになるために、彼は英語を一生懸命勉強している。<br><br>📘 「to become」は「なるために」という意味で、目的を表す副詞的用法です。"
-},
-{
-  sentence: "You need <span class='highlight'>to get up</span> early every morning.",
-  choices: ["起きるために", "起きて", "起きるべき", "起きることを"],
-  correct: 3,
-  explanation: "🧩 あなたは／必要としている／起きることを／早く／毎朝<br><br>💬 あなたは毎朝早起きする必要がある。<br><br>📘「to get up」は「起きることを」という意味で、「need」 の目的語になる名詞的用法です。"
-},
-{
   sentence: "<span class='highlight'>Learning</span> English is important.",
   choices: ["学ぶことは", "学んで", "学ぶための", "学ぶために"],
   correct: 0,
@@ -1286,12 +1266,67 @@ infinitive02: {
   },
 
 
+infinitive03: {
+    title: "📗 不定詞【３】",
+    level: "normal",
+    questions: [
+
+{
+  sentence: "It is important for us <span class='highlight'>to study</span> English.",
+  choices: ["勉強するための", "勉強して", "勉強することを", "勉強することは"],
+  correct: 3,
+  explanation: "🧩 （それは）／重要だ／私たちにとって／勉強することは／英語を<br><br>💬 私たちにとって英語を勉強することは大切だ。<br><br>📘「it」は仮主語と分類し、文の主語は後ろにある「to study」です。"
+},
+{
+  sentence: "He asked me <span class='highlight'>to open</span> the door.",
+  choices: ["開けるために", "開けることを", "開けるための", "開けないように"],
+  correct: 1,
+  explanation: "🧩 彼は／頼んだ／私に／開けることを／ドアを<br><br>💬 彼は私にドアを開けるように頼みました。<br><br>📘「me」は「to open」開けるの主語に当たり、「私が→開ける」という主語述語の関係になっています。"
+},
+{
+  sentence: "The coffee was too hot for me <span class='highlight'>to drink</span>.",
+  choices: ["飲むことを", "飲むための", "飲むという", "飲むには"],
+  correct: 3,
+  explanation: "🧩 コーヒーは／熱すぎた／私が／飲むには<br><br>💬 そのコーヒーは熱すぎて、私には飲めなかった。<br><br>📘「飲むには熱すぎた」→「熱すぎて飲めなかった」という結果まで訳に反映させます。「for me」は「私が→飲む」という主語述語の関係になっています。"
+},
+{
+  sentence: "I am sad <span class='highlight'>to hear that</span>.",
+  choices: ["それを聞いて", "それを聞くことを", "それを聞くために", "それを聞くべき"],
+  correct: 0,
+  explanation: "🧩 私は／悲しい／聞いて／それを<br><br>💬 私はそれを聞いて悲しい。<br><br>📘「to hear」は「～を聞いて」という意味で、「sad」 という感情の原因を表しています。"
+},
+{
+  sentence: "We have a lot of homework <span class='highlight'>to do</span>.",
+  choices: ["するために", "することを", "するべき", "するべきこと"],
+  correct: 2,
+  explanation: "🧩 私たちは／持っている／たくさんの宿題を／やるべき<br><br>💬 私達にはやらなければならない宿題がたくさんある。<br><br>📘「to do」は「やるべき」という意味で、「homework」 を説明する形容詞的用法です。"
+},
+{
+  sentence: "<span class='highlight'>To become</span> a pilot, he studies English hard.",
+  choices: ["～になることを", "～になるために", "～になって", "～になることは"],
+  correct: 1,
+  explanation: "🧩 なるために／パイロットに／彼は／勉強している／英語を／懸命に<br><br>💬 パイロットになるために、彼は英語を一生懸命勉強している。<br><br>📘 「to become」は「なるために」という意味で、目的を表す副詞的用法です。"
+},
+{
+  sentence: "You need <span class='highlight'>to get up</span> early every morning.",
+  choices: ["起きるために", "起きて", "起きるべき", "起きることを"],
+  correct: 3,
+  explanation: "🧩 あなたは／必要としている／起きることを／早く／毎朝<br><br>💬 あなたは毎朝早起きする必要がある。<br><br>📘「to get up」は「起きることを」という意味で、「need」 の目的語になる名詞的用法です。"
+},
+{
+  sentence: "He was too tired <span class='highlight'>to practice</span> the piano.",
+  choices: ["練習しないで", "練習することを", "練習するには", "練習するための"],
+  correct: 2,
+  explanation: "🧩 彼は／疲れすぎていた／練習するには／ピアノを<br><br>💬 彼は疲れすぎていて、ピアノを練習できなかった。<br><br>📘「練習するには疲れすぎていた」→「疲れすぎていて練習できなかった」という結果まで訳に反映させます。"
+}
+ ]
+  },
+
 
 passive02: {
     title: "📗 受動態【２】",
     level: "normal",
     questions: [
-
 {
   sentence: "This desk <span class='highlight'>is made of</span> wood.",
   choices: ["作った", "作られていた", "作っている", "作られている"],
@@ -1356,19 +1391,19 @@ indirect: {
     questions: [
 {
   sentence: "I know <span class='highlight'>what she likes</span>.",
-  choices: ["どちらを彼女がすきなのか", "どんなに彼女が好きなのか", "どこを彼女が好きなのか", "何を彼女が好きなのか"],
+  choices: ["彼女がどちらをすきなのか", "彼女がどんなに好きなのか", "彼女がどこを好きなのか", "彼女が何を好きなのか"],
   correct: 3,
   explanation: "🧩 私は／知っている／何を／彼女が／好んでいるのか<br><br>💬 彼女の好みは分かっている。<br><br>📘「what」はものを表し、彼女が好きなものを知っているという意味になります。「何を彼女が好きなのか」という表現がよく使われます。"
 },
 {
   sentence: "I want to know <span class='highlight'>where he lives</span>.",
-  choices: ["どこに彼が住んでいるのか", "いつ彼が住んでいるのか", "なぜ彼が住んでいるのか", "だれが住んでいるのか"],
+  choices: ["彼がどこに住んでいるのか", "彼がいつ住んでいるのか", "彼がなぜ住んでいるのか", "だれが住んでいるのか"],
   correct: 0,
   explanation: "🧩 私は／知りたい／どこに／彼が／住んでいるのか<br><br>💬 彼がどこに住んでいるのか知りたい。<br><br>📘「where」は場所を表し、住んでいる場所を知りたいという意味になります。「どこに〜か」という表現がよく使われます。"
 },
 {
   sentence: "Please tell me <span class='highlight'>when the game starts</span>.",
-  choices: ["なぜ試合が始まるのか", "いつ試合が始まるのか", "どこで試合が始まるのか", "だれが試合を始めるのか"],
+  choices: ["試合がなぜ始まるのか", "試合がいつ始まるのか", "試合がどこで始まるのか", "だれが試合を始めるのか"],
   correct: 1,
   explanation: "🧩 教えてください／私に／いつなのか／試合が／始まるのか<br><br>💬 試合の開始時間を教えて。<br><br>📘「when」は時を表し、時に関する情報を教えてほしいという意味になります。"
 },
@@ -1380,22 +1415,36 @@ indirect: {
 },
 {
   sentence: "I don't know <span class='highlight'>how old she is</span>.",
-  choices: ["どこにいるのか彼女が", "なぜ彼女がいるのか", "何歳なのか彼女が", "どれくらい彼女がいるのか"],
+  choices: ["彼女がどこにいるのか", "彼女がなぜいるのか", "彼女が何歳なのか", "彼女がどれくらいいるのか"],
   correct: 2,
   explanation: "🧩 私は／知らない／何歳なのか／彼女が<br><br>💬 私は彼女が何歳なのか知らない。<br><br>📘「how old」は年齢をたずね、「何歳か」という意味になります。how（どれくらい） old（年寄りか）→何歳か"
 },
 {
   sentence: "Please tell me <span class='highlight'>what time the train leaves</span>.",
-  choices: ["どこへ電車が出発するのか", "どの電車が出発するのか", "何時に電車が出発するのか", "なぜ電車が出発するのか"],
+  choices: ["電車がどこへ出発するのか", "どの電車が出発するのか", "電車が何時に出発するのか", "電車がなぜ出発するのか"],
   correct: 2,
   explanation: "🧩 教えてください／私に／何時に／電車が出発するのか<br><br>💬 電車の出発時刻を教えてください。<br><br>📘「what time」は時刻を表し、「何時に〜か」という意味になります。"
 },
 {
   sentence: "Can you tell me <span class='highlight'>who that boy is</span>?",
-  choices: ["あの少年がだれなのか", "どこにあの少年がいるのか", "なぜあの少年がいるのか", "いつあの少年が来たのか"],
+  choices: ["あの少年がだれなのか", "あの少年がどこにいるのか", "あの少年がなぜいるのか", "あの少年がいつ来たのか"],
   correct: 0,
   explanation: "🧩 教えてくれますか／私に／誰なのか／あの少年が<br><br>💬 あの少年が誰なのか教えてくれませんか。<br><br>📘「who」は人を表し、「だれなのか」教えてほしい、という意味になります。"
 },
+{
+  sentence: "I don't know <span class='highlight'>why he is late</span>.",
+  choices: ["彼がどこで遅れているのか", "彼がなぜ遅れているのか", "彼がいつ遅れているのか", "だれが遅れているのか"],
+  correct: 1,
+  explanation: "🧩 私は／知らない／なぜ／彼が／遅れているのか<br><br>💬 彼がなぜ遅れているのかわからない。<br><br>📘「why」は理由を表し、彼が遅れている理由をしらない、という意味になります。"
+}
+ ]
+  },
+
+
+indirect02: {
+    title: "📗 間接疑問文【２】",
+    level: "normal",
+    questions: [
 {
   sentence: "I know <span class='highlight'>which color you like</span>.",
   choices: ["あなたがどこの色を好きなのか", "あなたがどの色を好きなのか", "あなたがなぜその色を好きなのか", "あなたがいつからその色を好きなのか"],
@@ -1422,39 +1471,31 @@ indirect: {
 },
 {
   sentence: "Please tell me <span class='highlight'>what you want</span>.",
-  choices: ["どこにあなたが行きたいのか", "何をあなたがほしいのか", "なぜあなたがほしいのか", "いつあなたがほしいのか"],
+  choices: ["あなたがどこに行きたいのか", "あなたが何をほしいのか", "あなたがなぜほしいのか", "あなたがいつほしいのか"],
   correct: 1,
   explanation: "🧩 教えてください／私に／何を／あなたが／欲しているのか<br><br>💬 何が欲しいか教えて。<br><br>📘「what」はものを表し、「あなたがほしいもの」という意味になります。"
 },
 {
   sentence: "Can you tell me <span class='highlight'>where the station is</span>?",
-  choices: ["どこに駅があるのか", "いつ駅があるのか", "なぜ駅があるのか", "駅がだれのものなのか"],
+  choices: ["駅がどこにあるのか", "駅がいつあるのか", "駅がなぜあるのか", "駅がだれのものなのか"],
   correct: 0,
   explanation: "🧩 教えてくれますか／私に／どこに／駅が／あるのか<br><br>💬 駅がどこなのか教えてくれませんか。<br><br>📘「where」は場所を表し、駅がある場所を教えてほしい、という意味になります。"
 },
 {
   sentence: "Can you tell me <span class='highlight'>how long it takes</span>?",
-  choices: ["どこに時間がかかるのか", "なぜ時間がかかるのか", "どれくらい時間がかかるのか", "だれに時間がかかるのか"],
+  choices: ["時間がどこにかかるのか", "時間がなぜかかるのか", "時間がどれくらいかかるのか", "時間がだれにかかるのか"],
   correct: 2,
   explanation: "🧩 教えてくれますか／私に／どれくらい／時間がかかるのか<br><br>💬 どれくらい時間がかかるか教えてくれませんか。<br><br>📘「how long」は時間の長さを表し、必要な時間を教えてほしい、という意味になります。"
-},
-{
-  sentence: "I don't know <span class='highlight'>why he is late</span>.",
-  choices: ["どこで彼が遅れているのか", "なぜ彼が遅れているのか", "いつ彼が遅れているのか", "だれが遅れているのか"],
-  correct: 1,
-  explanation: "🧩 私は／知らない／なぜ／彼が／遅れているのか<br><br>💬 彼がなぜ遅れているのかわからない。<br><br>📘「why」は理由を表し、彼が遅れている理由をしらない、という意味になります。"
 }
  ]
   },
-
 
 
 relative02: {
     title: "📗 関係代名詞【２】",
     level: "normal",
     questions: [
-
-  {
+{
     "sentence": "This is <span class='highlight'>the book that I bought</span>.",
     "choices": ["私が書いた本", "私が借りた本", "私が持っている本", "私が買った本"],
     "correct": 3,
@@ -1535,6 +1576,44 @@ clauseparticiple: {
   explanation: "🧩 私たちは／見た／少女を／歌っている／歌を<br><br>💬 私たちは歌を歌っている少女を見た。<br><br>📘「a girl」を「singing a song」が修飾し、「歌を歌っている少女」。「singing」は「sing」の現在分詞です。"
 },
 {
+  sentence: "This is the book <span class='highlight'>I bought</span> yesterday.",
+  choices: ["私が買った", "私が買われた", "私が買っている", "私が買うつもりの"],
+  correct: 0,
+  explanation: "🧩 これは／本です／私が買った／昨日<br><br>💬 これは昨日私が買った本です。<br><br>📘「the book」を「I bought」が修飾し、「私が買った本」という意味。目的格の関係代名詞が省略された形です。"
+},
+{
+  sentence: "That is the movie <span class='highlight'>we watched</span> last night.",
+  choices: ["私たちが見られた", "私たちが見た", "私たちが見られる", "私たちが見ている"],
+  correct: 1,
+  explanation: "🧩 あれは／映画です／私たちが／見た／昨夜<br><br>💬 あれは昨夜私たちが見た映画です。<br><br>📘「the movie」を「we watched」が修飾し、「私たちが見た映画」という意味。目的格の関係代名詞が省略された形です。"
+},
+{
+  sentence: "This is the cake <span class='highlight'>my mother made</span>.",
+  choices: ["母が作られた", "母が作っている", "母が作るだろう", "母が作った"],
+  correct: 3,
+  explanation: "🧩 これは／ケーキです／母が／作った<br><br>💬 これは母が作ったケーキです。<br><br>📘「the cake」を「my mother made」が修飾し、「母が作ったケーキ」という意味。目的格の関係代名詞が省略された形です。"
+},
+{
+  sentence: "This is the game <span class='highlight'>we played</span> after school.",
+  choices: ["私たちがした", "私たちがされる", "私たちがしている", "私たちがする予定の"],
+  correct: 0,
+  explanation: "🧩 これは／ゲームです／私たちが／した／放課後<br><br>💬 これは放課後私たちがやったゲームです。<br><br>📘「the game」を「we played」が修飾し、「私たちがしたゲーム」という意味。目的格の関係代名詞が省略された形です。"
+},
+{
+  sentence: "She showed me the picture <span class='highlight'>she took</span>.",
+  choices: ["彼女が撮られた", "彼女が撮る", "彼女が撮っている", "彼女が撮った"],
+  correct: 3,
+  explanation: "🧩 彼女は／見せた／私に／写真を／彼女が／撮った<br><br>💬 彼女は自分が撮った写真を私に見せた。<br><br>📘「the picture」を「she took」が修飾し、「彼女が撮った写真」という意味。目的格の関係代名詞が省略された形です。"
+}
+ ]
+  },
+
+
+clauseparticiple02: {
+    title: "📗 節・分詞で修飾【２】",
+    level: "normal",
+    questions: [
+{
   sentence: "That is a bus <span class='highlight'>going to the station</span>.",
   choices: ["駅に行かない", "駅に行く", "駅から来た", "駅に行った"],
   correct: 1,
@@ -1575,36 +1654,6 @@ clauseparticiple: {
   choices: ["撮られた", "撮っている", "撮る", "撮られる"],
   correct: 0,
   explanation: "🧩 これは／写真です／撮られた／ケンによって<br><br>💬 これはケンによって撮影された写真です。<br><br>📘「a picture」を「taken」が修飾し、「撮られた写真」という意味。「taken」は「take」の過去分詞です。"
-},
-{
-  sentence: "This is the book <span class='highlight'>I bought</span> yesterday.",
-  choices: ["私が買った", "私が買われた", "私が買っている", "私が買うつもりの"],
-  correct: 0,
-  explanation: "🧩 これは／本です／私が買った／昨日<br><br>💬 これは昨日私が買った本です。<br><br>📘「the book」を「I bought」が修飾し、「私が買った本」という意味。目的格の関係代名詞が省略された形です。"
-},
-{
-  sentence: "That is the movie <span class='highlight'>we watched</span> last night.",
-  choices: ["私たちが見られた", "私たちが見た", "私たちが見られる", "私たちが見ている"],
-  correct: 1,
-  explanation: "🧩 あれは／映画です／私たちが／見た／昨夜<br><br>💬 あれは昨夜私たちが見た映画です。<br><br>📘「the movie」を「we watched」が修飾し、「私たちが見た映画」という意味。目的格の関係代名詞が省略された形です。"
-},
-{
-  sentence: "This is the cake <span class='highlight'>my mother made</span>.",
-  choices: ["母が作られた", "母が作っている", "母が作るだろう", "母が作った"],
-  correct: 3,
-  explanation: "🧩 これは／ケーキです／母が／作った<br><br>💬 これは母が作ったケーキです。<br><br>📘「the cake」を「my mother made」が修飾し、「母が作ったケーキ」という意味。目的格の関係代名詞が省略された形です。"
-},
-{
-  sentence: "This is the game <span class='highlight'>we played</span> after school.",
-  choices: ["私たちがした", "私たちがされる", "私たちがしている", "私たちがする予定の"],
-  correct: 0,
-  explanation: "🧩 これは／ゲームです／私たちが／した／放課後<br><br>💬 これは放課後私たちがやったゲームです。<br><br>📘「the game」を「we played」が修飾し、「私たちがしたゲーム」という意味。目的格の関係代名詞が省略された形です。"
-},
-{
-  sentence: "She showed me the picture <span class='highlight'>she took</span>.",
-  choices: ["彼女が撮られた", "彼女が撮る", "彼女が撮っている", "彼女が撮った"],
-  correct: 3,
-  explanation: "🧩 彼女は／見せた／私に／写真を／彼女が／撮った<br><br>💬 彼女は自分が撮った写真を私に見せた。<br><br>📘「the picture」を「she took」が修飾し、「彼女が撮った写真」という意味。目的格の関係代名詞が省略された形です。"
 }
  ]
   },
@@ -1614,7 +1663,6 @@ verb02: {
     title: "📗 動詞【２】",
     level: "normal",
     questions: [
-
 {
   sentence: "They <span class='highlight'>named</span> the dog Pochi.",
   choices: ["呼んだ", "名付けた", "見つけた", "育てた"],
@@ -1677,7 +1725,6 @@ adjective02: {
     title: "📗 形容詞【２】",
     level: "normal",
     questions: [
-
 {
   sentence: "It is <span class='highlight'>possible</span> to finish it today.",
   choices: ["必要だ", "可能だ", "暗い", "怒っている"],
@@ -1728,7 +1775,6 @@ adverb02: {
     title: "📗 副詞【２】",
     level: "normal",
     questions: [
-
 {
   sentence: "I have <span class='highlight'>never</span> been to France.",
   choices: ["今までに", "1度も〜ない", "もう", "よく"],
@@ -1791,7 +1837,6 @@ idiom: {
     title: "📗 熟語",
     level: "normal",
     questions: [
-
 {
   sentence: "I felt better <span class='highlight'>after a while</span>.",
   choices: ["すぐに", "しばらくして", "いつも", "ついに"],
@@ -1829,6 +1874,38 @@ idiom: {
   explanation: "🧩 彼は／立っている／ドアの前に<br><br>💬 彼はドアの前に立っている。<br><br>📘「in front of」は「〜の前に」という意味です。"
 },
 {
+  sentence: "<span class='highlight'>First of all</span>, wash your hands.",
+  choices: ["そのあとで", "最後に", "実は", "まず第一に"],
+  correct: 3,
+  explanation: "🧩 まず第一に／洗え／あなたの／手を<br><br>💬 まず最初に、手を洗ってください。<br><br>📘「first of all」は「まず第一に」という意味です。"
+},
+{
+  sentence: "I got to the station <span class='highlight'>in time</span>.",
+  choices: ["遅れて", "すぐに", "時間内に", "ときどき"],
+  correct: 2,
+  explanation: "🧩 私は／着いた／駅に／時間内に<br><br>💬 私は時間通りに駅に着いた。<br><br>📘「in time」は「時間に間に合って」という意味です。"
+},
+{
+  sentence: "I am <span class='highlight'>a little</span> tired.",
+  choices: ["とても", "少し", "まったく〜ない", "いつも"],
+  correct: 1,
+  explanation: "🧩 私は／少し／疲れている<br><br>💬 少し疲れているんだ。<br><br>📘「a little」は「少し」という意味です。"
+}
+ ]
+  },
+
+
+idiom02: {
+    title: "📗 熟語【２】",
+    level: "normal",
+    questions: [
+{
+  sentence: "I <span class='highlight'>am interested in</span> playing video games.",
+  choices: ["ワクワクする", "ドキドキする", "上手だ", "興味がある"],
+  correct: 3,
+  explanation: "🧩 私は／興味がある／することに／テレビゲームを<br><br>💬 私はゲームに興味がある。<br><br>📘「in ～」は興味の対象を示し「～に」という意味です。"
+},
+{
   sentence: "I met her <span class='highlight'>on my way to school</span>.",
   choices: ["学校のあとで", "学校の前で", "学校へ行く途中で", "学校の中で"],
   correct: 2,
@@ -1858,23 +1935,12 @@ idiom: {
   correct: 1,
   explanation: "🧩 私の考えでは／この本は／よい<br><br>💬 私の考えでは、この本は良いです。<br><br>📘「in my opinion」は「私の考えでは」という意味です。"
 },
+
 {
-  sentence: "<span class='highlight'>First of all</span>, wash your hands.",
-  choices: ["そのあとで", "最後に", "実は", "まず第一に"],
-  correct: 3,
-  explanation: "🧩 まず第一に／洗え／あなたの／手を<br><br>💬 まず最初に、手を洗ってください。<br><br>📘「first of all」は「まず第一に」という意味です。"
-},
-{
-  sentence: "I got to the station <span class='highlight'>in time</span>.",
-  choices: ["遅れて", "すぐに", "時間内に", "ときどき"],
+  sentence: "Playing baseball <span class='highlight'>is different from</span> watching it.",
+  choices: ["ワクワクする", "ドキドキする", "異なっている", "興味がある"],
   correct: 2,
-  explanation: "🧩 私は／着いた／駅に／時間内に<br><br>💬 私は時間通りに駅に着いた。<br><br>📘「in time」は「時間に間に合って」という意味です。"
-},
-{
-  sentence: "I am <span class='highlight'>a little</span> tired.",
-  choices: ["とても", "少し", "まったく〜ない", "いつも"],
-  correct: 1,
-  explanation: "🧩 私は／少し／疲れている<br><br>💬 少し疲れているんだ。<br><br>📘「a little」は「少し」という意味です。"
+  explanation: "🧩 することは／野球を／異なっている／観ることと／それを<br><br>💬 野球をすることは、それを観ることとは違う。<br><br>📘「from ～」は異なっている対象を示し「～から、～とは」という意味です。"
 }
  ]
   }
@@ -2091,7 +2157,7 @@ function load() {
 }
 
 
-const MAX_STARS = 26; // 単元数が追加されたら増やす
+const MAX_STARS = 31; // 単元数が追加されたら増やす
 
 
 
@@ -2587,7 +2653,7 @@ function renderStudyMenu(root) {
 
 
      <div class="mode-study">
-      <img src="images/cw01.png" class="mode-cat">
+      <img src="images/cw01.png" class="mode-cat02">
     </div>
 
     
@@ -2610,7 +2676,7 @@ function renderStudyMenu(root) {
 
      <div class="note">⬆ 単元ごとの⭐を[長押し][右クリック]すると解除できます</div>
 
-    <button class="category-btn" id="resetStarsBtn">⭐全解除ボタン</button>
+    <button class="remove-btn" id="resetStarsBtn">⭐全解除ボタン</button>
     <div class="note02">⬆ 必修、標準のすべての⭐が解除されます</div>
    
     ${getConfirmDialogHtml()}
@@ -2785,7 +2851,7 @@ function renderLevelSelect(root) {
     <h2>📘📗 レベル選択</h2>
 
     <div class="mode-hero">
-      <img src="images/cw01.png" class="mode-cat">
+      <img src="images/cw01.png" class="mode-cat02">
     </div>
 
     <!-- 必修編 -->
@@ -3237,7 +3303,7 @@ function renderChainMenu(root) {
   
     
     <div class="mode-study">
-      <img src="images/cmi01.png" class="mode-cat">
+      <img src="images/cmi01.png" class="mode-cat02">
     </div>
 
     <p class="message">連続正解にチャレンジしよう</p>
@@ -3774,17 +3840,25 @@ function finishChain() {
 
 function getChainImage(streak, perfect){
 
-  if (perfect) return "images/cm_perfect.png";
+  if (perfect) return "images/ev017.png";
 
-  if (streak >= 150) return "images/cm08.png";
-  if (streak >= 130) return "images/cm07.png";
-  if (streak >= 100) return "images/cm06.png";
-  if (streak >= 50)  return "images/cm05.png";
-  if (streak >= 30)  return "images/cm04.png";
-  if (streak >= 20)  return "images/cm03.png";
-  if (streak >= 10)  return "images/cm02.png";
+  if (streak >= 250) return "images/ev016.png";
+  if (streak >= 200) return "images/ev015.png";
+  if (streak >= 150) return "images/ev014.png";
+  if (streak >= 120) return "images/ev013.png";
+  if (streak >= 110) return "images/ev012.png";
+  if (streak >= 100) return "images/ev011.png";
+  if (streak >= 90) return "images/ev010.png";
+  if (streak >= 80) return "images/ev009.png";
+  if (streak >= 70) return "images/ev008.png";
+  if (streak >= 60) return "images/ev007.png";
+  if (streak >= 50) return "images/ev006.png";
+  if (streak >= 40) return "images/ev005.png";
+  if (streak >= 30) return "images/ev004.png";
+  if (streak >= 20) return "images/ev003.png";
+  if (streak >= 10) return "images/ev002.png";
 
-  return "images/cm01.png";
+  return "images/ev001.png";
 
 
 
@@ -3976,7 +4050,7 @@ function renderWeakChainMenu(root){
   <h2>💥 弱点克服</h2>
 
   <div class="mode-study">
-    <img src="images/cs01.png" class="mode-cat">
+    <img src="images/cs01.png" class="mode-cat02">
   </div>
 
   <div align="center">弱点問題：${weakCount}問</div>
@@ -4105,7 +4179,7 @@ function renderBasicChainMenu(root) {
    <h2>🎈 必修連チャン</h2>
 
     <div class="mode-study">
-      <img src="images/cb01.png" class="mode-cat">
+      <img src="images/cb01.png" class="mode-cat02">
     </div>
 
     <p class="message" align=center>
