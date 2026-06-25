@@ -176,6 +176,23 @@ button:disabled {
 
 }
 
+.remove-btn {
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  text-align: left;
+  background: #c3d3f2;
+  
+  font-size: 16px;
+  gap: 4px;
+   /* 影 */
+  box-shadow: 
+    0 6px 12px rgba(0,0,0,0.1),
+    0 12px 24px rgba(0,0,0,0.08);
+  position: relative
+
+}
+
 .start-btn{
   width:100%;
   background-color:#daecb0;
@@ -301,7 +318,7 @@ button:disabled {
 .evaluation-image {
   text-align: center;
   margin: 5px 0;
-     animation: shake 0.5s ease infinite;
+     animation: shake 2s ease infinite;
 }
 
 @keyframes shake {
@@ -429,8 +446,13 @@ button:disabled {
 }
 
 .mode-cat {
- 
-  max-width: 100%;
+   max-width: 100%;
+  height: auto;
+  animation: float 3s ease-in-out infinite;
+}
+
+.mode-cat02 {
+   max-width: 60%;
   height: auto;
   animation: float 3s ease-in-out infinite;
 }
@@ -458,7 +480,7 @@ button:disabled {
 }
 
 .mode-study {
-  max-width: 50%;
+  max-width: 100%;
   text-align: center;
   margin: 5px auto;
 }
@@ -1101,7 +1123,7 @@ box-shadow: 0 0 14px rgba(246, 196, 83, 0.6);
   border: none;
   border-radius: 12px;
   font-size: 14px;
-  background: #f3f3f3;
+  background: #f2f7dc;
 }
 
 .message {
@@ -1154,5 +1176,6 @@ box-shadow: 0 0 14px rgba(246, 196, 83, 0.6);
   cursor: pointer;
   transition: all 0.2s ease;
 }
+
 
 
