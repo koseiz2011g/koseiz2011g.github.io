@@ -1,4 +1,4 @@
-const CACHE_NAME = "yontakun-v20";
+const CACHE_NAME = "yontakun-v21";
 
 const urlsToCache = [
   "/",
@@ -33,6 +33,23 @@ const urlsToCache = [
   "/images/cw01.png",
   "/images/cw02.png",
   "/images/cw03.png",
+ "/images/ev001.png",
+ "/images/ev002.png",
+ "/images/ev003.png",
+ "/images/ev004.png",
+ "/images/ev005.png",
+ "/images/ev006.png",
+ "/images/ev007.png",
+ "/images/ev008.png",
+ "/images/ev009.png",
+ "/images/ev010.png",
+ "/images/ev011.png",
+ "/images/ev012.png",
+ "/images/ev013.png",
+ "/images/ev014.png",
+ "/images/ev015.png",
+ "/images/ev016.png",
+ "/images/ev017.png",
 
   // 効果音
   "/sounds/correct.mp3",
@@ -169,4 +186,3 @@ self.addEventListener("fetch", (event) => {
     })()
   );
 });
-
