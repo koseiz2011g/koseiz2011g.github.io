@@ -1148,7 +1148,7 @@ conjunction02: {
 },
 {
   sentence: "I have lived here <span class='highlight'>since</span> I was five.",
-  choices: ["～の間に", "～だけれども", "だから", "～以来ずっと"],
+  choices: ["～の間に", "～だけれども", "だから", "～以来"],
   correct: 3,
   explanation: "🧩 私は／ずっと住んでいる／ここに／～以来／私が5歳だった<br><br>💬 私が5歳だったときからずっとここに住んでいます。<br><br>📘「since」は「～以来ずっと」という意味で使われます。"
 },
@@ -2021,8 +2021,8 @@ const state = {
   localStorage.getItem("todayRecord")
 ) || {
 
-  soundEnabled: JSON.parse(
-  localStorage.getItem("soundEnabled") ?? "true"
+  soundVolume: Number(
+  localStorage.getItem("soundVolume") ?? "0.6"
 ),
 
   date: "",
@@ -2057,7 +2057,7 @@ function initSounds() {
   for (const type in sounds) {
     if (Object.prototype.hasOwnProperty.call(sounds, type)) {
       const audio = new Audio(sounds[type]);
-      audio.volume = 0.8;
+      audio.volume = state.soundVolume;
       audio.load(); // 事前読み込みを指示
       audioPool[type] = audio;
     }
@@ -2066,10 +2066,14 @@ function initSounds() {
 
 // 4. 音を鳴らす関数（毎回 new しない使い回し方式）
 function playSound(type) {
-  if (!state.soundEnabled) return;
+  if(state.soundVolume === 0) return;
 
   const audio = audioPool[type];
   if (!audio) return;
+
+   // ←追加
+  audio.volume = state.soundVolume;
+
 
   // 再生中の場合は先頭に巻き戻す（連打対策）
   audio.currentTime = 0;
@@ -2080,8 +2084,7 @@ function playSound(type) {
   });
 }
 
-// 5. 【超重要】定義した後に必ず初期化関数を呼び出す
-initSounds();
+
 
 
 function getStudyEvaluation(correct, total) {
@@ -2547,6 +2550,11 @@ function renderModeSelect(root) {
     </div>
 
 
+ <div align=center class="chain-guide">
+  ⬇ どこまで連続正解できる？
+</div>
+
+
  <div class="today-box">
 
   <div align=center class="today-title">
@@ -2559,10 +2567,6 @@ function renderModeSelect(root) {
     ${state.today.challenge}
   </div>
 
-</div>
-
-  <div align=center class="chain-guide">
-  ⬇ どこまで連続正解できる？
 </div>
 
 
@@ -2589,13 +2593,18 @@ function renderModeSelect(root) {
 
 
     <button id="soundToggleBtn" class="sound-btn">
-  ${state.soundEnabled ? "🔊 効果音 ON になっています" : "🔇 効果音 OFF になっています"}
+  ${
+    state.soundVolume === 0   ? "🔇 消音" :
+    state.soundVolume === 0.3 ? "🔈 効果音：小" :
+    state.soundVolume === 0.6 ? "🔉 効果音：中" :
+                                "🔊 効果音：大"
+  }
 </button>
 
 
 
 
-    <p class="version">ver 1.0.4</p>
+    <p class="version">ver 1.0.5</p>
 
 ${state.popupMessage
   ? `<div class="milestone-popup">
@@ -2631,16 +2640,29 @@ ${state.popupMessage
 
   document.getElementById("soundToggleBtn").onclick = () => {
 
-  state.soundEnabled = !state.soundEnabled;
+  const volumes = [0, 0.3, 0.6, 1.0];
 
-  localStorage.setItem(
-    "soundEnabled",
-    JSON.stringify(state.soundEnabled)
-  );
+let index = volumes.indexOf(state.soundVolume);
 
-  if(state.soundEnabled){
-    playSound("correct");
-  }
+if(index === -1){
+  index = 2; // 初期値は「中」
+}
+
+index = (index + 1) % volumes.length;
+
+state.soundVolume = volumes[index];
+
+localStorage.setItem(
+  "soundVolume",
+  state.soundVolume
+);
+
+// 消音以外なら試しに鳴らす
+if(state.soundVolume > 0){
+  playSound("correct");
+}
+
+render();
 
   render();
 };
@@ -2676,8 +2698,8 @@ function renderStudyMenu(root) {
 
      <div class="note">⬆ 単元ごとの⭐を[長押し][右クリック]すると解除できます</div>
 
-    <button class="remove-btn" id="resetStarsBtn">⭐全解除ボタン</button>
-    <div class="note02">⬆ 必修、標準のすべての⭐が解除されます</div>
+    <button class="remove-btn" id="resetStarsBtn">⭐をすべて解除</button>
+    <div class="note02">⬆ 表示中のレベルの⭐をすべて解除します</div>
    
     ${getConfirmDialogHtml()}
 
@@ -2769,22 +2791,32 @@ document.getElementById("weakBtn").onclick = () => {
   render();
 };
 
-  document.getElementById("resetStarsBtn").onclick = () => {
+ document.getElementById("resetStarsBtn").onclick = () => {
 
   state.confirmDialog = {
-    message: "すべての⭐をリセットしますか？",
+    message: "このレベルの⭐をすべてリセットしますか？",
+
     onOk: () => {
 
+      // 現在のレベルの⭐だけ削除
+      Object.keys(categories).forEach(key => {
+        if (categories[key].level === state.level) {
+          delete state.stars[key];
+        }
+      });
 
-  // ⭐データ削除
-  localStorage.removeItem("stars");
+      // 保存
+      localStorage.setItem(
+        "stars",
+        JSON.stringify(state.stars)
+      );
 
-  // stateもリセット
-  state.stars = {};
+      // ダイアログを閉じる
+      state.confirmDialog = null;
 
-  // 再描画
-  render();
-  }
+      // 再描画
+      render();
+    }
   };
 
   render();
@@ -4461,12 +4493,15 @@ function setupStarLongPress() {
 
 function init() {
 
-   state.soundEnabled = JSON.parse(
-    localStorage.getItem("soundEnabled") ?? "true"
+  state.soundVolume = Number(
+    localStorage.getItem("soundVolume") ?? "0.6"
   );
 
   load();
   cleanStars();
+
+  
+initSounds();
 
   history.pushState(
     {screen:"modeSelect"},
