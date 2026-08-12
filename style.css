@@ -1177,6 +1177,21 @@ box-shadow: 0 0 14px rgba(246, 196, 83, 0.6);
   transition: all 0.2s ease;
 }
 
+.audio-btn{
+  display:block;
+  margin:12px auto 18px;
+  padding:5px 18px;
 
+  border:none;
+  border-radius:12px;
 
+  background:#7d81e9;
+  color:white;
 
+  font-size:12px;
+  cursor:pointer;
+}
+
+.audio-btn:active{
+  transform:scale(0.97);
+}
