@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>よんたくん データ移行テスト</title>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+            word-break: break-all;
+        }
+
+        h1 {
+            font-size: 22px;
+        }
+
+        .item {
+            margin: 15px 0;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .key {
+            font-weight: bold;
+            color: #333;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        .none {
+            color: #888;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>よんたくん データ移行テスト</h1>
+
+<p>
+このページは、現在このChromeに保存されている
+「よんたくん」のデータを確認するためのテストページです。
+</p>
+
+<p>
+<strong>このページではデータを書き換えません。</strong>
+</p>
+
+<div id="result"></div>
+
+<script>
+    const result = document.getElementById("result");
+
+    const keys = [
+        "english-study-app-v1",
+        "stars",
+        "weakQuestions",
+        "records",
+        "todayRecord",
+        "soundVolume"
+    ];
+
+    let html = "";
+
+    keys.forEach(key => {
+
+        const value = localStorage.getItem(key);
+
+        html += '<div class="item">';
+        html += '<div class="key">' + key + '</div>';
+
+        if (value === null) {
+            html += '<div class="none">データなし</div>';
+        } else {
+            html += '<div>データあり</div>';
+            html += '<pre>' + escapeHtml(value) + '</pre>';
+        }
+
+        html += '</div>';
+    });
+
+    result.innerHTML = html;
+
+
+    function escapeHtml(text) {
+        return text
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+</script>
+
+</body>
+</html>
