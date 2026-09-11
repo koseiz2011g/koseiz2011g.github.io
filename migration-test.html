@@ -29,7 +29,7 @@
     button {
       font-size: 18px;
       padding: 12px 24px;
-      margin-top: 10px;
+      margin: 8px 0;
       cursor: pointer;
     }
 
@@ -52,6 +52,12 @@
     <p id="status">確認中...</p>
   </div>
 
+  <button id="createButton">
+    テストデータを作成
+  </button>
+
+  <br>
+
   <button id="migrationButton" disabled>
     移行テスト
   </button>
@@ -66,40 +72,65 @@
 
     const status = document.getElementById("status");
     const result = document.getElementById("result");
-    const button = document.getElementById("migrationButton");
+    const createButton = document.getElementById("createButton");
+    const migrationButton = document.getElementById("migrationButton");
 
-    // Chrome側のlocalStorageからデータを読む
-    const data = localStorage.getItem(STORAGE_KEY);
 
-    if (data) {
+    // Chrome側のlocalStorageを確認する
+    function checkData() {
 
-      status.textContent = "データが見つかりました。";
+      const data = localStorage.getItem(STORAGE_KEY);
 
-      result.textContent =
-        "キー：\n" +
-        STORAGE_KEY +
-        "\n\n" +
-        "データサイズ：" +
-        data.length +
-        " 文字\n\n" +
-        "移行テストを実行できます。";
+      if (data) {
 
-      button.disabled = false;
+        status.textContent = "データが見つかりました。";
 
-    } else {
+        result.textContent =
+          "キー：\n" +
+          STORAGE_KEY +
+          "\n\n" +
+          "データサイズ：" +
+          data.length +
+          " 文字\n\n" +
+          "移行テストを実行できます。";
 
-      status.textContent = "データが見つかりません。";
+        migrationButton.disabled = false;
 
-      result.textContent =
-        "localStorage に " +
-        STORAGE_KEY +
-        " がありません。";
+      } else {
 
+        status.textContent = "データが見つかりません。";
+
+        result.textContent =
+          "localStorage に " +
+          STORAGE_KEY +
+          " がありません。";
+
+        migrationButton.disabled = true;
+      }
     }
 
 
+    // テストデータを作成する
+    createButton.addEventListener("click", function () {
+
+      const testData = {
+        test: "移行テスト用データ",
+        message: "ChromeからAndroidへ移行するテストです"
+      };
+
+      localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(testData)
+      );
+
+      checkData();
+
+      alert("テストデータを作成しました。");
+    });
+
+
     // 「移行テスト」ボタン
-    button.addEventListener("click", function () {
+    migrationButton.addEventListener("click", function () {
 
       const currentData = localStorage.getItem(STORAGE_KEY);
 
@@ -108,15 +139,10 @@
         return;
       }
 
-      /*
-       * Androidへ渡すためにURLエンコードする
-       */
+      // Androidへ渡すためにURLエンコードする
       const encodedData = encodeURIComponent(currentData);
 
-      /*
-       * yontakun://migration
-       * にデータを付けてAndroidへ渡す
-       */
+      // Androidへデータを渡す
       const migrationUrl =
         "yontakun://migration?data=" + encodedData;
 
@@ -128,6 +154,11 @@
 
       window.location.href = migrationUrl;
     });
+
+
+    // ページを開いたときの確認
+    checkData();
+
   </script>
 
 </body>
