@@ -1,105 +1,134 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>よんたくん データ移行テスト</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            font-family: sans-serif;
-            padding: 20px;
-            line-height: 1.6;
-            word-break: break-all;
-        }
+  <title>よんたくん データ移行テスト</title>
 
-        h1 {
-            font-size: 22px;
-        }
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+      line-height: 1.7;
+    }
 
-        .item {
-            margin: 15px 0;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-        }
+    h1 {
+      font-size: 24px;
+    }
 
-        .key {
-            font-weight: bold;
-            color: #333;
-        }
+    .box {
+      background: #f5f5f5;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
 
-        pre {
-            white-space: pre-wrap;
-            background: #f5f5f5;
-            padding: 10px;
-            border-radius: 6px;
-        }
+    button {
+      font-size: 18px;
+      padding: 12px 24px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
 
-        .none {
-            color: #888;
-        }
-    </style>
+    #result {
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+  </style>
 </head>
 
 <body>
 
-<h1>よんたくん データ移行テスト</h1>
+  <h1>よんたくん データ移行テスト</h1>
 
-<p>
-このページは、現在このChromeに保存されている
-「よんたくん」のデータを確認するためのテストページです。
-</p>
+  <div class="box">
+    <p>
+      今回は「english-study-app-v1」だけをテストします。
+    </p>
 
-<p>
-<strong>このページではデータを書き換えません。</strong>
-</p>
+    <p id="status">確認中...</p>
+  </div>
 
-<div id="result"></div>
+  <button id="migrationButton" disabled>
+    移行テスト
+  </button>
 
-<script>
+  <div class="box">
+    <h2>確認結果</h2>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    const STORAGE_KEY = "english-study-app-v1";
+
+    const status = document.getElementById("status");
     const result = document.getElementById("result");
+    const button = document.getElementById("migrationButton");
 
-    const keys = [
-        "english-study-app-v1",
-        "stars",
-        "weakQuestions",
-        "records",
-        "todayRecord",
-        "soundVolume"
-    ];
+    // Chrome側のlocalStorageからデータを読む
+    const data = localStorage.getItem(STORAGE_KEY);
 
-    let html = "";
+    if (data) {
 
-    keys.forEach(key => {
+      status.textContent = "データが見つかりました。";
 
-        const value = localStorage.getItem(key);
+      result.textContent =
+        "キー：\n" +
+        STORAGE_KEY +
+        "\n\n" +
+        "データサイズ：" +
+        data.length +
+        " 文字\n\n" +
+        "移行テストを実行できます。";
 
-        html += '<div class="item">';
-        html += '<div class="key">' + key + '</div>';
+      button.disabled = false;
 
-        if (value === null) {
-            html += '<div class="none">データなし</div>';
-        } else {
-            html += '<div>データあり</div>';
-            html += '<pre>' + escapeHtml(value) + '</pre>';
-        }
+    } else {
 
-        html += '</div>';
-    });
+      status.textContent = "データが見つかりません。";
 
-    result.innerHTML = html;
+      result.textContent =
+        "localStorage に " +
+        STORAGE_KEY +
+        " がありません。";
 
-
-    function escapeHtml(text) {
-        return text
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#039;");
     }
-</script>
+
+
+    // 「移行テスト」ボタン
+    button.addEventListener("click", function () {
+
+      const currentData = localStorage.getItem(STORAGE_KEY);
+
+      if (!currentData) {
+        alert("移行するデータがありません。");
+        return;
+      }
+
+      /*
+       * Androidへ渡すためにURLエンコードする
+       */
+      const encodedData = encodeURIComponent(currentData);
+
+      /*
+       * yontakun://migration
+       * にデータを付けてAndroidへ渡す
+       */
+      const migrationUrl =
+        "yontakun://migration?data=" + encodedData;
+
+      result.textContent =
+        "Androidアプリへデータを送信します。\n\n" +
+        "データサイズ：" +
+        currentData.length +
+        " 文字";
+
+      window.location.href = migrationUrl;
+    });
+  </script>
 
 </body>
 </html>
