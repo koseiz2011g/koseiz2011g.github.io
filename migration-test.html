@@ -46,7 +46,7 @@
 
   <div class="box">
     <p>
-      今回は「english-study-app-v1」だけをテストします。
+      今回は6種類のlocalStorageデータをまとめてテストします。
     </p>
 
     <p id="status">確認中...</p>
@@ -68,7 +68,17 @@
   </div>
 
   <script>
-    const STORAGE_KEY = "english-study-app-v1";
+
+    // 移行対象のlocalStorageキー
+    const STORAGE_KEYS = [
+      "english-study-app-v1",
+      "weakQuestions",
+      "stars",
+      "records",
+      "todayRecord",
+      "soundVolume"
+    ];
+
 
     const status = document.getElementById("status");
     const result = document.getElementById("result");
@@ -79,31 +89,52 @@
     // Chrome側のlocalStorageを確認する
     function checkData() {
 
-      const data = localStorage.getItem(STORAGE_KEY);
+      let foundCount = 0;
+      let resultText = "";
 
-      if (data) {
+      STORAGE_KEYS.forEach(function(key) {
 
-        status.textContent = "データが見つかりました。";
+        const data = localStorage.getItem(key);
+
+        if (data !== null) {
+
+          foundCount++;
+
+          resultText +=
+            "【" + key + "】\n" +
+            "データあり：" +
+            data.length +
+            "文字\n\n";
+
+        } else {
+
+          resultText +=
+            "【" + key + "】\n" +
+            "データなし\n\n";
+        }
+      });
+
+
+      if (foundCount > 0) {
+
+        status.textContent =
+          foundCount +
+          "種類のデータが見つかりました。";
 
         result.textContent =
-          "キー：\n" +
-          STORAGE_KEY +
-          "\n\n" +
-          "データサイズ：" +
-          data.length +
-          " 文字\n\n" +
+          resultText +
+          "--------------------\n" +
           "移行テストを実行できます。";
 
         migrationButton.disabled = false;
 
       } else {
 
-        status.textContent = "データが見つかりません。";
+        status.textContent =
+          "移行対象のデータがありません。";
 
         result.textContent =
-          "localStorage に " +
-          STORAGE_KEY +
-          " がありません。";
+          resultText;
 
         migrationButton.disabled = true;
       }
@@ -111,48 +142,128 @@
 
 
     // テストデータを作成する
-    createButton.addEventListener("click", function () {
+    createButton.addEventListener("click", function() {
 
-      const testData = {
+      // ① english-study-app-v1
+      const studyData = {
         test: "移行テスト用データ",
         message: "ChromeからAndroidへ移行するテストです"
       };
 
       localStorage.setItem(
-        STORAGE_KEY,
-        JSON.stringify(testData)
+        "english-study-app-v1",
+        JSON.stringify(studyData)
       );
+
+
+      // ② weakQuestions
+      const weakQuestionsData = [
+        {
+          test: "弱点問題テスト"
+        }
+      ];
+
+      localStorage.setItem(
+        "weakQuestions",
+        JSON.stringify(weakQuestionsData)
+      );
+
+
+      // ③ stars
+      const starsData = {
+        basic: 3,
+        standard: 2
+      };
+
+      localStorage.setItem(
+        "stars",
+        JSON.stringify(starsData)
+      );
+
+
+      // ④ records
+      const recordsData = {
+        test: "連チャン記録テスト",
+        maxChain: 9
+      };
+
+      localStorage.setItem(
+        "records",
+        JSON.stringify(recordsData)
+      );
+
+
+      // ⑤ todayRecord
+      const todayRecordData = {
+        test: "今日の記録テスト",
+        challenge: 5
+      };
+
+      localStorage.setItem(
+        "todayRecord",
+        JSON.stringify(todayRecordData)
+      );
+
+
+      // ⑥ soundVolume
+      localStorage.setItem(
+        "soundVolume",
+        "0.7"
+      );
+
 
       checkData();
 
-      alert("テストデータを作成しました。");
+      alert("6種類のテストデータを作成しました。");
     });
 
 
     // 「移行テスト」ボタン
-    migrationButton.addEventListener("click", function () {
+    migrationButton.addEventListener("click", function() {
 
-      const currentData = localStorage.getItem(STORAGE_KEY);
+      // 6種類のデータを1つにまとめる
+      const migrationData = {};
 
-      if (!currentData) {
-        alert("移行するデータがありません。");
-        return;
-      }
+
+      STORAGE_KEYS.forEach(function(key) {
+
+        const data = localStorage.getItem(key);
+
+        if (data !== null) {
+          migrationData[key] = data;
+        }
+
+      });
+
+
+      // JSON文字列にする
+      const jsonData =
+        JSON.stringify(migrationData);
+
 
       // Androidへ渡すためにURLエンコードする
-      const encodedData = encodeURIComponent(currentData);
+      const encodedData =
+        encodeURIComponent(jsonData);
+
 
       // Androidへデータを渡す
       const migrationUrl =
-        "yontakun://migration?data=" + encodedData;
+        "yontakun://migration?data=" +
+        encodedData;
+
 
       result.textContent =
         "Androidアプリへデータを送信します。\n\n" +
+        "移行対象：" +
+        Object.keys(migrationData).length +
+        "種類\n\n" +
         "データサイズ：" +
-        currentData.length +
-        " 文字";
+        jsonData.length +
+        "文字";
 
-      window.location.href = migrationUrl;
+
+      window.location.href =
+        migrationUrl;
     });
 
 
