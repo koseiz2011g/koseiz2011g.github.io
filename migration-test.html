@@ -46,20 +46,18 @@
 
   <div class="box">
     <p>
-      今回は6種類のlocalStorageデータをまとめてテストします。
+      Chromeに保存されている実際のよんたくんのデータを確認します。
+    </p>
+
+    <p>
+      ※このページはデータを変更しません。
     </p>
 
     <p id="status">確認中...</p>
   </div>
 
-  <button id="createButton">
-    テストデータを作成
-  </button>
-
-  <br>
-
   <button id="migrationButton" disabled>
-    移行テスト
+    実データを移行テスト
   </button>
 
   <div class="box">
@@ -82,11 +80,11 @@
 
     const status = document.getElementById("status");
     const result = document.getElementById("result");
-    const createButton = document.getElementById("createButton");
-    const migrationButton = document.getElementById("migrationButton");
+    const migrationButton =
+      document.getElementById("migrationButton");
 
 
-    // Chrome側のlocalStorageを確認する
+    // Chrome側の実データを確認する
     function checkData() {
 
       let foundCount = 0;
@@ -115,115 +113,28 @@
       });
 
 
+      status.textContent =
+        foundCount +
+        "種類の実データが見つかりました。";
+
+      result.textContent =
+        resultText +
+        "--------------------\n" +
+        "Chrome側の確認が完了しました。";
+
+
       if (foundCount > 0) {
-
-        status.textContent =
-          foundCount +
-          "種類のデータが見つかりました。";
-
-        result.textContent =
-          resultText +
-          "--------------------\n" +
-          "移行テストを実行できます。";
-
         migrationButton.disabled = false;
-
       } else {
-
-        status.textContent =
-          "移行対象のデータがありません。";
-
-        result.textContent =
-          resultText;
-
         migrationButton.disabled = true;
       }
     }
 
 
-    // テストデータを作成する
-    createButton.addEventListener("click", function() {
-
-      // ① english-study-app-v1
-      const studyData = {
-        test: "移行テスト用データ",
-        message: "ChromeからAndroidへ移行するテストです"
-      };
-
-      localStorage.setItem(
-        "english-study-app-v1",
-        JSON.stringify(studyData)
-      );
-
-
-      // ② weakQuestions
-      const weakQuestionsData = [
-        {
-          test: "弱点問題テスト"
-        }
-      ];
-
-      localStorage.setItem(
-        "weakQuestions",
-        JSON.stringify(weakQuestionsData)
-      );
-
-
-      // ③ stars
-      const starsData = {
-        basic: 3,
-        standard: 2
-      };
-
-      localStorage.setItem(
-        "stars",
-        JSON.stringify(starsData)
-      );
-
-
-      // ④ records
-      const recordsData = {
-        test: "連チャン記録テスト",
-        maxChain: 9
-      };
-
-      localStorage.setItem(
-        "records",
-        JSON.stringify(recordsData)
-      );
-
-
-      // ⑤ todayRecord
-      const todayRecordData = {
-        test: "今日の記録テスト",
-        challenge: 5
-      };
-
-      localStorage.setItem(
-        "todayRecord",
-        JSON.stringify(todayRecordData)
-      );
-
-
-      // ⑥ soundVolume
-      localStorage.setItem(
-        "soundVolume",
-        "0.7"
-      );
-
-
-      checkData();
-
-      alert("6種類のテストデータを作成しました。");
-    });
-
-
-    // 「移行テスト」ボタン
+    // 実際のChromeデータをAndroidへ送る
     migrationButton.addEventListener("click", function() {
 
-      // 6種類のデータを1つにまとめる
       const migrationData = {};
-
 
       STORAGE_KEYS.forEach(function(key) {
 
@@ -236,24 +147,20 @@
       });
 
 
-      // JSON文字列にする
       const jsonData =
         JSON.stringify(migrationData);
 
-
-      // Androidへ渡すためにURLエンコードする
       const encodedData =
         encodeURIComponent(jsonData);
 
 
-      // Androidへデータを渡す
       const migrationUrl =
         "yontakun://migration?data=" +
         encodedData;
 
 
       result.textContent =
-        "Androidアプリへデータを送信します。\n\n" +
+        "実際のよんたくんデータを送信します。\n\n" +
         "移行対象：" +
         Object.keys(migrationData).length +
         "種類\n\n" +
@@ -267,7 +174,7 @@
     });
 
 
-    // ページを開いたときの確認
+    // ページを開いたときに確認
     checkData();
 
   </script>
