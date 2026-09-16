@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>よんたくん データ移行テスト</title>
+  <title>よんたくん データ引き継ぎ</title>
 
   <style>
     body {
@@ -27,43 +27,60 @@
     }
 
     button {
+      display: block;
+      width: 100%;
       font-size: 18px;
-      padding: 12px 24px;
-      margin: 8px 0;
+      padding: 14px 20px;
+      margin: 12px 0;
       cursor: pointer;
     }
 
-    #result {
-      white-space: pre-wrap;
-      word-break: break-all;
+    #status {
+      font-weight: bold;
     }
   </style>
 </head>
 
 <body>
 
-  <h1>よんたくん データ移行テスト</h1>
+  <h1>よんたくん データ引き継ぎ</h1>
 
   <div class="box">
+
     <p>
-      Chromeに保存されている実際のよんたくんのデータを確認します。
+      今回のバージョンアップで、
+      よんたくんのデータの保存場所が変わりました。
     </p>
 
     <p>
-      ※このページはデータを変更しません。
+      これまでのよんたくんを利用していて、
+      学習記録や連チャン記録などのデータがある場合は、
+      「以前のデータを引き継ぐ」を押してください。
     </p>
 
-    <p id="status">確認中...</p>
+    <p>
+      以前のデータがない場合は、
+      「新しく始める」を押してください。
+    </p>
+
+    <p>
+      ※データを引き継ぐ場合、これまでのよんたくんのデータを
+      新しい保存場所へ移します。
+    </p>
+
+    <p id="status">
+      データを確認しています...
+    </p>
+
   </div>
 
   <button id="migrationButton" disabled>
-    実データを移行テスト
+    以前のデータを引き継ぐ
   </button>
 
-  <div class="box">
-    <h2>確認結果</h2>
-    <div id="result"></div>
-  </div>
+  <button id="skipButton">
+    新しく始める
+  </button>
 
   <script>
 
@@ -78,100 +95,98 @@
     ];
 
 
-    const status = document.getElementById("status");
-    const result = document.getElementById("result");
+    const status =
+      document.getElementById("status");
+
     const migrationButton =
       document.getElementById("migrationButton");
 
+    const skipButton =
+      document.getElementById("skipButton");
 
-    // Chrome側の実データを確認する
+
+    // Chrome側にデータがあるか確認する
     function checkData() {
 
       let foundCount = 0;
-      let resultText = "";
 
       STORAGE_KEYS.forEach(function(key) {
 
-        const data = localStorage.getItem(key);
+        const data =
+          localStorage.getItem(key);
 
         if (data !== null) {
-
           foundCount++;
-
-          resultText +=
-            "【" + key + "】\n" +
-            "データあり：" +
-            data.length +
-            "文字\n\n";
-
-        } else {
-
-          resultText +=
-            "【" + key + "】\n" +
-            "データなし\n\n";
         }
+
       });
 
 
-      status.textContent =
-        foundCount +
-        "種類の実データが見つかりました。";
-
-      result.textContent =
-        resultText +
-        "--------------------\n" +
-        "Chrome側の確認が完了しました。";
-
-
       if (foundCount > 0) {
+
+        status.textContent =
+          "以前のデータが見つかりました。";
+
         migrationButton.disabled = false;
+
       } else {
+
+        status.textContent =
+          "以前のデータは見つかりませんでした。";
+
         migrationButton.disabled = true;
       }
     }
 
 
-    // 実際のChromeデータをAndroidへ送る
-    migrationButton.addEventListener("click", function() {
+    // 以前のデータをAndroidへ送る
+    migrationButton.addEventListener(
+      "click",
+      function() {
 
-      const migrationData = {};
-
-      STORAGE_KEYS.forEach(function(key) {
-
-        const data = localStorage.getItem(key);
-
-        if (data !== null) {
-          migrationData[key] = data;
-        }
-
-      });
+        const migrationData = {};
 
 
-      const jsonData =
-        JSON.stringify(migrationData);
+        STORAGE_KEYS.forEach(function(key) {
 
-      const encodedData =
-        encodeURIComponent(jsonData);
+          const data =
+            localStorage.getItem(key);
 
+          if (data !== null) {
+            migrationData[key] = data;
+          }
 
-      const migrationUrl =
-        "yontakun://migration?data=" +
-        encodedData;
-
-
-      result.textContent =
-        "実際のよんたくんデータを送信します。\n\n" +
-        "移行対象：" +
-        Object.keys(migrationData).length +
-        "種類\n\n" +
-        "データサイズ：" +
-        jsonData.length +
-        "文字";
+        });
 
 
-      window.location.href =
-        migrationUrl;
-    });
+        const jsonData =
+          JSON.stringify(migrationData);
+
+        const encodedData =
+          encodeURIComponent(jsonData);
+
+
+        const migrationUrl =
+          "yontakun://migration?data=" +
+          encodedData;
+
+
+        window.location.href =
+          migrationUrl;
+      }
+    );
+
+
+    // 新しく始める
+    skipButton.addEventListener(
+      "click",
+      function() {
+
+        window.location.href =
+          "yontakun://migration?skip=true";
+
+      }
+    );
 
 
     // ページを開いたときに確認
