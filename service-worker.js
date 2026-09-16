@@ -405,6 +405,12 @@ self.addEventListener("fetch", (event) => {
 
   event.respondWith(
     (async () => {
+
+            // データ引き継ぎページは常に最新の内容を取得する
+      if (url.pathname === "/migration-test.html") {
+        return fetch(event.request);
+      }
+
       // 1. まず通常のキャッシュマッチを試みる（音声の場合はURL文字列だけで再検索できるようにする）
       let cachedResponse = await caches.match(event.request);
 
