@@ -1,4 +1,4 @@
-const CACHE_NAME = "yontakun-v28";
+const CACHE_NAME = "yontakun-v29";
 
 const urlsToCache = [
   "/",
@@ -401,6 +401,12 @@ self.addEventListener("activate", (event) => {
 // fetch（Android / Windows / iOS 完全対応・修正版）
 self.addEventListener("fetch", (event) => {
   const url = new URL(event.request.url);
+
+  // たして10か20は、このService Workerの管理対象外
+  if (url.pathname.startsWith("/addupto1020/")) {
+    return;
+  }
+
   const isAudio = url.pathname.endsWith(".mp3");
 
   event.respondWith(
